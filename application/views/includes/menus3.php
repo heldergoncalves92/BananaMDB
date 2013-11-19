@@ -1,5 +1,3 @@
-</head>
-  <body>
 
     
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -11,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url(); ?>">&raquo;SuperSeller!</a>
+          <a class="navbar-brand" href="<?php echo base_url(); ?>">&raquo;BananaMDB!</a>
           <div class="collapse navbar-collapse">
           	
             <ul class="nav navbar-nav">

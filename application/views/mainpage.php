@@ -1,10 +1,44 @@
 
 
-    <div class="container">
+   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Aqui está ele!</h1>
-        <p>O BananaMDB</p>
-        <p><a class="btn btn-primary btn-lg">Cenas &raquo;</a></p>
+  <!-- Wrapper for slides -->
+  <div align="middle" class="carousel-inner">
+    <div class="item active">
+      <a href="http://www.google.pt"><img id="carrosel" src="img/Tron.jpg" ></a>
+      <div class="carousel-caption">
+       	<h1>TRON</h1>
       </div>
+    </div>
+
+     <div class="item">
+      <img id="carrosel" src="img/Hangover.jpg" >
+      <div class="carousel-caption">
+       
+      </div>
+    </div>
+
+    <div  class="item">
+      <img id="carrosel" src="img/hobbit.jpg" >
+      <div class="carousel-caption">
+       
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+ </div>
