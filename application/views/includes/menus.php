@@ -15,10 +15,10 @@
             <ul class="nav">
               <li class="active"><a href="<?php echo base_url(); ?>">Início</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Anúncios <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filmes <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   
-                  <li><a href="<?php echo base_url(); ?>anuncio/listar">Listar Anúncios</a></li>
+                  <li><a href="<?php echo base_url(); ?>title/">Listar Filmes</a></li>
                   
                 </ul>
               </li>
