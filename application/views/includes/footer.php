@@ -2,7 +2,7 @@
 
 
       <footer>
-        <p>&copy; Company 2012 | 
+        <p>&copy; Company 2013 | 
         	<?php $dia = mktime(date("h")-1,date("i"),date("s"),date("m"),date("d")+0,date("Y"));
 			echo " >.> ".date("d/m/Y H:i:s", $dia);?></p>
 			

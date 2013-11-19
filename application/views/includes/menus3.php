@@ -5,13 +5,15 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="<?php echo base_url(); ?>">&raquo;SuperSeller!</a>
-          <div class="nav-collapse collapse">
+          </button>
+          <a class="navbar-brand" href="<?php echo base_url(); ?>">&raquo;SuperSeller!</a>
+          <div class="collapse navbar-collapse">
+          	
             <ul class="nav navbar-nav">
               <li class="active"><a href="<?php echo base_url(); ?>">Início</a></li>
               <li class="dropdown">
@@ -25,9 +27,9 @@
 
                 </ul>
               </li>
-              <li class="active"><a href="<?php echo base_url(); ?>pesquisa">Pesquisar</a></li>
+              <li ><a href="<?php echo base_url(); ?>pesquisa">Pesquisar</a></li>
             </ul>
-             <ul class="nav pull-right">
+             <ul class="nav navbar-nav navbar-right">
           <li><a href="<?php echo base_url(); ?>inicio/registo">Registo</a></li>
           <li class="divider-vertical"></li>
           <li class="dropdown">
@@ -39,8 +41,8 @@
 		<?php
 		
 			$atopen = array('action'=>'login', 'method'=>'post', 'accept-charset'=>'UTF-8');
-			$atuser = array('id'=>'USER','style'=>'margin-bottom: 15px', 'name'=>'USER', 'size'=>'30');
-			$atpass = array('id'=>'PASS','style'=>'margin-bottom: 15px', 'name'=>'PASS', 'size'=>'30');
+			$atuser = array('id'=>'USER',/*'style'=>'margin-bottom: 15px',*/ 'name'=>'USER'/*, 'size'=>'30'*/,'class'=>'form-control');
+			$atpass = array('id'=>'PASS',/*'style'=>'margin-bottom: 15px',*/ 'name'=>'PASS'/*, 'size'=>'30'*/,'class'=>'form-control');
 			
 			
     		

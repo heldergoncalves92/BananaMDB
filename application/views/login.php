@@ -21,14 +21,14 @@
 echo form_open("login",'');
 ?>
 
- <div class="alert alert-error">      
+ <div class="alert alert-danger">      
 <?php
 echo $erro;
 echo validation_errors('<p>','</p>');
 ?>
 
 </div>
-<div class="control-group">
+<div class="form-group">
 	      <label class="control-label" for="input01">Username</label>
 <div class="controls">
 
@@ -39,7 +39,7 @@ echo form_input(array('name'=>'USER'),set_value('USER'),'autofocus');?>
 
 
 
-<div class="control-group">
+<div class="form-group">
 	      <label class="control-label" for="input01">Password</label>
 <div class="controls">
 
@@ -48,7 +48,7 @@ echo form_input(array('name'=>'USER'),set_value('USER'),'autofocus');?>
 echo form_password(array('name'=>'PASS'));?>
 </div></div>
 
-<div class="control-group">
+<div class="form-group">
 	<div class="controls">
 <?php
 

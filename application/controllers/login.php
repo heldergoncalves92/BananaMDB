@@ -49,7 +49,7 @@ class Login extends CI_Controller {
 		//validação do form
 		//trim »»» limpa espaços
 		
-		//$this->form_validation->set_error_delimiters('<div class="alert alert-error">', '</div>');
+		//$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 		
 		$this->form_validation->set_rules('USER','Username','trim|min_length[5]|required|alpha_numeric|max_length[20]');
 		$this->form_validation->set_rules('PASS','Password','required|max_length[32]');

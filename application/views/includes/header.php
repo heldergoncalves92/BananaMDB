@@ -11,7 +11,7 @@
     <link href="<?php echo base_url(); ?>css/bootstrap.css" rel="stylesheet">
     
     <!--por o cenas do titulo hero mais pequeno para ficar como base pa todas as paginas-->
-    <style type="text/css"> .hero-unit {padding: 12px;}   </style>
+    <style type="text/css"> .jumbotron {padding: 12px;}   </style>
     
     <style type="text/css">
       body {

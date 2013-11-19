@@ -36,7 +36,7 @@ endif
 
 echo form_open('inicio/Registo','');?>
 
- <div class="alert alert-error">      
+ <div class="alert alert-danger">      
 <?php
 
 echo validation_errors('<p>','</p>');

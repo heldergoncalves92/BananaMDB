@@ -29,11 +29,11 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-		$this->load->view('includes/menus');
+		$this->load->view('includes/menus3');
 		else {
 		$this->load->view('includes/menus2');	
 		}
-		$this->load->view('bt.php');	
+		$this->load->view('mainpage.php');	
 		$this->load->view('includes/footer');	
 		
 	}
@@ -180,7 +180,7 @@ class Inicio extends CI_Controller {
 				}
 		$this->load->view('includes/header');
 		$this->load->view('includes/menus');
-		$this->load->view('bt2',$dados);
+		$this->load->view('mainpage',$dados);
 		$this->load->view('includes/footer');	
 		
 	}
