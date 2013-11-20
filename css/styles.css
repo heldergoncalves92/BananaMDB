@@ -1,6 +1,7 @@
 
 	body{
 		margin-top: 50px;
+		background-color: floralwhite;
 	}
 
 	#carrosel{
@@ -9,4 +10,15 @@
 	}
 
 
-	
+	#S_today{
+
+		height: 250px;
+		width: 350px;
+
+	}
+
+	#login{
+		padding: 10px;
+	}
+
+
