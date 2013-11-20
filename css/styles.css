@@ -1,4 +1,15 @@
 
+	body,html{
+		width: 100%;
+		height: 100%;
+	}
+
+	#all-page{
+		width: 100%;
+		height: 100%;
+
+	}
+
 	body{
 		margin-top: 50px;
 		background-color: floralwhite;
@@ -6,41 +17,44 @@
 
 	#carrosel{
 		height: 400px;
-		width: 1300px;
+		width: 100%;
 	}
 
 
 	#S_today{
 
 		height: 250px;
-		width: 350px;
+		width: 100%;
 
 	}
 
-	img.noticia{
-		
-		height: 400px;
-		width: 650px;
-	}
-
-	div.noticia{
-		text-indent: 50px;
-		text-align: justify;
-		margin: 0 340px 0 50px;
-		
+	#feed-block{
+		margin: 5% 5% 0 5%;
+		text-indent: 5%;
 
 	}
 
-	div.noticias{
-		margin: 50px 100px 0 100px;
-		text-indent: 75px;
+	#feed-noticias{
+		text-indent: 5%;
+		display: table;
 	}
 
-	div.tops{
-
-		width: 300px;
-		background-color: aliceblue;
-		float: right;
+	img.img-feed{
+		width: 100%;
 	}
+	
+	#noticia ,#tops{
+		padding: 1%;
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	#noticia{
+		padding-right: 3%;
+		width: 75%;
+	}
+
+
+	
 
 
