@@ -72,6 +72,7 @@
     <!-- - - - - Noticias - - - - - -->
     <div id="feed-block" class="well">
       <h2><b>Notícias</b></h2>
+      <hr>
       <div id="feed-noticias"> 
         <div id="noticia">
           <div class="title"><h3>Nell Patric Harris contra-cena nos 'Mostros'</h3></div>

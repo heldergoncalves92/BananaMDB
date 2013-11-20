@@ -45,11 +45,13 @@
 	
 	#noticia ,#tops{
 		padding: 1%;
+
 		display: table-cell;
 		vertical-align: top;
 	}
 
 	#noticia{
+		padding-top: 0;
 		padding-right: 3%;
 		width: 75%;
 	}
