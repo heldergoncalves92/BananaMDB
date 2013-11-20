@@ -14,7 +14,6 @@ class Inicio extends CI_Controller {
 	$this->load->library('session');
 	$this->load->library('table');
 	//$this->load->library('MY_Form_validation');
-	$this->load->model('inicio_model','inmodel');
 	$this->load->model('user','usermodel');
 	}
 	
@@ -45,7 +44,7 @@ class Inicio extends CI_Controller {
 	
 	public function listar (){
 		$dados = array (
-		'data'=>$this->inmodel->get_users()->result());	
+		'data'=>$this->usermodel->get_users()->result());	
 		
 		$tbltmpl = array (
         'table_open'          => '<class="table table-striped table-bordered table-condensed">',
@@ -99,7 +98,7 @@ class Inicio extends CI_Controller {
 			$dados = elements(array('USERNAME','PASS'), $this->input->post());
 			//para guardar a senha em MD5
 			$dados['PASS']=md5($dados['PASS']);
-			$this->inmodel->db_editar_UTILIZADORES($dados,array('EMAIL'=>$this->input->post('emailuser'),'IDUTILIZADOR'=>$this->input->post('iduser')));
+			$this->usermodel->db_editar_UTILIZADORES($dados,array('EMAIL'=>$this->input->post('emailuser'),'IDUTILIZADOR'=>$this->input->post('iduser')));
 		endif;
 		
 		
@@ -140,5 +139,5 @@ class Inicio extends CI_Controller {
 	
 	
 	
-}
+} ?>
 	

@@ -34,12 +34,23 @@
                   <li><a href="<?php echo base_url(); ?>chart/top">TOP 10</a></li>
                 </ul>
             </li>
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Procura">
-              </div>
+            <?php
+		
+			$atopen = array('class'=>'navbar-form navbar-left','action'=>'pesquisa', 'method'=>'post', 'role'=>'search');
+			$pesquisatext= array('class'=>'form-control','placeholder'=>'Procura' ,'name'=>'PESQUISA', 'size'=>'20');
+			
+			echo form_open("pesquisa",$atopen);
+			
+		echo"<div class=\"form-group\">";
+			echo form_input($pesquisatext);
+            echo"</div>"
+           ?>
               <button type="submit" class="btn btn-warning">Procurar</button>
-            </form>
+            
+            
+            <?php
+			echo form_close();
+			?>
           </ul>
 
          

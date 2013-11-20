@@ -14,7 +14,6 @@ class Registo extends CI_Controller {
 	$this->load->library('session');
 	$this->load->library('table');
 	//$this->load->library('MY_Form_validation');
-	$this->load->model('inicio_model','inmodel');
 	$this->load->model('user','usermodel');
 	}
 	
@@ -40,7 +39,7 @@ class Registo extends CI_Controller {
 			$dados = elements(array('USERNAME','EMAIL','PASS','DATANASCIMENTO'), $this->input->post());
 			//para guardar a senha em MD5
 			$dados['PASS']=md5($dados['PASS']);			
-			$this->inmodel->db_insert_UTILIZADORES($dados);
+			$this->usermodel->db_insert_UTILIZADORES($dados);
 			
 			echo 'validou';
 		endif;

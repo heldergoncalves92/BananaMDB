@@ -60,7 +60,12 @@ Class User extends CI_Model
 
 
 
-
+		public function get_users(){
+			$this->db->from('UTILIZADORES');
+			$this->db->order_by("IDX", "asc");
+			return $this->db->get();
+			
+		}
 
 
 function getuser($cookies)
@@ -75,6 +80,52 @@ function getuser($cookies)
   return $query; 
  }
 
+
+
+		public function get_UTILIZADORESseqcurrval(){
+			
+			return $this->db->query('SELECT UTILIZADORES_seq.currval from dual')->result();
+		}
+	
+
+
+
+	public function db_insert_UTILIZADORES($dados=NULL){
+	
+		if($dados!=NULL):
+			/*$date1=$dados['DNM'];
+			$date2=$dados['ES'];
+			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
+			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
+			//$this->db->insert('UTILIZADORES',$dados);
+			$user = $dados['USERNAME'];
+			$pass = $dados['PASS'];
+			$email = $dados['EMAIL'];
+			$datan = $dados['DATANASCIMENTO'];
+			
+			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan')";
+			$this->db->query($query);
+			$this->session->set_flashdata('registook','Registou-se com Sucesso');
+			redirect('registo');
+		endif;		
+	}
+	
+	
+	
+	
+	public function db_editar_UTILIZADORES($dados=NULL,$condicao=NULL){
+	
+		if($dados!=NULL&&$condicao!=NULL):
+			/*$date1=$dados['DNM'];
+			$date2=$dados['ES'];
+			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
+			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
+			$this->db->update('UTILIZADORES',$dados,$condicao);
+			$this->session->set_flashdata('edicaook','Editou com Sucesso');
+			redirect(current_url());
+		endif;		
+	}
+	
 
 }
 
