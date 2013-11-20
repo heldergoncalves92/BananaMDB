@@ -24,6 +24,7 @@
 	}
 
 	div.noticia{
+		text-indent: 50px;
 		text-align: justify;
 		margin: 0 340px 0 50px;
 		
@@ -32,7 +33,7 @@
 
 	div.noticias{
 		margin: 50px 100px 0 100px;
-		text-indent: 50px;
+		text-indent: 75px;
 	}
 
 	div.tops{

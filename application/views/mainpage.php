@@ -33,6 +33,7 @@
        
       </div>
     </div>
+  </div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -72,7 +73,7 @@
 
     <div class="noticias well">
 
-      <h2>Notícias</h2>
+      <h2><b>Notícias</b></h2>
 
       <div class="tops">
         <p>Welcome to the Jungle <hr><h2>Por aqui tabelas que interessam</h2></p>
