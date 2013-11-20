@@ -29,9 +29,11 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-			$this->load->view('includes/navbar_base');
+			{$this->load->view('includes/navbar_base');
+			$this->load->view('includes/navbar_direitaLOGIN');	}
 		else {
-			$this->load->view('includes/menus2');	
+			$this->load->view('includes/navbar_base');	
+			$this->load->view('includes/navbar_direitaLOGOUT');	
 		}
 		$this->load->view('mainpage.php');	
 		$this->load->view('includes/footer');	
@@ -68,9 +70,11 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-		$this->load->view('includes/menus');
+			{$this->load->view('includes/navbar_base');
+			$this->load->view('includes/navbar_direitaLOGIN');	}
 		else {
-		$this->load->view('includes/menus2');	
+			$this->load->view('includes/navbar_base');	
+			$this->load->view('includes/navbar_direitaLOGOUT');	
 		}
 		
 		$this->load->view('listar',$dados);
@@ -106,9 +110,11 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-		$this->load->view('includes/menus');
+			{$this->load->view('includes/navbar_base');
+			$this->load->view('includes/navbar_direitaLOGIN');	}
 		else {
-		$this->load->view('includes/menus2');	
+			$this->load->view('includes/navbar_base');	
+			$this->load->view('includes/navbar_direitaLOGOUT');	
 		}
 		$this->load->view('editar');
 		$this->load->view('includes/footer');
@@ -147,9 +153,11 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-		$this->load->view('includes/navbar_base');
+			{$this->load->view('includes/navbar_base');
+			$this->load->view('includes/navbar_direitaLOGIN');	}
 		else {
-		$this->load->view('includes/menus2');	
+			$this->load->view('includes/navbar_base');	
+			$this->load->view('includes/navbar_direitaLOGOUT');	
 		}
 		$this->load->view('registo');
 		$this->load->view('includes/footer');	
@@ -157,33 +165,6 @@ class Inicio extends CI_Controller {
 		}
 	
 	
-	public function inded (){
-		
-		
-				$con=odbc_connect("user","AAUSER","PASSWORD");
-				
-				if(!$con){echo "ERRO";}
-				
-				$sql="select M,NM,to_char(DNM,'dd-mm-yyyy') from medicos";
-				$result = odbc_exec($con,$sql);
-				
-				$dados = array('titulo'=>'');
-				while (odbc_fetch_row($result))
-				{
-					$codigo=odbc_result($result,"M");
-					$nome=odbc_result($result,"NM");
-//					$nome = strtr($nome, "é", "e");
-					$idade=odbc_result($result,3);
-					
-					$dados['titulo'].="<tr><td>$codigo</td><td>$nome</td><td>$idade</td></td>";
-					
-				}
-		$this->load->view('includes/header');
-		$this->load->view('includes/menus');
-		$this->load->view('mainpage',$dados);
-		$this->load->view('includes/footer');	
-		
-	}
 	
 	
 	
