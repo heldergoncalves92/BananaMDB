@@ -44,27 +44,46 @@
  </div>
 
 
-    <!-- - - - - - -Series de hoje - - - - - - -->
+    <!-- - - - - - -Cinema de hoje - - - - - - -->
     <h4 align="center">Nos Cinemas</h4>
 
     <div align="center" class="row">
       <div class="col-lg-4">
         <a href="#">
-          <img class="img-rounded" id="S_today" src="img/carrie.jpg" >
+          <img class="img-thumbnail" id="S_today" src="img/carrie.jpg" >
         </a>
         <h4>Carrie</h4>
       </div>
       <div class="col-lg-4">
         <a href="#">
-          <img  class="img-rounded" id="S_today" src="img/moster.jpg" >
+          <img  class="img-thumbnail" id="S_today" src="img/moster.jpg" >
         </a>
         <h4>Mostros: A Universidade</h4>
       </div>
       <div class="col-lg-4">
         <a href="#">
-          <img class="img-rounded" id="S_today" src="img/gaiola.jpg" >
+          <img class="img-thumbnail" id="S_today" src="img/gaiola.jpg" >
         </a>
         <h4>A Gaiola Dourada</h4>
       </div>
     </div>
+
+    <!-- - - - - Noticias - - - - - -->
+
+    <div class="noticias well">
+
+      <h2>Notícias</h2>
+
+      <div class="tops">
+        <p>Welcome to the Jungle <hr><h2>Por aqui tabelas que interessam</h2></p>
+      </div>
+
+      <div class="noticia">
+        <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
+        <img  class="img-rounded noticia" src="img/moster.jpg" >
+        <p>Agora aqui as noticias pretendidas</p>
+      </div>
+
+    </div>
+
 

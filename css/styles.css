@@ -17,8 +17,29 @@
 
 	}
 
-	#login{
-		padding: 10px;
+	img.noticia{
+		
+		height: 400px;
+		width: 650px;
+	}
+
+	div.noticia{
+		text-align: justify;
+		margin: 0 340px 0 50px;
+		
+
+	}
+
+	div.noticias{
+		margin: 50px 100px 0 100px;
+		text-indent: 50px;
+	}
+
+	div.tops{
+
+		width: 300px;
+		background-color: aliceblue;
+		float: right;
 	}
 
 
