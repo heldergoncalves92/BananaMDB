@@ -30,7 +30,8 @@ class Inicio extends CI_Controller {
 		
 		if ($IDUTILIZADOR ==FALSE)
 			{$this->load->view('includes/navbar_base');
-			$this->load->view('includes/navbar_direitaLOGIN');	}
+			//$this->load->view('includes/navbar_direitaLOGIN');	
+		}
 		else {
 			$this->load->view('includes/navbar_base');	
 			$this->load->view('includes/navbar_direitaLOGOUT');	

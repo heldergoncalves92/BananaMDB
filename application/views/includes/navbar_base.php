@@ -41,7 +41,7 @@
               <button type="submit" class="btn btn-warning">Procurar</button>
             </form>
           </ul>
-<<<<<<< HEAD
+
           <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Registo</a></li>
               <li class="divider-vertical"></li>
@@ -70,6 +70,3 @@
 
 
     </nav>
-=======
-          
->>>>>>> af0f83974efbcceb601e9a8007d6aff54de5dfb7
