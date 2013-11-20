@@ -20,7 +20,7 @@
       </div>
     </div>
 
-     <div class="item">
+    <div class="item">
       <img id="carrosel" src="img/Hangover.jpg" >
       <div class="carousel-caption">
        
@@ -33,6 +33,7 @@
        
       </div>
     </div>
+  </div>
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
