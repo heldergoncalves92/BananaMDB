@@ -11,7 +11,7 @@
   <!-- Wrapper for slides -->
   <div align="middle" class="carousel-inner">
     <div class="item active">
-      <a href="http://www.google.pt"><img id="carrosel" src="img/Tron.jpg" ></a>
+      <a href="#"><img id="carrosel" src="img/Tron.jpg" ></a>
       <div class="carousel-caption">
        	<h1>TRON</h1>
       </div>

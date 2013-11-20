@@ -29,7 +29,7 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-			$this->load->view('includes/menus3');
+			$this->load->view('includes/navbar_base');
 		else {
 			$this->load->view('includes/menus2');	
 		}
@@ -147,7 +147,7 @@ class Inicio extends CI_Controller {
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
 		if ($IDUTILIZADOR ==FALSE)
-		$this->load->view('includes/menus');
+		$this->load->view('includes/navbar_base');
 		else {
 		$this->load->view('includes/menus2');	
 		}
