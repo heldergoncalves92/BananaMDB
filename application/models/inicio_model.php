@@ -3,11 +3,15 @@
 class Inicio_model extends CI_Model {
 	
 	
+	
+	
+	
+	
 
 	
-		public function get_userxpseqcurrval(){
+		public function get_UTILIZADORESseqcurrval(){
 			
-			return $this->db->query('SELECT userxp_seq.currval from dual')->result();
+			return $this->db->query('SELECT UTILIZADORES_seq.currval from dual')->result();
 		}
 	
 	
@@ -27,12 +31,35 @@ class Inicio_model extends CI_Model {
 		}
 	
 		public function get_users(){
-			$this->db->from('USERXP');
+			$this->db->from('UTILIZADORES');
 			$this->db->order_by("IDX", "asc");
 			return $this->db->get();
 			
 		}
 		
+
+
+	public function db_insert_UTILIZADORES($dados=NULL){
+	
+		if($dados!=NULL):
+			/*$date1=$dados['DNM'];
+			$date2=$dados['ES'];
+			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
+			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
+			//$this->db->insert('UTILIZADORES',$dados);
+			$user = $dados['USERNAME'];
+			$pass = $dados['PASS'];
+			$email = $dados['EMAIL'];
+			$datan = $dados['DATANASCIMENTO'];
+			
+			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan')";
+			$this->db->query($query);
+			$this->session->set_flashdata('registook','Registou-se com Sucesso');
+			redirect('registo');
+		endif;		
+	}
+	
+
 
 
 
@@ -72,7 +99,7 @@ DATAVENDA IS  NULL')->result();
 
 		$this->db->where('IDX',$id);
 		//$this->db->limit(1);
-		return $this->db->get('USERXP');
+		return $this->db->get('UTILIZADORES');
 		else:
 			return FALSE;
 			
@@ -154,6 +181,10 @@ DATAVENDA IS  NULL')->result();
 		endif;
 	}
 	
+	
+	
+	
+	
 	public function get_vendabyida($id=NULL)
 	{
 		if ($id!=NULL):
@@ -168,24 +199,6 @@ DATAVENDA IS  NULL')->result();
 	}
 	
 	
-	public function db_insert_userxp($dados=NULL){
-	
-		if($dados!=NULL):
-			/*$date1=$dados['DNM'];
-			$date2=$dados['ES'];
-			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
-			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
-			//$this->db->insert('USERXP',$dados);
-			$user = $dados['USERNAME'];
-			$pass = $dados['PASS'];
-			$email = $dados['EMAIL'];
-			
-			$query = "INSERT INTO userxp VALUES (userxp_seq.nextval,'$user',0,0,'$email','$pass')";
-			$this->db->query($query);
-			$this->session->set_flashdata('registook','Registou-se com Sucesso');
-			redirect('inicio/registo');
-		endif;		
-	}
 	
 		public function db_insert_anuncio($dadosfinal=NULL){
 	
@@ -241,14 +254,14 @@ DATAVENDA IS  NULL')->result();
 	}
 	
 	
-	public function db_editar_userxp($dados=NULL,$condicao=NULL){
+	public function db_editar_UTILIZADORES($dados=NULL,$condicao=NULL){
 	
 		if($dados!=NULL&&$condicao!=NULL):
 			/*$date1=$dados['DNM'];
 			$date2=$dados['ES'];
 			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
 			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
-			$this->db->update('USERXP',$dados,$condicao);
+			$this->db->update('UTILIZADORES',$dados,$condicao);
 			$this->session->set_flashdata('edicaook','Editou com Sucesso');
 			redirect(current_url());
 		endif;		
