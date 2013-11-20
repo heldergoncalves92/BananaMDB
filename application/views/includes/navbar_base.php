@@ -44,6 +44,12 @@
           <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Registo</a></li>
               <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                   <li><a href="#">Cenas</a></li>
+                  </ul>
+              </li>
           </ul>
              
 
