@@ -7,7 +7,7 @@ Class User extends CI_Model
  function login($dados)
  {
    
-   $sql="SELECT * from USERXP where USERNAME='{$dados['USER']}' AND PASS= '{$dados['PASS']}'";
+   $sql="SELECT * from UTILIZADORES where USERNAME='{$dados['USER']}' AND PASS= '{$dados['PASS']}'";
    $query = $this->db->query($sql);
 
    if($query -> num_rows() == 1)
@@ -42,7 +42,7 @@ Class User extends CI_Model
  function getidxbyuser($user)
  {
 
-   $sql="SELECT IDX from USERXP WHERE USERNAME='$user'";
+   $sql="SELECT IDX from UTILIZADORES WHERE USERNAME='$user'";
    
    $query = $this->db->query($sql)->row()->IDX;
   return $query; 

@@ -112,7 +112,8 @@ class Login extends CI_Controller {
 	
 	
  	$this->load->view('includes/header');
-	$this->load->view('includes/menus');
+	$this->load->view('includes/navbar_base');
+	$this->load->view('includes/navbar_direitaLOGIN');
   	$this->load->view('login',$erros);
 	$this->load->view('includes/footer');
 		
