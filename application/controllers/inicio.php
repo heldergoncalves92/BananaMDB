@@ -28,9 +28,9 @@ class Inicio extends CI_Controller {
 		$session_id = $this->session->userdata('session_id');
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
-		if ($IDUTILIZADOR ==FALSE)
-			{$this->load->view('includes/navbar_base');
-			//$this->load->view('includes/navbar_direitaLOGIN');	
+		if ($IDUTILIZADOR ==FALSE){
+			$this->load->view('includes/navbar_base');
+			$this->load->view('includes/navbar_direitaLOGIN');	
 		}
 		else {
 			$this->load->view('includes/navbar_base');	

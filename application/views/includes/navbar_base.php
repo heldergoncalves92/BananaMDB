@@ -42,31 +42,9 @@
             </form>
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Registo</a></li>
-              <li class="divider-vertical"></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                   <li id="login">
-                    <form  role="form">
-                      <input class="form-control" id="focusedInput" type="text" value="Utilizador">
-                      <br>
-                      <input class="form-control" id="focusedInput" type="text" value="Palavra-Passe">
-                      <hr>
-                      <button type="submit" class="btn btn-primary">Login</button>
-                    </form>
-                   </li>
-                  </ul>
-              </li>
-          </ul>
+         
              
 
 
 
-      </div>
-
-
-
-
-    </nav>
+    
