@@ -1,4 +1,4 @@
-<ul class="nav pull-right">
+<ul class="nav navbar-nav navbar-right">
           <li><a ><?php  $session_id = $this->session->userdata('session_id');
 					 $idx = $this->usermodel->getuser($session_id);
 					 echo $idx; ?>  </a></li>   	

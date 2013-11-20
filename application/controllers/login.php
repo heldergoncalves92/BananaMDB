@@ -14,11 +14,8 @@ class Login extends CI_Controller {
 	$this->load->model('user','usermodel');
  }
 
-    
- public function  aa()
- {
- 	$this->load->view('includes/aaaa');
- }
+ 
+
  
  public function  logout()
  {
