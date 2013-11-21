@@ -1,9 +1,12 @@
-<div class="panel panel-default">
+<div class="container">
+    <hr class="">
+    <div class="row">
+        <div class="col-md-6">
+        	<div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Filmes</div>
 
-<!-- <table class="table table-striped">
--->
+
 	
 	<?php
 if($data=='0 Resultados')
@@ -20,3 +23,76 @@ echo $this->table->generate();}
 
 
 </div>
+</div></div></div>
+
+
+<div class="container">
+    <hr class="">
+    <div class="row">
+        <div class="col-md-6">
+        	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Séries</div>
+
+<table>
+	
+	<td></td><td>0 Resultados porque não fiz search</td>
+</table>
+
+</div>
+</div></div></div>
+
+
+
+<div class="container">
+    <hr class="">
+    <div class="row">
+        <div class="col-md-6">
+        	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Realizadores</div>
+
+<table>
+	
+	<td></td><td>0 Resultados porque ainda não fiz search</td>
+</table>
+
+</div>
+</div></div></div>
+
+
+
+
+<div class="container">
+    <hr class="">
+    <div class="row">
+        <div class="col-md-6">
+        	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Actores</div>
+
+<table>
+	
+	<td></td><td>0 Resultados porque ainda não fiz search</td>
+</table>
+
+</div>
+</div></div></div>
+
+
+
+<div class="container">
+    <hr class="">
+    <div class="row">
+        <div class="col-md-6">
+        	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Géneros</div>
+
+<table>
+	
+	<td></td><td>0 Resultados porque ainda não fiz search</td>
+</table>
+
+</div>
+</div></div></div>
