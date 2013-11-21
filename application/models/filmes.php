@@ -27,7 +27,7 @@ where UPPER(f.titulo) like UPPER('%$nome%') and f.ano = '%$ano%");
 			
 		}
 
-	public function get_get_generosbyid($id=NULL){
+	public function get_generosbyid($id=NULL){
 			$this->db->from('GENEROS');
 			$this->db->where('ID_GENERO',$id);
 			//$this->db->order_by("NOME", "asc");	

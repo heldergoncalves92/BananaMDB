@@ -29,7 +29,7 @@ class Pesquisa extends CI_Controller {
 
 		
 		$pesquisaquery = $this->filmesmodel->pesquisa1($this->input->post('PESQUISA'));
-		$pesquisa = $pesquisaquery->result();
+		$pesquisa = $anuncios = array ('data'=>$pesquisaquery->result());
 		$quantos = $pesquisaquery->num_rows();
 		$dadospesqisa = array ('data'=>$pesquisa);	
 			
@@ -52,9 +52,10 @@ class Pesquisa extends CI_Controller {
 			$this->load->view('includes/navbar_base');	
 			$this->load->view('includes/navbar_direitaLOGOUT');	
 		}
-		$this->load->view('pesquisa.php',$dadospesqisa);
+
+		$this->load->view('pesquisa.php',$pesquisa);
 		
-		
+		/*
 		
 		echo "post = ";
 		var_dump($this->input->post());
@@ -63,7 +64,7 @@ class Pesquisa extends CI_Controller {
 		echo "-------------------------<p> Quantos = ";
 		var_dump($quantos);
 		
-		$this->load->view('includes/footer');	
+		$this->load->view('includes/footer');	*/
 	}
 		
 			
