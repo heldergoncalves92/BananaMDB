@@ -59,16 +59,9 @@ class Pesquisa extends CI_Controller {
 		
 		$this->load->view('pesquisa.php',$pesquisa);
 		
-		/*
 		
-		echo "post = ";
-		var_dump($this->input->post());
-		echo "-------------------------<p>Pesquisa = ";
-		var_dump($pesquisa);
-		echo "-------------------------<p> Quantos = ";
-		var_dump($quantos);
 		
-		$this->load->view('includes/footer');	*/
+		$this->load->view('includes/footer');	
 	}
 		
 			
