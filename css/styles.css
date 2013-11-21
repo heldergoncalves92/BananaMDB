@@ -36,7 +36,7 @@
 
 	}
 
-	#feed-noticias{
+	#feed{
 		text-indent: 5%;
 		display: table;
 	}
@@ -46,14 +46,14 @@
 
 	}
 	
-	#noticia ,#tops{
+	#feed-noticias ,#tops{
 		padding: 1%;
 
 		display: table-cell;
 		vertical-align: top;
 	}
 
-	#noticia{
+	#feed-noticias{
 		padding-top: 0;
 		padding-right: 3%;
 		width: 75%;
