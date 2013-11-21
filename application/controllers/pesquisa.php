@@ -59,9 +59,8 @@ class Pesquisa extends CI_Controller {
 		
 		$this->load->view('pesquisa.php',$pesquisa);
 		
+		$this->load->view('includes/footer');	
 
-		
-		$this->load->view('includes/footer');
 	}
 		
 			
