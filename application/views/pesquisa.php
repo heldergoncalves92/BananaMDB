@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-6">
         	<div class="panel panel-default">
-  <!-- Default panel contents -->
+  <!-- Default panel contents  -->
   <div class="panel-heading">Filmes</div>
 
 

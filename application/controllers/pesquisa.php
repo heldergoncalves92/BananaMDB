@@ -54,7 +54,7 @@ class Pesquisa extends CI_Controller {
 		}
 
 
-		if($quantos==0)
+		if($quantos==0) 
 			$pesquisa=array ('data'=>'0 Resultados');
 		
 		$this->load->view('pesquisa.php',$pesquisa);

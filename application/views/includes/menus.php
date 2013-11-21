@@ -17,7 +17,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filmes <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   
-                  <li><a href="<?php echo base_url(); ?>title/">Listar Filmes</a></li>
+                  <li><a href="<?php echo base_url(); ?>title/">Listar Filmes</a></li> 
                   <li><a href="<?php echo base_url(); ?>chart/budget">Mais Caros</a></li>
                   <li><a href="<?php echo base_url(); ?>chart/gross">Mais Rentáveis</a></li>
                   <li><a href="<?php echo base_url(); ?>chart/top">TOP 10</a></li>

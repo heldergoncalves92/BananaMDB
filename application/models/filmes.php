@@ -4,9 +4,9 @@ class filmes extends CI_Model {//Filmes e Géneros
 	
 	
 	
-		public function pesquisa1($nome){//Pesquisa por nome
+		public function pesquisa1($nome){//Pesquisa por nome .
 			return $this->db->query("Select f.* from FILMES f
-where UPPER(f.titulo) like UPPER('%$nome%')");
+where UPPER(f.titulo) like UPPER('%$nome%')"); 
 			
 		}
 		
