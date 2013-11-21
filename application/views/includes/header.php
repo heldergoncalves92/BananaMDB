@@ -8,8 +8,13 @@
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
+<<<<<<< HEAD
     <link href="css/bootstrap.css" rel="stylesheet">
     
+=======
+    <link href="<?php echo base_url(); ?>css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/styles.css">
+>>>>>>> bd7c1b36e95231e84cf9c931f01ae5315ea812ec
   </head>
 
   <body>
@@ -21,6 +26,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://code.jquery.com/jquery.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.min.js"></script>
+      <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
       <div id="all-page">

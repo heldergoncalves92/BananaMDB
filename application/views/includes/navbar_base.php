@@ -4,7 +4,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://code.jquery.com/jquery.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="js/bootstrap.min.js"></script>
+      <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
