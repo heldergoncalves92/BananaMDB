@@ -29,7 +29,7 @@
 	}
 
 	#feed-block{
-		margin: 5% 5% 0 5%;
+		margin: 1% 5% 0 5%;
 		text-indent: 5%;
 
 	}
@@ -41,6 +41,7 @@
 
 	img.img-feed{
 		width: 100%;
+
 	}
 	
 	#noticia ,#tops{
@@ -54,6 +55,7 @@
 		padding-top: 0;
 		padding-right: 3%;
 		width: 75%;
+		
 	}
 
 
