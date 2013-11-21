@@ -53,6 +53,10 @@ class Pesquisa extends CI_Controller {
 			$this->load->view('includes/navbar_direitaLOGOUT');	
 		}
 
+
+		if($quantos==0)
+			$pesquisa=array ('data'=>'0 Resultados');
+		
 		$this->load->view('pesquisa.php',$pesquisa);
 		
 		/*
