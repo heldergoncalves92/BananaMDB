@@ -42,8 +42,12 @@
 	}
 
 	img.img-feed{
+<<<<<<< HEAD
 		width: 90%;
 
+=======
+		width: 70%;
+>>>>>>> 647224e253b04bba894561867d2984525a9f04d8
 	}
 	
 	#feed-noticias ,#tops{
@@ -54,8 +58,8 @@
 	}
 
 	#feed-noticias{
-		padding-top: 0;
-		padding-right: 3%;
+		text-align: justify;
+		padding: 0 4% 0 2%;
 		width: 70%;
 		
 	}

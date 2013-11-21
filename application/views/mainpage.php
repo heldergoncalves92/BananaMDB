@@ -56,7 +56,9 @@
               <div class="title"><h3>Nell Patric Harris contra-cena nos 'Mostros'</h3></div>
               <div class="contend">
                 <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
-                <img  class="img-rounded img-feed" src="img/moster.jpg" >
+                  <div align="center">
+                    <img  class="img-rounded img-feed" src="img/moster.jpg" >
+                  </div>
                 <p>Agora aqui as noticias pretendidas</p>
               </div>
             </div>
@@ -65,7 +67,9 @@
               <div class="title"><h3>Actores de 'Tron 2' queixam-se da produção</h3></div>
               <div class="contend">
                 <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
-                <img  class="img-rounded img-feed" src="img/thor.jpg" >
+                  <div align="center">
+                    <img  class="img-rounded img-feed" src="img/thor.jpg" >
+                  </div>
                 <p>Agora aqui as noticias pretendidas</p>
               </div>
 
