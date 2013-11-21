@@ -42,8 +42,7 @@
 	}
 
 	img.img-feed{
-		width: 100%;
-
+		width: 70%;
 	}
 	
 	#feed-noticias ,#tops{
@@ -54,8 +53,8 @@
 	}
 
 	#feed-noticias{
-		padding-top: 0;
-		padding-right: 3%;
+		text-align: justify;
+		padding: 0 4% 0 2%;
 		width: 70%;
 		
 	}
