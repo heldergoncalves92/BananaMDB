@@ -26,7 +26,7 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 
 
 
-    <div class="container">
+    <div class="jumbotron">
 	<h2><?php  echo $query->TITULO ?></h2>
       <!-- Main hero unit for a primary marketing message or call to action -->
       
@@ -39,7 +39,7 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
       	
       </div>
       
-      </div
+      </div>
       <div class="col.-md-6">
       	
 <div class="control-group" >
