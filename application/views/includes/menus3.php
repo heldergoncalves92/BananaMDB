@@ -14,25 +14,25 @@
           	
             <ul class="nav navbar-nav">
               <li class="active"><a href="<?php echo base_url(); ?>">Início</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filmes <b class="caret"></b></a>
-                <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filmes <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
                   
-                  <li><a href="<?php echo base_url(); ?>title/">Listar Filmes</a></li>
-                  <li><a href="<?php echo base_url(); ?>chart/budget">Mais Caros</a></li>
-                  <li><a href="<?php echo base_url(); ?>chart/gross">Mais Rentáveis</a></li>
-                  <li><a href="<?php echo base_url(); ?>chart/top">TOP 10</a></li>
+                    <li><a href="<?php echo base_url(); ?>title/">Listar Filmes</a></li>
+                    <li><a href="<?php echo base_url(); ?>chart/budget">Mais Caros</a></li>
+                    <li><a href="<?php echo base_url(); ?>chart/gross">Mais Rentáveis</a></li>
+                    <li><a href="<?php echo base_url(); ?>chart/top">TOP 10</a></li>
 
-                </ul>
-              </li>
+                  </ul>
+                </li>
               <li ><a href="<?php echo base_url(); ?>pesquisa">Pesquisar</a></li>
             </ul>
-             <ul class="nav navbar-nav navbar-right">
-          <li><a href="<?php echo base_url(); ?>inicio/registo">Registo</a></li>
-          <li class="divider-vertical"></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
-            <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="<?php echo base_url(); ?>inicio/registo">Registo</a></li>
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
               <!-- Form do Login  aqui em baixo -->
               
               	     

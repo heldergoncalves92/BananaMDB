@@ -49,7 +49,7 @@ echo validation_errors('<p>','</p>');
 
 <?php
 
-echo form_input(array('name'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
+echo form_input(array('name'=>'USERNAME','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
 </div></div>
 
 
@@ -61,7 +61,7 @@ echo form_input(array('name'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
 
 <?php
 
-echo form_input(array('name'=>'EMAIL'),set_value('EMAIL'));?>
+echo form_input(array('name'=>'EMAIL','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'E-MAIL'),set_value('EMAIL'));?>
 </div></div>
 
 
@@ -72,7 +72,7 @@ echo form_input(array('name'=>'EMAIL'),set_value('EMAIL'));?>
 
 <?php
 
-echo form_input(array('name'=>'DATANASCIMENTO'),set_value('DATANASCIMENTO'));?>
+echo form_input(array('name'=>'DATANASCIMENTO','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'DATA'),set_value('DATANASCIMENTO'));?>
 </div></div>
 
 
@@ -83,7 +83,7 @@ echo form_input(array('name'=>'DATANASCIMENTO'),set_value('DATANASCIMENTO'));?>
 
 <?php
 
-echo form_password(array('name'=>'PASS'),set_value('PASS'));?>
+echo form_password(array('name'=>'PASS','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'PASSWORD'),set_value('PASS'));?>
 </div></div>
 
 
@@ -94,7 +94,7 @@ echo form_password(array('name'=>'PASS'),set_value('PASS'));?>
 	
 <?php
 
-echo form_password(array('name'=>'PASS2'),set_value('PASS2')); ?>
+echo form_password(array('name'=>'PASS2','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'REPITA A PASSWORD'),set_value('PASS2')); ?>
 
 </div></div>
 	<div class="control-group">

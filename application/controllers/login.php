@@ -14,11 +14,8 @@ class Login extends CI_Controller {
 	$this->load->model('user','usermodel');
  }
 
-    
- public function  aa()
- {
- 	$this->load->view('includes/aaaa');
- }
+ 
+
  
  public function  logout()
  {
@@ -66,7 +63,7 @@ class Login extends CI_Controller {
 			$resultado = $this->usermodel->login($dados);
 			 
 			
-			//$sql="SELECT * from USERXP where USERNAME='{$dados['USERNAME']}' AND PASS= '{$dados['PASS']}'";
+			//$sql="SELECT * from UTILIZADORES where USERNAME='{$dados['USERNAME']}' AND PASS= '{$dados['PASS']}'";
 			//$query = $this->db->query($sql);
 			//$row = $query->num_rows();
 			

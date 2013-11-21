@@ -7,7 +7,7 @@ Class User extends CI_Model
  function login($dados)
  {
    
-   $sql="SELECT * from UTILIZADORES where USERNAME='{$dados['USER']}' AND PASS= '{$dados['PASS']}'";
+   $sql="SELECT * from UTILIZADORES where USERNAME='{$dados['USER']}' AND PASSWORD= '{$dados['PASS']}'";
    $query = $this->db->query($sql);
 
    if($query -> num_rows() == 1)
@@ -25,7 +25,7 @@ Class User extends CI_Model
  {
    $user = $dados['USER'];
    $idx = $this->usermodel->getidxbyuser($user);
-   $sql="UPDATE CISE set IDX = '$idx' , USERNAME = '$user' WHERE SESSION_ID='{$cookies}'";
+   $sql="UPDATE CISE set ID_UTILIZADOR = '$idx' , USERNAME = '$user' WHERE SESSION_ID='{$cookies}'";
    $query = $this->db->query($sql);
   return true; 
 /*
@@ -42,7 +42,7 @@ Class User extends CI_Model
  function getidxbyuser($user)
  {
 
-   $sql="SELECT IDX from UTILIZADORES WHERE USERNAME='$user'";
+   $sql="SELECT ID_UTILIZADOR from UTILIZADORES WHERE USERNAME='$user'";
    
    $query = $this->db->query($sql)->row()->IDX;
   return $query; 
@@ -52,7 +52,7 @@ Class User extends CI_Model
  function getidx($cookies)
  {
 
-   $sql="SELECT IDX from CISE WHERE SESSION_ID='$cookies'";
+   $sql="SELECT ID_UTILIZADOR from CISE WHERE SESSION_ID='$cookies'";
    
    $query = $this->db->query($sql)->row()->IDX;
   return $query; 
@@ -60,7 +60,12 @@ Class User extends CI_Model
 
 
 
-
+		public function get_users(){
+			$this->db->from('UTILIZADORES');
+			$this->db->order_by("IDX", "asc");
+			return $this->db->get();
+			
+		}
 
 
 function getuser($cookies)
@@ -75,6 +80,52 @@ function getuser($cookies)
   return $query; 
  }
 
+
+
+		public function get_UTILIZADORESseqcurrval(){
+			
+			return $this->db->query('SELECT UTILIZADORES_seq.currval from dual')->result();
+		}
+	
+
+
+
+	public function db_insert_UTILIZADORES($dados=NULL){
+	
+		if($dados!=NULL):
+			/*$date1=$dados['DNM'];
+			$date2=$dados['ES'];
+			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
+			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
+			//$this->db->insert('UTILIZADORES',$dados);
+			$user = $dados['USERNAME'];
+			$pass = $dados['PASS'];
+			$email = $dados['EMAIL'];
+			$datan = $dados['DATANASCIMENTO'];
+			
+			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan')";
+			$this->db->query($query);
+			$this->session->set_flashdata('registook','Registou-se com Sucesso');
+			redirect('registo');
+		endif;		
+	}
+	
+	
+	
+	
+	public function db_editar_UTILIZADORES($dados=NULL,$condicao=NULL){
+	
+		if($dados!=NULL&&$condicao!=NULL):
+			/*$date1=$dados['DNM'];
+			$date2=$dados['ES'];
+			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
+			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
+			$this->db->update('UTILIZADORES',$dados,$condicao);
+			$this->session->set_flashdata('edicaook','Editou com Sucesso');
+			redirect(current_url());
+		endif;		
+	}
+	
 
 }
 
