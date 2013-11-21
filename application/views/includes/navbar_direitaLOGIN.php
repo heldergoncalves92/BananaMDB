@@ -1,8 +1,8 @@
-<ul class="nav navbar-nav navbar-right">
-              <li><a href="<?php echo base_url(); ?>registo">Registo</a></li>
-              <li class="divider-vertical"></li>
+		  <ul class="nav navbar-nav navbar-right">
+             <li><a href="<?php echo base_url(); ?>inicio/registo">Registo</a></li>
+             <li class="divider-vertical"></li>
               
-              <li class="dropdown"> 
+             <li class="dropdown"> 
               	<a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
 
                     <div class="dropdown-menu" style="padding: 10px;min-width:240px;">

@@ -46,50 +46,62 @@
   </a>
  </div>
 
-
-    <!-- - - - - - -Cinema de hoje - - - - - - -->
-    <h4 align="center">Nos Cinemas</h4>
-
-    <div align="center" class="row">
-      <div class="col-lg-4">
-        <a href="#">
-          <img class="img-thumbnail" id="S_today" src="img/carrie.jpg" >
-        </a>
-        <h4>Carrie</h4>
-      </div>
-      <div class="col-lg-4">
-        <a href="#">
-          <img  class="img-thumbnail" id="S_today" src="img/moster.jpg" >
-        </a>
-        <h4>Mostros: A Universidade</h4>
-      </div>
-      <div class="col-lg-4">
-        <a href="#">
-          <img class="img-thumbnail" id="S_today" src="img/gaiola.jpg" >
-        </a>
-        <h4>A Gaiola Dourada</h4>
-      </div>
-    </div>
-
     <!-- - - - - Noticias - - - - - -->
     <div id="feed-block" class="well">
       <h2><b>Notícias</b></h2>
       <hr>
       <div id="feed-noticias"> 
         <div id="noticia">
-          <div class="title"><h3>Nell Patric Harris contra-cena nos 'Mostros'</h3></div>
-          <div class="contend">
-            <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
-            <img  class="img-rounded img-feed" src="img/moster.jpg" >
-            <p>Agora aqui as noticias pretendidas</p>
+
+              <div class="title"><h3>Nell Patric Harris contra-cena nos 'Mostros'</h3></div>
+              <div class="contend">
+                <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
+                <img  class="img-rounded img-feed" src="img/moster.jpg" >
+                <p>Agora aqui as noticias pretendidas</p>
+              </div>
+
+              <hr>
+              <div class="title"><h3>Actores de 'Tron 2' queixam-se da produção</h3></div>
+              <div class="contend">
+                <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
+                <img  class="img-rounded img-feed" src="img/thor.jpg" >
+                <p>Agora aqui as noticias pretendidas</p>
+              </div>
+
+        </div>
+
+
+
+        <div align="center" id="tops">
+          <!-- - - - - - -Cinema de hoje - - - - - - -->
+          <h4 class="title" align="center">Nos Cinemas</h4>
+          <div id="tab-cin">
+            <div id="cell-cin1">
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="img/carrie.jpg" >
+                <p>Carrie</p>
+              </div>
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="img/escape.jpg" >
+                <p>Plano de Fuga</p>
+              </div>
+              
+            </div>
+            <div id="cell-cin2">
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="img/thor.jpg" >
+                <p>Thor 2</p>
+              </div>
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="img/moster.jpg" >
+                <p>Mostros</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div id="tops">
-          <p>Welcome to the Jungle <hr><h2>Por aqui tabelas que interessam</h2></p>
-        </div>
+          <h2>Mais cenas que ne apteça meter!!</h2>
 
+        </div>
       </div>
-    </div>
 
 

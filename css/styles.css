@@ -22,14 +22,16 @@
 
 
 	#S_today{
-
-		height: 250px;
-		width: 100%;
-
+		width: 95%;
+		height: 110px
+		
+		
 	}
 
+
+
 	#feed-block{
-		margin: 1% 5% 0 5%;
+		margin: 0 5% 0 5%;
 		text-indent: 5%;
 
 	}
@@ -57,6 +59,20 @@
 		width: 75%;
 		
 	}
+
+	#tab-cin{
+		display: table;
+		width: 100%;
+		height: 100%
+	}
+
+	#cell-cin1, #cell-cin2{
+		display: table-cell;
+		vertical-align: top;
+		width: 50%;
+		height: 100%
+	}
+
 
 
 	
