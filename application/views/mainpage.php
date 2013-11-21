@@ -29,7 +29,8 @@
       </div>
 
       <div  class="item">
-        <img id="carrosel" src="img/hobbit.jpg" >
+      	<a href="<?php echo base_url(); ?>title/filme/2">
+        <img id="carrosel" src="img/hobbit.jpg" ></a>
         <div class="carousel-caption">
          
         </div>
