@@ -1,46 +1,29 @@
 
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/block.css">
 
   	<div id="feed-block" class="well">
-	  	<div class="container">
-			<div class="row">
-			  <div class="span8">
+	  	<div class="block">
+			<h2 class="title">Login</h2>
+			<hr>
+			<div id="log">
+								    
+				<label>Utilizador</label>
+				<?php echo form_open("login",'');?>
+				<?php echo form_input(array('name'=>'USER','class'=>'form-control input','placeholder'=>'Utilizador'),set_value('USERNAME'),'autofocus');?>
 				
-				
-				    <legend>Login</legend>	     
-					<?php
-						echo form_open("login",'');
-					?>
-					<?php
-						
-						if($erro!='')
-							echo '<div class="alert alert-danger"><p>' . $erro . '</p></div>';
-						echo validation_errors('<div class="alert alert-danger"><p>','</p></div>');
-						
-					?>
-						<div class="form-group">
-						<label class="control-label" for="input01">Username</label>
-						<div class="controls">
-						<?php echo form_input(array('name'=>'USER','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="input01">Password</label>
-						<div class="controls">
-						<?php echo form_password(array('name'=>'PASS','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'PASSWORD'),set_value('PASS'));?>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="controls">
-							<?php $attributes = 'class = "btn btn-success"';
-								echo form_submit('submit', 'Login', $attributes); 
-								echo form_close();
-							?>
-						</div>
-					</div>
-				 
-			  </div>
-			</div>
+				<label>Password</label>
+				<?php echo form_password(array('name'=>'PASS','class'=>'form-control input','placeholder'=>'Password'),set_value('PASS'));?>
+				<br>
+				<?php $attributes = 'class = "btn btn-success button"';
+				echo form_submit('submit', 'Login', $attributes); 
+				echo form_close();
+				?>
+				<br>
+				<?php 	if($erro!='')
+							echo '<div class="alert alert-danger erro "><p>' . $erro . '</p></div>';
+						echo validation_errors('<div class="alert alert-danger erro"><p>','</p></div>');		
+				?>
+			</div> 
 	    </div>
 	
         
