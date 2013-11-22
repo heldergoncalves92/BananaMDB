@@ -22,11 +22,6 @@ class Pesquisa extends CI_Controller {
 	
 	public function index (){
 
-
-
-		
-
-		
 		$pesquisaquery = $this->filmesmodel->pesquisa1($this->input->post('PESQUISA'));
 		$pesquisa = $anuncios = array ('data'=>$pesquisaquery->result());
 		$quantos = $pesquisaquery->num_rows();
@@ -37,28 +32,23 @@ class Pesquisa extends CI_Controller {
 		if($this->input->post('PESQUISA')=='')
 			redirect(base_url());
 			
-			
-			
-		$this->load->view('includes/header');
+		$this->load->view('header');
 		$session_id = $this->session->userdata('session_id');
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
-		if ($IDUTILIZADOR ==FALSE){
-			$this->load->view('includes/navbar_base');
-			$this->load->view('includes/navbar_direitaLOGIN');	
-		}
-		else {
-			$this->load->view('includes/navbar_base');	
-			$this->load->view('includes/navbar_direitaLOGOUT');	
-		}
+
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+
+		else
+			$this->load->view('navbar_Login');	
 
 
 		if($quantos==0)
 			$pesquisa=array ('data'=>'0 Resultados');
 		
 		$this->load->view('pesquisa.php',$pesquisa);
-		
-		$this->load->view('includes/footer');	
+		$this->load->view('footer');	
 
 	}
 		public function pe(){
