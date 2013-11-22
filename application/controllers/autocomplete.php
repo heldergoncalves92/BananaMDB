@@ -1,21 +1,24 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Autocomplete extends CI_Controller {
+	
+		function __construct(){
+		parent::__construct();
+		$this->load->model('filmes','get_data');
+		}
 
 	function index()
 	{
 		$this->load->view('autocomplete');
 	}
 
-	function suggestions()
-	{
-		// Search term from jQuery
-		$term = $this->input->post('term');
-
-		// Do mysql query or what ever
-		$arr = array($term, 'item1', 'item2', 'item3');
-
-		// Return data
-		echo json_encode($arr);
-	}
+function autocomplete()
+{
+    
+    $query= $this->get_data->get_autocomplete();
+    
+    foreach($query->result() as $row):
+        echo "<li id='$row->ID_FILME'>".$row->TITULO."</li>";
+    endforeach;    
+} 
 } ?>

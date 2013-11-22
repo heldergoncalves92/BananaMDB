@@ -26,7 +26,6 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 
 
 
-    <div class="jumbotron">
 	<h2><?php  echo $query->TITULO ?></h2>
       <!-- Main hero unit for a primary marketing message or call to action -->
       
@@ -34,8 +33,8 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
   
   
       
-      <div class="col-md-5">
-      	<?php echo '<img src="' . base_url() . 'uploads/posters/' . $query->POSTER . '" width="400px" height="auto""></img>';?>
+      <div class="col-md-5"><br>
+      	<?php echo '<img src="' . base_url() . 'uploads/posters/' . $query->POSTER . '" width="350px" height="auto""></img>';?>
       	
       </div>
       
@@ -63,12 +62,12 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 
 <div class="control-group" >
 	      <label class="control-label">GROSS - </label>
-		  <label class="control-label"><?php echo $query->GROSS;?></label>
+		  <label class="control-label"><?php echo $query->GROSS;?> €</label>
 </div>
 
 <div class="control-group" >
 	      <label class="control-label">BUDGET - </label>
-		  <label class="control-label"><?php echo $query->BUDGET;?></label>
+		  <label class="control-label"><?php echo $query->BUDGET;?> €</label>
 </div>
 
 <div class="control-group" >
@@ -87,13 +86,11 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 		  <label class="control-label"><?php echo $query->RATING;?></label>
 </div>
 
-
+<hr>
 <iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $query->TRAILER ?>" frameborder="0" allowfullscreen></iframe>
 
 
         
-      </div>
-      
       
       
 

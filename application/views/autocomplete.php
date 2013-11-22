@@ -8,61 +8,37 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
 <script type="text/javascript">// <![CDATA[
-$(document).ready(function () {
-    $(function () {
-        $("#autocomplete").autocomplete({
-            source: function (request, response) {
-                $.ajax({
-                    type: "POST",
-                    url: "http://localhost/autocomplete/suggestions",
-                    data: {
-                        term: $("#forwardEmail").val()
-                    },
-                    dataType: "json",
-                    success: function (data) {
-                        if (data != null) {
-                            response($.map(data, function (item) {
-                                return {
-                                    label: item.subEmail + ', ' + item.listName,
-                                    value: item.subEmail,
-                                    subEmail: item.subEmail,
-                                    subId: item.subId,
-                                    subName: item.subName,
-                                    listName: item.listName,
-                                    listId: item.listId
-                                }
-                            }))
-                        } else $(".ui-autocomplete").css({
-                            "display": "none"
-                        });
-                    },
-                    error: function (data) {
-                        alert('Error: ' + data.errorThrown);
-                    }
-                })
-            },
-            delay: 1000,
-            minLength: 1,
-            select: function (event, ui) {
-                $("#forwardEmail").val(ui.item.subEmail);
-                $("#forwardName").val(ui.item.subName);
-                $("select[name='forwardMessageListId']").find("option[value='" + ui.item.listId + "']").attr("selected", true);
-                return false;
-            }
-        }).data("autocomplete")._renderItem = function (ul, item) {
-            return $("
-	<li></li>
 
-").data("item.autocomplete", item).append("<a>" + item.label + "</a>").appendTo(ul);
-        };
-    });
-});
-});
+function lookup(inputString) {
+    if(inputString.length == 0) {
+        $('#suggestions').hide();
+    } else {
+        $.post("http://localhost/BananaMDB/autocomplete/autocomplete/", {queryString: ""+inputString+""}, function(data){
+            if(data.length > 0) {
+                $('#suggestions').show();
+                $('#autoSuggestionsList').html(data);
+            }
+        });
+    }
+}
+
+function fill(thisValue) {
+    $('#id_input').val(thisValue);
+    setTimeout("$('#suggestions').hide();", 200);
+}   
+
+
 // ]]></script>
 
 
 </head>
 <body>
-Text: <input type="text" id="autocomplete" />
+<input name="name" id="id_input" type="text">
+
+<div id="suggestions">
+    <!-- <img src="http://localhost/BananaMDB/img/upArrow.png"> -->
+    <div class="autoSuggestionsList_l" id="autoSuggestionsList">    
+    </div>
+</div>
 </body>
 </html>

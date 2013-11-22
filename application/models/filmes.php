@@ -75,6 +75,14 @@ where UPPER(f.titulo) like UPPER('%$nome%') and f.ano = '%$ano%");
 			
 		}		
 		
+	public function get_autocomplete(){
+		$this->db->select('TITULO');
+//$this->db->like('TITULO',$this->input->post('queryString'));
+return $this->db->get('FILMES', 10);    }
+
+
+
+		
 }
 
 ?>

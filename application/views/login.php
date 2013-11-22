@@ -11,12 +11,13 @@
 					<?php
 						echo form_open("login",'');
 					?>
-					<div class="alert alert-danger">      
-						<?php
-							echo $erro;
-							echo validation_errors('<p>','</p>');
-						?>
-					</div>
+					<?php
+						
+						if($erro!='')
+							echo '<div class="alert alert-danger"><p>' . $erro . '</p></div>';
+						echo validation_errors('<div class="alert alert-danger"><p>','</p></div>');
+						
+					?>
 						<div class="form-group">
 						<label class="control-label" for="input01">Username</label>
 						<div class="controls">
