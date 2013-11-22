@@ -51,16 +51,24 @@ class Pesquisa extends CI_Controller {
 		$this->load->view('footer');	
 
 	}
-		public function pe(){
-			
-			
-			$this->load->view('xml.html');
-		}
-			public function auto(){
-			
-			
-			$this->load->view('london.xml');
-		}
-			
+
+
+
+function suggestions()
+{
+	$this->load->model('autocomplete_model');
+	$term = $this->input->post('term',TRUE);
+
+	if (strlen($term) < 2) break;
+
+	$rows = $this->autocomplete_model->GetAutocomplete(array('keyword' => $term));
+
+	$json_array = array();
+	foreach ($rows as $row)
+		 array_push($json_array, $row->mystring);
+
+	echo json_encode($json_array);
+}
+
 			
 } ?>

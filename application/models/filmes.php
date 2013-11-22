@@ -75,12 +75,6 @@ where UPPER(f.titulo) like UPPER('%$nome%') and f.ano = '%$ano%");
 			
 		}		
 		
-		
-		
-		
-		
-		
-		
 }
 
 ?>
