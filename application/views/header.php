@@ -18,7 +18,8 @@
       #all-page{  width: 100%;
                   height: 100%;}
 
-      #feed-block{  margin: 0 10% 0 10%;}
+      #feed-block{  margin: 0 10% 0 10%;
+                    }
 
       body{ margin-top: 50px;
             background-color: floralwhite;}
