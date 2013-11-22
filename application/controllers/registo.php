@@ -48,7 +48,7 @@ class Registo extends CI_Controller {
 
 		else 
 			$this->load->view('navbar_Login');		
-		}
+		
 		$this->load->view('registo');
 		$this->load->view('footer');	
 		
