@@ -59,7 +59,7 @@
              <li class="dropdown"> 
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
 
-                    <div class="dropdown-menu" style="padding: 10px;min-width:240px;">
+                    <div class="dropdown-menu" style="padding:10px;min-width:240px;">
 
                   
                   <?php
