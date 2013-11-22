@@ -15,7 +15,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo base_url(); ?>">&raquo;BananaMDB</a>
+        <a  href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>img/BananaLOGO.png" width="100px" height="auto""/></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

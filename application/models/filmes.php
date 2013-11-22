@@ -81,7 +81,6 @@ where UPPER(f.titulo) like UPPER('%$nome%') and f.ano = '%$ano%");
 return $this->db->get('FILMES', 10);    }
 
 
-
 		
 }
 

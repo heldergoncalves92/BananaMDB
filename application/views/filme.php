@@ -83,7 +83,10 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 
 <div class="control-group" >
 	      <label class="control-label">RATING - </label>
-		  <label class="control-label"><?php echo $query->RATING;?></label>
+	      <?php if( $query->RATING<13)
+		  			echo '<span class="label label-success">' .  $query->RATING . '</span>';
+				else if( $query->RATING>17)
+		  			echo '<span class="label label-danger">' .  $query->RATING . '</span>'; ?>
 </div>
 
 <hr>

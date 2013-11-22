@@ -55,5 +55,31 @@ class Pesquisa extends CI_Controller {
 
 
 
+public function search(){
+        
+        $search = $this->input->post('term');
+        
+        $data['response'] = 'false';
+        
+        $this->db->select('*');
+        $this->db->from('FILMES');
+        $this->db->like('TITULO', $search); 
+        $locations = $this->db->get()->result();
+
+        
+        if(count($locations) > 0){
+            $data['message'] = array();
+            
+            foreach($locations as $location){
+               $data['message'][] = array(  'label' => $location->name . ', ' . $location->name . ' ' . $location->name,
+                                            'item'  => $location->name,
+                                            'value' => $location->name ); 
+            }
+            
+            $data['response'] = 'true';
+        }
+        echo json_encode($data);       
+} 
+
 			
 } ?>
