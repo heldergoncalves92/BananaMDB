@@ -1,6 +1,5 @@
     
-    <!-- Precisa ter estes includes na Pagina para os DROPDOWN funcionarem -->
-
+   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="<?php echo base_url(); ?>js/jquery-1.8.3.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->

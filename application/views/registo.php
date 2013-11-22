@@ -1,4 +1,4 @@
-
+<div id="feed-block" class="well">
 
 
 <?php

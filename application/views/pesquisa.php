@@ -1,3 +1,4 @@
+<div id="feed-block" class="well">
 <div class="container">
     <hr class="">
     <div class="row">

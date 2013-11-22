@@ -48,7 +48,7 @@
  </div>
 
     <!-- - - - - Noticias - - - - - -->
-    <div id="feed-block" class="well">
+    <div id="feed-block" class="well ident">
       <h2><b>Notícias</b></h2>
       <hr>
       <div id="feed"> 

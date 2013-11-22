@@ -14,7 +14,8 @@
 	
       </footer>
 
-    </div> <!-- /container -->
+    </div> <!-- feed-block fecha aqui -obrigatorio para todos-->
+  </div>
 
     <!-- Le javascript
     ================================================== -->

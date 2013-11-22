@@ -10,7 +10,19 @@
     <!-- Bootstrap -->
 
     <link href="<?php echo base_url(); ?>css/bootstrap.css" rel="stylesheet">
-    
+
+    <style type="text/css">
+      body,html{  width: 100%;
+                  height: 100%;}
+
+      #all-page{  width: 100%;
+                  height: 100%;}
+
+      #feed-block{  margin: 0 10% 0 10%;}
+
+      body{ margin-top: 50px;
+            background-color: floralwhite;}
+    </style>
   </head>
 
   <body>
