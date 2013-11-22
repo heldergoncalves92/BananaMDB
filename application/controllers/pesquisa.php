@@ -9,7 +9,6 @@ class Pesquisa extends CI_Controller {
 	$this->load->helper('url');
 	$this->load->helper('form');
 	$this->load->helper('array');
-	$this->load->helper('form');
 	$this->load->library('form_validation');	
 	$this->load->library('session');
 	$this->load->library('table');
@@ -62,7 +61,16 @@ class Pesquisa extends CI_Controller {
 		$this->load->view('includes/footer');	
 
 	}
-		
+		public function pe(){
+			
+			
+			$this->load->view('xml.html');
+		}
+			public function auto(){
+			
+			
+			$this->load->view('london.xml');
+		}
 			
 			
 } ?>

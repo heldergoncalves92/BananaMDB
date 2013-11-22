@@ -21,7 +21,7 @@ $genero = $this->filmesmodel->get_generosbyid($generoid);
 $realizador = $this->filmesmodel->get_realizadorbyid($query->ID_REALIZADOR);
 $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 
-//echo form_open("inicio/editar/$iduser");
+//echo form_open("user/editar/$iduser");
 ?>
 
 

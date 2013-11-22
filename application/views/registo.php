@@ -34,7 +34,7 @@ endif
 	     
 <?php
 
-echo form_open('inicio/Registo','');?>
+echo form_open('Registo','');?>
 
  <div class="alert alert-danger">      
 <?php

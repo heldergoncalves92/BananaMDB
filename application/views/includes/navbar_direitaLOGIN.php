@@ -1,5 +1,5 @@
 		  <ul class="nav navbar-nav navbar-right">
-             <li><a href="<?php echo base_url(); ?>inicio/registo">Registo</a></li>
+             <li><a href="<?php echo base_url(); ?>registo">Registo</a></li>
              <li class="divider-vertical"></li>
               
              <li class="dropdown"> 

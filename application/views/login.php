@@ -17,16 +17,16 @@
 						echo validation_errors('<p>','</p>');
 					?>
 				</div>
-				<div class="form-group">
+					<div class="form-group">
 					<label class="control-label" for="input01">Username</label>
 					<div class="controls">
-						<?php echo form_input(array('name'=>'USER'),set_value('USER'),'autofocus');?>
+					<?php echo form_input(array('name'=>'USER','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label" for="input01">Password</label>
 					<div class="controls">
-						<?php echo form_password(array('name'=>'PASS'));?>
+					<?php echo form_password(array('name'=>'PASS','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'PASSWORD'),set_value('PASS'));?>
 					</div>
 				</div>
 				<div class="form-group">

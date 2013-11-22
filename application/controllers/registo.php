@@ -9,7 +9,6 @@ class Registo extends CI_Controller {
 	$this->load->helper('url');
 	$this->load->helper('form');
 	$this->load->helper('array');
-	$this->load->helper('form');
 	$this->load->library('form_validation');	
 	$this->load->library('session');
 	$this->load->library('table');
