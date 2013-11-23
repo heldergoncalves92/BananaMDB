@@ -15,7 +15,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a  href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>img/BananaLOGO.png" width="100px" height="auto""/></a>
+        <a  href="<?php echo base_url(); ?>">
+          <img src="<?php echo base_url(); ?>img/BananaLOGO.png" width="100px" height="auto"/>
+        </a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,7 +61,7 @@
              <li class="dropdown"> 
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login <strong class="caret"></strong></a>
 
-                    <div class="dropdown-menu" style="padding:10px;min-width:240px;">
+                  <div class="dropdown-menu" style="padding:10px;min-width:240px;">
 
                   
                   <?php
