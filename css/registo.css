@@ -1,0 +1,54 @@
+		
+		.block{
+			width: 100%;
+			
+		}
+
+		.button{
+			margin-left: 28%;
+			width: 22%;
+		}
+
+		.erro{
+			width: 100%;
+		}
+
+		.input{
+			margin-bottom:.5em;
+			width:50%
+		}
+
+		h5{
+			font-weight: bolder;
+		}
+
+		#feed-block .title{
+			text-indent: 4%;
+			font-weight: bold;
+		}
+
+		#log{
+			padding: 0 5% 0 5%;
+			text-indent: 1%;
+		}
+
+		#log-table{
+			display: table;
+			width: 100%;
+		}
+
+		#log-cell-1, #log-cell-2{
+			display: table-cell;
+			vertical-align: top;
+			width: 50%;
+			
+		}
+
+		#log-cell-2{
+			text-align: center;
+
+		}
+
+		#log-cell-2 h1 {
+			padding: 5%;
+		}

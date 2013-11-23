@@ -1,42 +1,49 @@
-	<link rel="stylesheet" type="text/css" href="css/block.css">
+	<link rel="stylesheet" type="text/css" href="css/registo.css">
 
   	<div id="feed-block" class="well">
 	  	<div class="block">
 			<h2 class="title">Registo</h2>
 			<hr>
 			<div id="log">
-				
-				<?php if ($this->session->flashdata('registook'))
-						echo'<p>'.$this->session->flashdata('registook').'</p>';
-				?>
+				<div id="log-table">
+					<div id="log-cell-1">
+					
+						<?php if ($this->session->flashdata('registook'))
+								echo'<p>'.$this->session->flashdata('registook').'</p>';
+						?>
 
 
-				<?php echo form_open('Registo','');?>
-				
-				<label>Utilizador</label>
-				<?php echo form_input(array('name'=>'USERNAME','class'=>'form-control input','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
-								
-				<label>E-Mail</label>
-				<?php echo form_input(array('name'=>'EMAIL','class'=>'form-control input','placeholder'=>'E-MAIL'),set_value('EMAIL'));?>
-				
-				<label>Data de Nascimento</label>
-				<?php echo form_input(array('name'=>'DATANASCIMENTO','class'=>'form-control input','placeholder'=>'DATA'),set_value('DATANASCIMENTO'));?>
-				
-				<label>Password</label>
-				<?php echo form_password(array('name'=>'PASS','class'=>'form-control input','placeholder'=>'PASSWORD'),set_value('PASS'));?>
-				
-				<label>Repita a Password</label>
-				<?php echo form_password(array('name'=>'PASS2','class'=>'form-control input','placeholder'=>'REPITA A PASSWORD'),set_value('PASS2')); ?>
+						<?php echo form_open('Registo','');?>
+						
+						<h5>Utilizador</h5>
+						<?php echo form_input(array('name'=>'USERNAME','class'=>'form-control input','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
+										
+						<h5>E-Mail</h5>
+						<?php echo form_input(array('name'=>'EMAIL','class'=>'form-control input','placeholder'=>'E-MAIL'),set_value('EMAIL'));?>
+						
+						<h5>Data de Nascimento</h5>
+						<?php echo form_input(array('name'=>'DATANASCIMENTO','class'=>'form-control input','placeholder'=>'DATA'),set_value('DATANASCIMENTO'));?>
+						
+						<h5>Password</h5>
+						<?php echo form_password(array('name'=>'PASS','class'=>'form-control input','placeholder'=>'PASSWORD'),set_value('PASS'));?>
+						
+						<h5>Repita a Password</h5>
+						<?php echo form_password(array('name'=>'PASS2','class'=>'form-control input','placeholder'=>'REPITA A PASSWORD'),set_value('PASS2')); ?>
 
-				<br>
-				<?php 	$attributes = 'class = "btn btn-success button"';
-						echo form_submit('submit', 'Registar', $attributes); 
-						echo form_close();?>
-				<br>
-				<div class="alert alert-danger">      
-					<?php echo validation_errors('<p>','</p>');?>
+						<br>
+						<?php 	$attributes = 'class = "btn btn-success button"';
+								echo form_submit('submit', 'Registar', $attributes); 
+								echo form_close();?>
+						<br>
+						<div class="alert alert-danger">      
+							<?php echo validation_errors('<p>','</p>');?>
+						</div>
+					</div>
+					<div id="log-cell-2">
+						<h1>Bem-Vindo ao:</h1>
+						<img src="<?php echo base_url(); ?>img/BananaLOGO.png" width="100%"/>
+					</div>
 				</div>
-
 			</div>
 		</div>
 	

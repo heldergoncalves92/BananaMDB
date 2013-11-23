@@ -54,7 +54,7 @@
       <div id="feed"> 
         <div id="feed-noticias">
             <div class="noticia">
-              <div class="title"><h3>Nell Patric Harris contra-cena nos 'Mostros'</h3></div>
+              <div class="title"><h3>Neil Patrick Harris contra-cena nos 'Monstros'</h3></div>
               <div class="contend">
                 <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
                   <div align="center">
