@@ -1,6 +1,6 @@
       
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="<?php echo base_url(); ?>js/jquery-1.8.3.js"></script>
+      <script src="<?php echo base_url(); ?>js/jquery-1.9.1.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 

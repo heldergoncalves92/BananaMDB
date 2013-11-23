@@ -9,22 +9,28 @@ $idfilme = $this->uri->segment(3);
 if ($idfilme==NULL)redirect(base_url());//se entra sem id no url vai para pagina principal
 
 
-$query = $this->filmesmodel->get_filmebyid($idfilme)->row();
+$query = $this->pesquisamodel->get_filmebyid($idfilme)->row();
 
 
 if ($query == FALSE)//não existe filme com esse id
 redirect(base_url());
 
-$generoid = $this->filmesmodel->get_generosbyfilme($idfilme);
+$generoid = $this->pesquisamodel->get_generosbyfilme($idfilme);
 
-$genero = $this->filmesmodel->get_generosbyid($generoid);
-$realizador = $this->filmesmodel->get_realizadorbyid($query->ID_REALIZADOR);
-$produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
+$genero = $this->pesquisamodel->get_generosbyid($generoid);
+$realizador = $this->pesquisamodel->get_realizadorbyid($query->ID_REALIZADOR);
+$produtora = $this->pesquisamodel->get_produtorabyid($query->ID_PRODUTORA);
+
+
+
 
 //echo form_open("user/editar/$iduser");
 ?>
 
 
+<script type="text/javascript">
+    document.title = "<?= 'BananaMDB - ' . $query->TITULO;?>"
+</script>
 
 	<h2><?php  echo $query->TITULO ?></h2>
       <!-- Main hero unit for a primary marketing message or call to action -->
@@ -61,13 +67,13 @@ $produtora = $this->filmesmodel->get_produtorabyid($query->ID_PRODUTORA);
 </div>
 
 <div class="control-group" >
-	      <label class="control-label">GROSS - </label>
-		  <label class="control-label"><?php echo $query->GROSS;?> €</label>
+	      <label class="control-label">BUDGET - </label>
+		  <label class="control-label"><?php if ($query->BUDGET>0) echo $query->BUDGET . '€' ; else echo 'Sem Informações';?></label>
 </div>
 
 <div class="control-group" >
-	      <label class="control-label">BUDGET - </label>
-		  <label class="control-label"><?php echo $query->BUDGET;?> €</label>
+	      <label class="control-label">GROSS - </label>
+		  <label class="control-label"><?php if ($query->GROSS>0) echo $query->GROSS . '€' ; else echo 'Sem Informações';?></label>
 </div>
 
 <div class="control-group" >

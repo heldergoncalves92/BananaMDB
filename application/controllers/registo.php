@@ -38,6 +38,7 @@ class Registo extends CI_Controller {
 			echo 'validou';
 		}
 		
+		$erros = array('erro'=>'');
 		
 		$this->load->view('header');
 		$session_id = $this->session->userdata('session_id');
@@ -49,7 +50,7 @@ class Registo extends CI_Controller {
 		else 
 			$this->load->view('navbar_Login');		
 		
-		$this->load->view('registo');
+		$this->load->view('registo',$erros);
 		$this->load->view('footer');	
 		
 		}

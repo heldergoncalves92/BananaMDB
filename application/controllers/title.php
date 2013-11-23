@@ -12,7 +12,7 @@ class title extends CI_Controller {
 		$this->load->library('form_validation');	
 		$this->load->library('session');
 		$this->load->library('table');
-		$this->load->model('filmes','filmesmodel');
+		$this->load->model('pesquisas','pesquisamodel');
 		$this->load->model('user','usermodel');
 	}
 	

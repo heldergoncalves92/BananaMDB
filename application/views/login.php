@@ -20,8 +20,8 @@
 				?>
 				<br>
 				<?php 	if($erro!='')
-							echo '<div class="alert alert-danger erro "><p>' . $erro . '</p></div>';
-						echo validation_errors('<div class="alert alert-danger erro"><p>','</p></div>');		
+							echo '<div class="alert alert-danger "><p>' . $erro . '</p></div>';
+						echo validation_errors('<div class="alert alert-danger"><p>','</p></div>');		
 				?>
 			</div> 
 	    </div>

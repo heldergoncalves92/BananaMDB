@@ -13,7 +13,7 @@ class Pesquisa extends CI_Controller {
 	$this->load->library('session');
 	$this->load->library('table');
 	//$this->load->library('MY_Form_validation');
-	$this->load->model('filmes','filmesmodel');
+	$this->load->model('pesquisas','pesquisamodel');
 	$this->load->model('user','usermodel');
 	}
 	
@@ -22,11 +22,27 @@ class Pesquisa extends CI_Controller {
 	
 	public function index (){
 
-		$pesquisaquery = $this->filmesmodel->pesquisa1($this->input->post('PESQUISA'));
-		$pesquisa = $anuncios = array ('data'=>$pesquisaquery->result());
-		$quantos = $pesquisaquery->num_rows();
-		$dadospesqisa = array ('data'=>$pesquisa);	
-			
+		//FILMES
+		$filmesquery = $this->pesquisamodel->getfilmesbynome($this->input->post('PESQUISA'));
+		$filmespesquisa = $filmesquery->result(); 
+		
+		//ACTORES
+		$actoresquery = $this->pesquisamodel->getactoresbynome($this->input->post('PESQUISA'));
+		$actorespesquisa = $actoresquery->result(); 		
+						
+		//GENEROS
+		$generosquery = $this->pesquisamodel->getgenerosbynome($this->input->post('PESQUISA'));
+		$generospesquisa = $generosquery->result(); 
+		
+		//REALIZADORES
+		$realizadoresquery = $this->pesquisamodel->getrealizadoresbynome($this->input->post('PESQUISA'));
+		$realizadorespesquisa = $realizadoresquery->result(); 
+				
+		//PRODUTORAS
+		$produtorasquery = $this->pesquisamodel->getprodutorasbynome($this->input->post('PESQUISA'));
+		$produtoraspesquisa = $produtorasquery->result(); 
+
+
 			
 			
 		if($this->input->post('PESQUISA')=='')
@@ -44,9 +60,8 @@ class Pesquisa extends CI_Controller {
 			$this->load->view('navbar_Login');	
 
 
-		if($quantos==0)
-			$pesquisa=array ('data'=>'0 Resultados');
-		
+
+		$pesquisa = array ('filmes'=>$filmespesquisa, 'generos'=>$generospesquisa, 'actores'=>$actorespesquisa, 'produtoras'=>$produtoraspesquisa, 'realizadores'=>$realizadorespesquisa);
 		$this->load->view('pesquisa.php',$pesquisa);
 		$this->load->view('footer');	
 

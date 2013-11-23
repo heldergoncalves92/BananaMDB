@@ -35,9 +35,12 @@
 								echo form_submit('submit', 'Registar', $attributes); 
 								echo form_close();?>
 						<br>
-						<div class="alert alert-danger">      
-							<?php echo validation_errors('<p>','</p>');?>
-						</div>
+						
+							<?php 	if($erro!='')
+										echo '<div class="alert alert-danger "><p>' . $erro . '</p></div>';
+									echo validation_errors('<div class="alert alert-danger erro"><p>','</p></div>');	
+				?>
+						
 					</div>
 					<div id="log-cell-2">
 						<h1>Bem-Vindo ao:</h1>
