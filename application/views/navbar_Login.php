@@ -55,7 +55,7 @@
 		<ul class="nav navbar-nav navbar-right">
           <li style="text-transform:capitalize;"><a href="<?php echo base_url();?>perfil"><?php echo $idx; ?></a></li>   	
           <li class="divider-vertical"></li>
-          <li><a href="<?php echo base_url(); ?>login/logout?last_url=<?php echo base_url(); ?>">Logout</a></li>
+          <li><a href="<?php echo base_url(); ?>login/logout?last_url=<?php echo current_url(); ?>">Logout</a></li>
           
             
           </li>
