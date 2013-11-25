@@ -61,7 +61,7 @@ Class User extends CI_Model
 
 
 function get_user_by_name($name){
-	$sql="SELECT USERNAME from CISE WHERE USERNAME='$name'";
+	$sql="SELECT * from UTILIZADORES WHERE USERNAME='$name'";
 
 	return $this->db->query($sql);
 	
@@ -121,7 +121,7 @@ public function get_Idadebydata($datan){
 			$email = $dados['EMAIL'];
 			$datan = $dados['DATANASCIMENTO'];
 			
-			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan')";
+			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan', 'default.jpg')";
 			$this->db->query($query);
 			$this->session->set_flashdata('registook','Registou-se com Sucesso');
 			redirect('registo');

@@ -2,7 +2,10 @@
 		#feed-block .title{
 			text-indent: 4%;
 			font-weight: bold;
+			
 		}
+
+		.user{text-transform: capitalize;}
 
 		#log{
 			padding: 0 5% 0 5%;
@@ -19,4 +22,12 @@
 			vertical-align: top;
 			width: 50%;
 			
+		}
+
+		.avatar{
+			width: 70%;
+		}
+
+		.btn-right{
+			float: right;
 		}

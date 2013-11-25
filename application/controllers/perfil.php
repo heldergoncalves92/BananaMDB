@@ -21,10 +21,31 @@ class Perfil extends CI_Controller {
 		$idx = $this->usermodel->getuser($session_id);
 		
 		if($idx){
-			$utilizador=$this->usermodel->get_user_by_name($idx);
-			var_dump($utilizador);
+			$utilizador=$this->usermodel->get_user_by_name($idx)->result();
+			//var_dump($utilizador);
 			$this->load->view("navbar_Login",array('idx' => $idx));
-			$this->load->view("perfil_login");
+			$this->load->view("perfil_login",array('idz' => $utilizador));
+		}
+		else{
+			$this->load->view("navbar_base");
+			$this->load->view("not_session");
+		}
+
+		$this->load->view("footer");
+		
+	}
+
+	public function  editar(){
+
+		$this->load->view("header");
+
+		$session_id = $this->session->userdata('session_id');
+		$idx = $this->usermodel->getuser($session_id);
+		
+		if($idx){
+			$utilizador=$this->usermodel->get_user_by_name($idx)->result();
+			$this->load->view("navbar_Login",array('idx' => $idx));
+			$this->load->view("perfil_editar",array('idz' => $utilizador));
 		}
 		else{
 			$this->load->view("navbar_base");

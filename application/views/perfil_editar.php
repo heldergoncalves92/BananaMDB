@@ -1,8 +1,8 @@
-	<link rel="stylesheet" type="text/css" href="css/perfil.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/perfil.css">
 
 	<div id="feed-block" class="well">
 	  	<div class="block">
-	  		<a href="<?php echo base_url();?>perfil/editar"><button type="button" class="btn btn-primary btn-right">Editar Perfil</button></a>
+	  		<a href="#"><button type="button" class="btn btn-primary btn-right">Guardar Alterações</button></a>
 
 			<h2 class="title">Perfil de <spam class="user"><?php echo $idz[0]->USERNAME;?></spam></h2>
 			<hr>
