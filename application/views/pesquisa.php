@@ -8,8 +8,12 @@
         <div id="log-table">
           <div id="log-cell-1">
 
-            <div class="panel panel-default">
-              <div class="panel-heading">Filmes</div>
+
+
+
+
+            <div class="panel panel-info">
+              <div class="panel-heading"><h3 class = "panel-title">Filmes</h3></div>
               		<?php $nada = '0 Resultados';
 				  		  $cfilmes=0;
 			              foreach ($filmes as $linha) {
@@ -33,7 +37,7 @@
               </table>
             </div>
 -->
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
               <div class="panel-heading">Actores</div>
               		<?php  $cactores=0;
 			              foreach ($actores as $linha) {
@@ -49,7 +53,7 @@
               		?>
             </div>
 
-            <div class="panel panel-default">
+            <div class="panel panel-success">
               <div class="panel-heading">Realizadores</div>
              		 <?php  $crealizadores=0;
 			              foreach ($realizadores as $linha) {
