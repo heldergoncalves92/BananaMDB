@@ -100,16 +100,17 @@ $produtora = $this->pesquisamodel->get_produtoraLbyid($query->ID_PRODUTORA)->res
 <div class="control-group" >
 	      <label class="control-label">RATING - </label>
 	      <?php if( $query->RATING<=6)
-		  			echo '<span class="label label-default">' .  $query->RATING . '</span>';
+		  			echo '<span class="label label-default">' .  'TODOS' . '</span>';
 				else if( $query->RATING<=8)
 		  			echo '<span class="label label-primary">' .  $query->RATING . '</span>'; 
 				else if( $query->RATING<=12)
 		  			echo '<span class="label label-success">' .  $query->RATING . '</span>'; 
 				else if( $query->RATING<=16)
 		  			echo '<span class="label label-warning">' .  $query->RATING . '</span>'; 
-				else
+				else if( $query->RATING<=18)
 		  			echo '<span class="label label-danger">' .  $query->RATING . '</span>'; 
-							  					  					  					  			
+				else 
+		  			echo '<span class="label label-xred">' .  'ADULTO' . '</span>'; 			  					  					  					  			
 		  			
 		  			?>
 </div>

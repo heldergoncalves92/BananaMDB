@@ -5156,6 +5156,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: #449d44;
 }
 
+.label-xred {
+  background-color: #FF0000;
+}
+
+.label-xred[href]:hover,
+.label-xred[href]:focus {
+  background-color: #FF0000;
+}
+
+
 .label-info {
   background-color: #5bc0de;
 }
