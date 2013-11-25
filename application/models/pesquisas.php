@@ -47,10 +47,10 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 	
 	public function get_generosbyfilme($id=NULL){
 			if ($id!=NULL):
-				$sql="SELECT ID_GENERO from LISTA_GENEROS WHERE ID_FILME = '$id'";
+				$sql="SELECT gen.* from LISTA_GENEROS lg, generos gen WHERE lg.ID_FILME = $id AND lg.id_genero = gen.id_genero";
 				$this->db->query($sql);
-				$val = $this->db->query($sql)->row()->ID_GENERO;
-				return $val;
+				return $this->db->query($sql);
+				
 		else:
 			return FALSE;
 			
@@ -69,7 +69,7 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 			$this->db->from('GENEROS');
 			$this->db->where('ID_GENERO',$id);
 			//$this->db->order_by("NOME", "asc");	
-			return $this->db->get()->row()->NOME;
+			return $this->db->get();
 			
 		}
 	
@@ -93,6 +93,15 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 			//$this->db->order_by("NOME", "asc");	
 			return $this->db->get()->row()->NOME;
 			
+		}	
+		
+	public function get_realizadorLbyid($id=NULL){
+			if($id == null)
+				return 0;
+			$this->db->from('REALIZADORES');
+			$this->db->where('ID_REALIZADOR',$id);
+			return $this->db->get();
+			
 		}		
 		
 		
@@ -104,6 +113,8 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 where UPPER(f.NOME) like UPPER('%$nome%')"); 
 			
 		}		
+	
+	
 	public function get_produtorabyid($id=NULL){
 		if($id == null)
 				return 0;
@@ -114,7 +125,16 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 			
 		}		
 		
-
+	public function get_produtoraLbyid($id=NULL){
+		if($id == null)
+				return 0;
+			$this->db->from('PRODUTORAS');
+			$this->db->where('ID_PRODUTORA',$id);
+			return $this->db->get();
+			
+		}		
+	
+	
 		//  ACTORES
 		
 

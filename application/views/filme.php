@@ -15,12 +15,10 @@ $query = $this->pesquisamodel->get_filmebyid($idfilme)->row();
 if ($query == FALSE)//não existe filme com esse id
 redirect(base_url());
 
-$generoid = $this->pesquisamodel->get_generosbyfilme($idfilme);
+$generoid = $this->pesquisamodel->get_generosbyfilme($idfilme)->result();
 
-$genero = $this->pesquisamodel->get_generosbyid($generoid);
-$realizador = $this->pesquisamodel->get_realizadorbyid($query->ID_REALIZADOR);
-$produtora = $this->pesquisamodel->get_produtorabyid($query->ID_PRODUTORA);
-
+$realizador = $this->pesquisamodel->get_realizadorLbyid($query->ID_REALIZADOR)->result();
+$produtora = $this->pesquisamodel->get_produtoraLbyid($query->ID_PRODUTORA)->result();
 
 
 
@@ -47,20 +45,32 @@ $produtora = $this->pesquisamodel->get_produtorabyid($query->ID_PRODUTORA);
       </div>
       <div class="col.-md-6">
       	
+      		
+<div class="control-group" >
+	      <label >Género</label>
+		  <label class="control-label">
+	  		<?php $gens = '';
+	  			  foreach ($generoid as $linha) {
+	  			  	$gens = $gens . ' - ' . '<a href=' .   base_url() . 'title/genero/' . $linha->ID_GENERO . '>' . $linha->NOME . '</a>' ;}
+	  			  echo $gens;?>
+		  </label>
+</div>     		
+      		
+      		
 <div class="control-group" >
 	      <label >Realizador - </label>
-		  <label class="control-label"><?php echo $realizador;?></label>
+		  <label class="control-label"><?php  '<a href=' .   base_url() . 'title/realizador/' . $realizador[0]->ID_REALIZADOR . '>' . $realizador[0]->NOME . '</a>';?></label>
 </div>
 
     	
 <div class="control-group" >
 	      <label class="control-label">Produtora - </label>
-		  <label class="control-label"><?php echo $produtora;?></label>
+		  <label class="control-label"><?php  '<a href=' .   base_url() . 'title/produtora/' . $produtora[0]->ID_PRODUTORA . '>' . $produtora[0]->NOME . '</a>';?></label>
 </div>
 
 
 
-    	
+
 <div class="control-group" >
 	      <label class="control-label">ANO - </label>
 		  <label class="control-label"><?php echo $query->ANO;?></label>
@@ -105,7 +115,13 @@ $produtora = $this->pesquisamodel->get_produtorabyid($query->ID_PRODUTORA);
 </div>
 
 <hr>
-<iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $query->TRAILER ?>" frameborder="0" allowfullscreen></iframe>
+<?php
+if($query->ID_FILME == 8)
+	echo "<iframe src=\"http://flashservice.xvideos.com/embedframe/4089943\" frameborder=0 width=510 height=400 scrolling=no></iframe>";
+else
+	echo "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/<?php echo $query->TRAILER ?>\" frameborder=\"0\" allowfullscreen></iframe>";
+?>
+
 
 
 
