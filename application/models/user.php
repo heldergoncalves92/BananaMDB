@@ -80,11 +80,29 @@ function getuser($cookies)
   return $query; 
  }
 
+function getDataNbyNome($datan)
+ {
+
+   $sql="SELECT DATA_NASCIMENTO from UTILIZADORES WHERE USERNAME='$datan'";
+   
+   $query = $this->db->query($sql)->row()->DATA_NASCIMENTO;
+  if ($query == ' ')
+  return -1;
+  else
+  return $query; 
+ }
 
 
 		public function get_UTILIZADORESseqcurrval(){
 			
 			return $this->db->query('SELECT UTILIZADORES_seq.currval from dual')->result();
+		}
+	
+
+
+public function get_Idadebydata($datan){
+			
+			return $this->db->query("select idade(to_date('$datan','dd-mm-yyyy')) as idade from dual")->row()->IDADE;
 		}
 	
 

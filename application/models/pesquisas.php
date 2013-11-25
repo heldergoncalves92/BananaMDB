@@ -83,7 +83,7 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 			return $this->db->query("Select f.* from REALIZADORES f
 where UPPER(f.NOME) like UPPER('%$nome%')"); 
 			
-		}		
+		}
 		
 	public function get_realizadorbyid($id=NULL){
 			if($id == null)
@@ -93,7 +93,7 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 			//$this->db->order_by("NOME", "asc");	
 			return $this->db->get()->row()->NOME;
 			
-		}	
+		}
 		
 	public function get_realizadorLbyid($id=NULL){
 			if($id == null)

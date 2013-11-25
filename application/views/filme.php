@@ -117,10 +117,20 @@ $produtora = $this->pesquisamodel->get_produtoraLbyid($query->ID_PRODUTORA)->res
 
 <hr>
 <?php
-if($query->ID_FILME == 8)
-	echo "<iframe src=\"http://flashservice.xvideos.com/embedframe/4089943\" frameborder=0 width=510 height=400 scrolling=no></iframe>";
-else
-	echo "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/<?php echo $query->TRAILER ?>\" frameborder=\"0\" allowfullscreen></iframe>";
+if($query->RATING >= 18){
+	
+	if($idade>0){//Está logado
+		if($idade>=18 && $idade<21)//maiores de 18 e menores de 21
+			echo "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/<?php echo $query->TRAILER ?>\" frameborder=\"0\" allowfullscreen></iframe>";
+		else if($idade>=21)//para adultos
+			echo "<iframe src=\"http://flashservice.xvideos.com/embedframe/$query->TRAILER\" frameborder=0 width=510 height=400 scrolling=no></iframe>";
+		else//não tem idade e está logado
+			echo "Não tem idade para ver";
+	}
+	else echo "Conteúdo Susceptível de ferir a sensibilidade dos visitantes.";//Não está logado
+}
+else echo "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/$query->TRAILER\" frameborder=\"0\" allowfullscreen></iframe>";
+
 ?>
 
 
@@ -135,7 +145,6 @@ else
               		<?php $filmes = $this->pesquisamodel->get_actoresbyfilmeid($query->ID_FILME)->result();
               				$nada = '0 Resultados';
 				  		  $cfilmes=0;
-				  		  
 			              foreach ($filmes as $linha) {
 			              	if($linha==NULL)
 								break;

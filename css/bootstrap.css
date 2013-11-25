@@ -2702,6 +2702,11 @@ input[type="button"].btn-block {
   content: "\e006";
 }
 
+.gold, .gold a {
+    color: #D4A017;
+}
+
+
 .glyphicon-star-empty:before {
   content: "\e007";
 }

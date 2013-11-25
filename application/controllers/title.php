@@ -29,11 +29,14 @@ class title extends CI_Controller {
 		$session_id = $this->session->userdata('session_id');
 		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
 		
+		
 		if ($IDUTILIZADOR ==FALSE)
-			$this->load->view('navbar_base');
+			$this->load->view('navbar_base',array('idx' => -1,'idade'=>-1));
 
-		else 
-			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));
+		else {
+			$datan = $this->usermodel->getDataNbyNOME($IDUTILIZADOR);
+			$idade = $this->usermodel->get_Idadebydata($datan);
+			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR,'idade'=>$idade));}
 
 		$this->load->view('filme.php');
 		$this->load->view('footer');

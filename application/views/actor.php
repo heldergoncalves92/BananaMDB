@@ -28,7 +28,7 @@ redirect(base_url());
     document.title = "<?= 'BananaMDB - ' . $query->NOME;?>"
 </script>
 
-	<h2><?php  echo $query->NOME ?> <span class = "glyphicon glyphicon-star" \> </h2>
+	<h2><?php  echo $query->NOME ?> <span class = "glyphicon glyphicon-star gold" \> </h2>
       <!-- Main hero unit for a primary marketing message or call to action -->
       
       <div class="panel panel-default">
