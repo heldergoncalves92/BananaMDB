@@ -32,7 +32,7 @@ $produtora = $this->pesquisamodel->get_produtorabyid($query->ID_PRODUTORA);
     document.title = "<?= 'BananaMDB - ' . $query->TITULO;?>"
 </script>
 
-	<h2><?php  echo $query->TITULO ?></h2>
+	<h2><?php  echo $query->TITULO ?> </h2>
       <!-- Main hero unit for a primary marketing message or call to action -->
       
       <div class="panel panel-default">
@@ -89,17 +89,52 @@ $produtora = $this->pesquisamodel->get_produtorabyid($query->ID_PRODUTORA);
 
 <div class="control-group" >
 	      <label class="control-label">RATING - </label>
-	      <?php if( $query->RATING<13)
-		  			echo '<span class="label label-success">' .  $query->RATING . '</span>';
-				else if( $query->RATING>17)
-		  			echo '<span class="label label-danger">' .  $query->RATING . '</span>'; ?>
+	      <?php if( $query->RATING<=6)
+		  			echo '<span class="label label-default">' .  $query->RATING . '</span>';
+				else if( $query->RATING<=8)
+		  			echo '<span class="label label-primary">' .  $query->RATING . '</span>'; 
+				else if( $query->RATING<=12)
+		  			echo '<span class="label label-success">' .  $query->RATING . '</span>'; 
+				else if( $query->RATING<=16)
+		  			echo '<span class="label label-warning">' .  $query->RATING . '</span>'; 
+				else
+		  			echo '<span class="label label-danger">' .  $query->RATING . '</span>'; 
+							  					  					  					  			
+		  			
+		  			?>
 </div>
 
 <hr>
 <iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $query->TRAILER ?>" frameborder="0" allowfullscreen></iframe>
 
 
-        
+
+
+        <div id="log-table">
+          <div id="log-cell-1">
+
+            <div class="panel panel-default">
+              <div class="panel-heading">Cast</div>
+              		<?php $filmes = $this->pesquisamodel->get_actoresbyfilmeid($query->ID_FILME)->result();
+              				$nada = '0 Resultados';
+				  		  $cfilmes=0;
+				  		  
+			              foreach ($filmes as $linha) {
+			              	if($linha==NULL)
+								break;
+			              	$this->table->add_row( '<a href=' .   base_url() . 'title/actor/' . $linha->ID_ACTOR . '><img src="' . base_url() . 'uploads/actores/' . $linha->IMAGEM . '" width="50px" height="auto""></a>',
+			              	$linha->PERSONAGEM . ' - <a href=' .   base_url() . 'title/actor/' . $linha->ID_ACTOR . '>' . $linha->NOME . '</a> (' . $linha->DATA_NASCIMENTO . ') <br> ');
+							$cfilmes++;
+						  	}
+						  if($cfilmes==0)
+						  	$this->table->add_row($nada);
+			              echo $this->table->generate();
+	              	?>
+            </div>
+         
+          
+          </div>
+          
       
       
 
