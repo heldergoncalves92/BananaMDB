@@ -14,60 +14,9 @@
 					<div id="log-cell-2">
 						<h4>Detalhes:</h4>
 						<hr>
-						
-						<nav class="navbar " role="navigation">
-						<div class="navbar-header">
-						
-						<a class="navbar-brand" href="#">Utilizador: </a>
-						</div>
-						<div id="bs-example-navbar-collapse-4" class="collapse navbar-collapse">
-						<p class="navbar-text"><?php  echo $idz[0]->USERNAME;?></p>
-						</div>
-						</nav>
-						<nav class="navbar" role="navigation">
-						<div class="navbar-header">
-						
-						<a class="navbar-brand" href="#">E-mail: </a>
-						</div>
-						<div id="bs-example-navbar-collapse-4" class="collapse navbar-collapse">
-						<p class="navbar-text"><?php  echo $idz[0]->EMAIL;?></p>
-						</div>
-						</nav>
-						</nav>
-						<nav class="navbar " role="navigation">
-						<div class="navbar-header">
-						
-						<a class="navbar-brand" href="#">Data de Nascimento: </a>
-						</div>
-						<div id="bs-example-navbar-collapse-4" class="collapse navbar-collapse">
-						<p class="navbar-text"><?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
-						</div>
-						</nav>
-						
-						
-						
-						
-						<div class="panel panel-info">
-						<div class="panel-heading">
-						<h3 class="panel-title">Utilizador</h3>
-						</div>
-						<div class="panel-body"> <?php  echo $idz[0]->EMAIL;?> </div>
-						</div>
-						
-						<div class="panel panel-info">
-						<div class="panel-heading">
-						<h3 class="panel-title">E-mail</h3>
-						</div>
-						<div class="panel-body"> <?php  echo $idz[0]->EMAIL;?> </div>
-						</div>
-						
-						<div class="panel panel-info">
-						<div class="panel-heading">
-						<h3 class="panel-title">Data de Nascimento: </h3>
-						</div>
-						<div class="panel-body"> <?php  echo $idz[0]->DATA_NASCIMENTO;?> </div>
-						</div>
-
+						<p class="destaque"><span class="destaque">Utilizador:</span> <?php  echo $idz[0]->USERNAME;?></p>
+						<p class="destaque"><span class="destaque">E-mail:</span> <?php  echo $idz[0]->EMAIL;?></p>
+						<p class="destaque"><span class="destaque">Data de Nascimento:</span> <?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
 					</div>
 				</div>
 			</div>

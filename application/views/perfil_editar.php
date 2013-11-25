@@ -14,9 +14,9 @@
 					<div id="log-cell-2">
 						<h4>Detalhes:</h4>
 						<hr>
-						<p class="user">Utilizador: <?php  echo $idz[0]->USERNAME;?></p>
-						<p>E-mail: <?php  echo $idz[0]->EMAIL;?></p>
-						<p>Data de Nascimento: <?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
+						<p><span class="destaque">Utilizador:</span> <?php  echo $idz[0]->USERNAME;?></p>
+						<p><span class="destaque">E-mail:</span> <?php  echo $idz[0]->EMAIL;?></p>
+						<p><span class="destaque">Data de Nascimento:</span> <?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
 					</div>
 				</div>
 			</div>
