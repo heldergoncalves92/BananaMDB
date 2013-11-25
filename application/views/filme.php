@@ -58,14 +58,24 @@ $produtora = $this->pesquisamodel->get_produtoraLbyid($query->ID_PRODUTORA)->res
       		
       		
 <div class="control-group" >
-	      <label >Realizador - </label>
-		  <label class="control-label"><?php  '<a href=' .   base_url() . 'title/realizador/' . $realizador[0]->ID_REALIZADOR . '>' . $realizador[0]->NOME . '</a>';?></label>
+	      <label >Realizador - </label> 
+		  <label class="control-label">
+		  	<?php  $reals = '';
+	  			  foreach ($realizador as $linha) {
+	  			  	$reals = $reals . '<a href=' .   base_url() . 'title/realizador/' . $linha->ID_REALIZADOR . '>' . $linha->NOME . '</a>';}
+	  			  echo $reals;?>
+	  			  </label>
 </div>
 
     	
 <div class="control-group" >
 	      <label class="control-label">Produtora - </label>
-		  <label class="control-label"><?php  '<a href=' .   base_url() . 'title/produtora/' . $produtora[0]->ID_PRODUTORA . '>' . $produtora[0]->NOME . '</a>';?></label>
+		  <label class="control-label">
+		  	<?php  $prods = '';
+	  			  foreach ($produtora as $linha) {
+	  			  	$prods = $prods . '<a href=' .   base_url() . 'title/produtora/' . $linha->ID_PRODUTORA . '>' . $linha->NOME . '</a>';}
+	  			  echo $prods;?>
+	  			  </label>
 </div>
 
 
@@ -140,7 +150,7 @@ else echo "<iframe width=\"560\" height=\"315\" src=\"//www.youtube.com/embed/$q
         <div id="log-table">
           <div id="log-cell-1">
 
-            <div class="panel panel-default">
+            <div class="panel panel-info">
               <div class="panel-heading">Cast</div>
               		<?php $filmes = $this->pesquisamodel->get_actoresbyfilmeid($query->ID_FILME)->result();
               				$nada = '0 Resultados';
