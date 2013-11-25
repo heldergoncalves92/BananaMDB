@@ -43,6 +43,30 @@
 						<p class="navbar-text"><?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
 						</div>
 						</nav>
+						
+						
+						
+						
+						<div class="panel panel-info">
+						<div class="panel-heading">
+						<h3 class="panel-title">Utilizador</h3>
+						</div>
+						<div class="panel-body"> <?php  echo $idz[0]->EMAIL;?> </div>
+						</div>
+						
+						<div class="panel panel-info">
+						<div class="panel-heading">
+						<h3 class="panel-title">E-mail</h3>
+						</div>
+						<div class="panel-body"> <?php  echo $idz[0]->EMAIL;?> </div>
+						</div>
+						
+						<div class="panel panel-info">
+						<div class="panel-heading">
+						<h3 class="panel-title">Data de Nascimento: </h3>
+						</div>
+						<div class="panel-body"> <?php  echo $idz[0]->DATA_NASCIMENTO;?> </div>
+						</div>
 
 					</div>
 				</div>
