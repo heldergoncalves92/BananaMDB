@@ -14,9 +14,36 @@
 					<div id="log-cell-2">
 						<h4>Detalhes:</h4>
 						<hr>
-						<p class="user">Utilizador: <?php  echo $idz[0]->USERNAME;?></p>
-						<p>E-mail: <?php  echo $idz[0]->EMAIL;?></p>
-						<p>Data de Nascimento: <?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
+						
+						<nav class="navbar " role="navigation">
+						<div class="navbar-header">
+						
+						<a class="navbar-brand" href="#">Utilizador: </a>
+						</div>
+						<div id="bs-example-navbar-collapse-4" class="collapse navbar-collapse">
+						<p class="navbar-text"><?php  echo $idz[0]->USERNAME;?></p>
+						</div>
+						</nav>
+						<nav class="navbar" role="navigation">
+						<div class="navbar-header">
+						
+						<a class="navbar-brand" href="#">E-mail: </a>
+						</div>
+						<div id="bs-example-navbar-collapse-4" class="collapse navbar-collapse">
+						<p class="navbar-text"><?php  echo $idz[0]->EMAIL;?></p>
+						</div>
+						</nav>
+						</nav>
+						<nav class="navbar " role="navigation">
+						<div class="navbar-header">
+						
+						<a class="navbar-brand" href="#">Data de Nascimento: </a>
+						</div>
+						<div id="bs-example-navbar-collapse-4" class="collapse navbar-collapse">
+						<p class="navbar-text"><?php  echo $idz[0]->DATA_NASCIMENTO;?></p>
+						</div>
+						</nav>
+
 					</div>
 				</div>
 			</div>
