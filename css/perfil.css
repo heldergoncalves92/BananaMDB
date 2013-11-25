@@ -1,0 +1,22 @@
+		
+		#feed-block .title{
+			text-indent: 4%;
+			font-weight: bold;
+		}
+
+		#log{
+			padding: 0 5% 0 5%;
+			text-indent: 1%;
+		}
+
+		#log-table{
+			display: table;
+			width: 100%;
+		}
+
+		#log-cell-1, #log-cell-2{
+			display: table-cell;
+			vertical-align: top;
+			width: 50%;
+			
+		}
