@@ -60,12 +60,12 @@ Class User extends CI_Model
 
 
 
-		public function get_users(){
-			$this->db->from('UTILIZADORES');
-			$this->db->order_by("IDX", "asc");
-			return $this->db->get();
-			
-		}
+function get_user_by_name($name){
+	$sql="SELECT USERNAME from CISE WHERE USERNAME='$name'";
+
+	return $this->db->query($sql);
+	
+}
 
 
 function getuser($cookies)

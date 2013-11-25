@@ -26,6 +26,7 @@ class Login extends CI_Controller {
 		$session_id = $this->session->userdata('session_id');
 		$idx = $this->usermodel->getuser($session_id);
 		$ultimo = $this->session->userdata('ultimo');
+		
 		if ($idx !=FALSE)
 		redirect($ultimo);
 
@@ -86,14 +87,6 @@ class Login extends CI_Controller {
 		$this->load->view('footer');
 
 	}
-	
-
-
-	
-
-
-
-
 }
 ?>
 

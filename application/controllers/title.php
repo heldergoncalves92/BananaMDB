@@ -33,7 +33,7 @@ class title extends CI_Controller {
 			$this->load->view('navbar_base');
 
 		else 
-			$this->load->view('navbar_Login');	
+			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));
 
 		$this->load->view('filme.php');
 		$this->load->view('footer');
