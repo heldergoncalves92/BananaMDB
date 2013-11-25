@@ -8,10 +8,6 @@
         <div id="log-table">
           <div id="log-cell-1">
 
-
-
-
-
             <div class="panel panel-info">
               <div class="panel-heading"><h3 class = "panel-title">Filmes</h3></div>
               		<?php $nada = '0 Resultados';
@@ -28,16 +24,8 @@
 			              echo $this->table->generate();
 	              	?>
             </div>
-<!--
-            <div class="panel panel-default">
-              <div class="panel-heading">Séries</div>
-              <table>
-                <td></td>
-                <td>0 Resultados porque não fiz search</td>
-              </table>
-            </div>
--->
-            <div class="panel panel-primary">
+
+            <div class="panel panel-info">
               <div class="panel-heading">Actores</div>
               		<?php  $cactores=0;
 			              foreach ($actores as $linha) {
@@ -53,7 +41,7 @@
               		?>
             </div>
 
-            <div class="panel panel-success">
+            <div class="panel panel-info">
               <div class="panel-heading">Realizadores</div>
              		 <?php  $crealizadores=0;
 			              foreach ($realizadores as $linha) {
@@ -68,7 +56,7 @@
               		?>
             </div>
 
-            <div class="panel panel-default">
+            <div class="panel panel-info">
               <div class="panel-heading">Géneros</div>
                     <?php  $cgeneros=0;
 			              foreach ($generos as $linha) {
@@ -85,7 +73,7 @@
           
           
 
-            <div class="panel panel-default">
+            <div class="panel panel-info">
               <div class="panel-heading">Produtoras</div>
               		<?php  $cprodutoras=0;
 			              foreach ($produtoras as $linha) {
@@ -103,63 +91,54 @@
           </div>
           
           <div id="log-cell-2">
-            <h4>Pesquisa Avançada</h4>
+            <h4>Pesquisa Avançada:</h4>
           		<?php   $cseries = 0; //fica aqui para nao esquecer
           				$ctodos = $cfilmes + $cseries + $cgeneros + $cactores +$crealizadores + $cprodutoras ?>
       
-				<div class="bs-example">
-				      
+				<div class="pesquisa-avc">
 				      <br>
 				      <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
-				      	
-				        <li class="active"><a href="#">
-				            <span class="badge pull-right"><?php echo $ctodos ?></span>
-				            Todos
-				          </a></li>
-				        
-				        
-				        <li><a href="#">
-				            <span class="badge pull-right"><?php echo $cfilmes ?></span>
-				            Filmes
-				          </a></li>
-				          
-				          <!--
-			           <li><a href="#">
-				            <span class="badge pull-right"><?php echo $cseries ?></span>
-				            Séries
-				          </a></li>-->
-				          
-				       <li><a href="#">
-				            <span class="badge pull-right"><?php echo $cactores ?></span>
-				            Actores
-				          </a></li>   
-				          
-				          
-			           <li><a href="#">
-				            <span class="badge pull-right"><?php echo $crealizadores ?></span>
-				            Realizadores
-				          </a></li>
-				          
-				          
-				       <li><a href="#">
-				            <span class="badge pull-right"><?php echo $cgeneros ?></span>
-				            Géneros
-				          </a></li>   
-				          
-				          
-				       <li><a href="#">
-				            <span class="badge pull-right"><?php echo $cprodutoras ?></span>
-				            Produtoras
-				          </a></li>   
-				          
+				        <li class="active">
+				        	<a href="#">
+				            	<span class="badge pull-right"><?php echo $ctodos ?></span>
+				            	Todos
+				          	</a>
+				        </li>
+				        <li>
+				        	<a href="#">
+				            	<span class="badge pull-right"><?php echo $cfilmes ?></span>
+				            	Filmes
+				          	</a>
+				        </li>
+				       	<li>
+				       		<a href="#">
+				            	<span class="badge pull-right"><?php echo $cactores ?></span>
+				            	Actores
+				          	</a>
+				        </li>   
+					    <li><a href="#">
+				            	<span class="badge pull-right"><?php echo $crealizadores ?></span>
+				            	Realizadores
+				          	</a>
+				        </li>
+				        <li>
+				        	<a href="#">
+				            	<span class="badge pull-right"><?php echo $cgeneros ?></span>
+				            	Géneros
+				          	</a>
+				        </li>   
+				        <li>
+				        	<a href="#">
+				            	<span class="badge pull-right"><?php echo $cprodutoras ?></span>
+				            	Produtoras
+				          	</a>
+				        </li>   
 				      </ul>
 				    </div>
-
-
-		</div>
+				</div>
+			</div>
+  		</div>
 	</div>
-  </div>
-</div>
 
 
 

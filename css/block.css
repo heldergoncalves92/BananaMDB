@@ -18,6 +18,12 @@
 			width:23%
 		}
 
+		div .pesquisa-avc{
+			padding-left:10%; 
+		}
+
+		
+
 		#feed-block .title{
 			text-indent: 4%;
 			font-weight: bold;
@@ -38,4 +44,8 @@
 			vertical-align: top;
 			width: 50%;
 			padding: 2%;
+		}
+
+		#log-cell-2 {
+			padding-left: 10%;
 		}
