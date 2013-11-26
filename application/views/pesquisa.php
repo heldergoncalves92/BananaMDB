@@ -3,8 +3,8 @@
   	<script>
 
     var table= new Array("filmes","actores", "realizadores", "generos","produtoras");
+    var lis= new Array("todosli","filmesli","actoresli","realizadoresli","generosli","produtorasli");
     var navs= new Array("nav-todos","nav-filmes","nav-actores", "nav-realizadores", "nav-generos","nav-produtoras");
-    var bdg= new Array("bdg-todos","bdg-filmes","bdg-actores", "bdg-realizadores", "bdg-generos","bdg-produtoras");
 
    	function showAll(){
 		var i=0;
@@ -13,15 +13,9 @@
    			i++;
    		}
    		for(i=1;i<navs.length;i++){
-   			document.getElementById(navs[i]).style.backgroundColor="transparent"
-      		document.getElementById(navs[i]).style.color="#428bca"
-      		document.getElementById(bdg[i]).style.backgroundColor="#999999"
-      		document.getElementById(bdg[i]).style.color="white"
+   			document.getElementById(lis[i]).setAttribute("class", "");
       	}
-      	document.getElementById(navs[0]).style.backgroundColor="#428bca"
-      	document.getElementById(navs[0]).style.color="white"
-      	document.getElementById(bdg[0]).style.backgroundColor="white"
-      	document.getElementById(bdg[0]).style.color="#428bca"
+      	document.getElementById(lis[0]).setAttribute("class", "active");
       	
     }
     
@@ -33,16 +27,10 @@
    		}
       	document.getElementById(table[show]).style.display="";
 
-      	for(i=0;i<navs.length;i++){
-      		document.getElementById(navs[i]).style.backgroundColor="transparent"
-      		document.getElementById(navs[i]).style.color="#428bca"
-      		document.getElementById(bdg[i]).style.backgroundColor="#999999"
-      		document.getElementById(bdg[i]).style.color="white"
+      	for(i=0;i<lis.length;i++){
+      		document.getElementById(lis[i]).setAttribute("class", "");
       	}
-      	document.getElementById(navs[show+1]).style.backgroundColor="#428bca"
-      	document.getElementById(navs[show+1]).style.color="white"
-      	document.getElementById(bdg[show+1]).style.backgroundColor="white"
-      		document.getElementById(bdg[show+1]).style.color="#428bca"
+      	document.getElementById(lis[show+1]).setAttribute("class", "active");
 
     }
   </script>
@@ -145,38 +133,38 @@
 				<div class="pesquisa-avc">
 				      <br>
 				      <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
-				        <li class="active">
-				        	<a id="nav-todos" onclick="showAll()">
+				        <li id="todosli" class="active">
+				        	<a href="#" id="nav-todos" onclick="showAll()">
 				            	<span id="bdg-todos" class="badge pull-right"><?php echo $ctodos ?></span>
 				            	Todos
 				          	</a>
-				        </li>
-				        <li>
-				        	<a id="nav-filmes" onclick="showID(0)">
+				        </li >
+				        <li id="filmesli">
+				        	<a href="#" id="nav-filmes" onclick="showID(0)">
 				            	<span  id="bdg-filmes"class="badge pull-right"><?php echo $cfilmes ?></span>
 				            	Filmes
 				          	</a>
 				        </li>
-				       	<li>
-				       		<a id="nav-actores" onclick="showID(1)">
+				       	<li id="actoresli">
+				       		<a href="#" id="nav-actores" onclick="showID(1)">
 				            	<span id="bdg-actores" class="badge pull-right"><?php echo $cactores ?></span>
 				            	Actores
 				          	</a>
 				        </li>   
-					    <li>
-					    	<a id="nav-realizadores" onclick="showID(2)">
+					    <li id="realizadoresli">
+					    	<a href="#" id="nav-realizadores" onclick="showID(2)">
 				            	<span id="bdg-realizadores" class="badge pull-right"><?php echo $crealizadores ?></span>
 				            	Realizadores
 				          	</a>
 				        </li>
-				        <li>
-				        	<a id="nav-generos" onclick="showID(3)">
+				        <li id="generosli">
+				        	<a href="#" id="nav-generos" onclick="showID(3)">
 				            	<span id="bdg-generos" class="badge pull-right"><?php echo $cgeneros ?></span>
 				            	Géneros
 				          	</a>
 				        </li>   
-				        <li>
-				        	<a id="nav-produtoras" onclick="showID(4)">
+				        <li  id="produtorasli">
+				        	<a href="#" id="nav-produtoras" onclick="showID(4)">
 				            	<span id="bdg-produtoras" class="badge pull-right"><?php echo $cprodutoras ?></span>
 				            	Produtoras
 				          	</a>

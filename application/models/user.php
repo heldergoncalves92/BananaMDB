@@ -124,7 +124,7 @@ public function get_Idadebydata($datan){
 			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan', 'default.jpg')";
 			$this->db->query($query);
 			$this->session->set_flashdata('registook','Registou-se com Sucesso');
-			redirect('registo');
+			
 		endif;		
 	}
 	
