@@ -1,14 +1,61 @@
   <link rel="stylesheet" type="text/css" href="css/block.css">
 
+  	<script>
+
+    var table= new Array("filmes","actores", "realizadores", "generos","produtoras");
+    var navs= new Array("nav-todos","nav-filmes","nav-actores", "nav-realizadores", "nav-generos","nav-produtoras");
+    var bdg= new Array("bdg-todos","bdg-filmes","bdg-actores", "bdg-realizadores", "bdg-generos","bdg-produtoras");
+
+   	function showAll(){
+		var i=0;
+      	while(i<table.length){
+    		document.getElementById(table[i]).style.display="";
+   			i++;
+   		}
+   		for(i=1;i<navs.length;i++){
+   			document.getElementById(navs[i]).style.backgroundColor="transparent"
+      		document.getElementById(navs[i]).style.color="#428bca"
+      		document.getElementById(bdg[i]).style.backgroundColor="#999999"
+      		document.getElementById(bdg[i]).style.color="white"
+      	}
+      	document.getElementById(navs[0]).style.backgroundColor="#428bca"
+      	document.getElementById(navs[0]).style.color="white"
+      	document.getElementById(bdg[0]).style.backgroundColor="white"
+      	document.getElementById(bdg[0]).style.color="#428bca"
+      	
+    }
+    
+    function showID(show){
+		var i=0;
+      	while(i<table.length){
+    		document.getElementById(table[i]).style.display="none";
+   			i++;
+   		}
+      	document.getElementById(table[show]).style.display="";
+
+      	for(i=0;i<navs.length;i++){
+      		document.getElementById(navs[i]).style.backgroundColor="transparent"
+      		document.getElementById(navs[i]).style.color="#428bca"
+      		document.getElementById(bdg[i]).style.backgroundColor="#999999"
+      		document.getElementById(bdg[i]).style.color="white"
+      	}
+      	document.getElementById(navs[show+1]).style.backgroundColor="#428bca"
+      	document.getElementById(navs[show+1]).style.color="white"
+      	document.getElementById(bdg[show+1]).style.backgroundColor="white"
+      		document.getElementById(bdg[show+1]).style.color="#428bca"
+
+    }
+  </script>
+
   <div id="feed-block" class="well">
     <div class="block">
-      <h2 class="title">Pesquisa</h2>
+      <h2 id="titu" class="title">Pesquisa</h2>
       <hr>
       <div id="log">
         <div id="log-table">
           <div id="log-cell-1">
 
-            <div class="panel panel-info">
+            <div id="filmes" class="panel panel-info">
               <div class="panel-heading"><h3 class = "panel-title">Filmes</h3></div>
               		<?php $nada = '0 Resultados';
 				  		  $cfilmes=0;
@@ -25,7 +72,7 @@
 	              	?>
             </div>
 
-            <div class="panel panel-info">
+            <div id="actores" class="panel panel-info">
               <div class="panel-heading">Actores</div>
               		<?php  $cactores=0;
 			              foreach ($actores as $linha) {
@@ -41,7 +88,7 @@
               		?>
             </div>
 
-            <div class="panel panel-info">
+            <div id="realizadores" class="panel panel-info">
               <div class="panel-heading">Realizadores</div>
              		 <?php  $crealizadores=0;
 			              foreach ($realizadores as $linha) {
@@ -56,7 +103,7 @@
               		?>
             </div>
 
-            <div class="panel panel-info">
+            <div id="generos" class="panel panel-info">
               <div class="panel-heading">Géneros</div>
                     <?php  $cgeneros=0;
 			              foreach ($generos as $linha) {
@@ -73,7 +120,7 @@
           
           
 
-            <div class="panel panel-info">
+            <div id="produtoras" class="panel panel-info">
               <div class="panel-heading">Produtoras</div>
               		<?php  $cprodutoras=0;
 			              foreach ($produtoras as $linha) {
@@ -99,37 +146,38 @@
 				      <br>
 				      <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
 				        <li class="active">
-				        	<a href="#">
-				            	<span class="badge pull-right"><?php echo $ctodos ?></span>
+				        	<a id="nav-todos" onclick="showAll()">
+				            	<span id="bdg-todos" class="badge pull-right"><?php echo $ctodos ?></span>
 				            	Todos
 				          	</a>
 				        </li>
 				        <li>
-				        	<a href="#">
-				            	<span class="badge pull-right"><?php echo $cfilmes ?></span>
+				        	<a id="nav-filmes" onclick="showID(0)">
+				            	<span  id="bdg-filmes"class="badge pull-right"><?php echo $cfilmes ?></span>
 				            	Filmes
 				          	</a>
 				        </li>
 				       	<li>
-				       		<a href="#">
-				            	<span class="badge pull-right"><?php echo $cactores ?></span>
+				       		<a id="nav-actores" onclick="showID(1)">
+				            	<span id="bdg-actores" class="badge pull-right"><?php echo $cactores ?></span>
 				            	Actores
 				          	</a>
 				        </li>   
-					    <li><a href="#">
-				            	<span class="badge pull-right"><?php echo $crealizadores ?></span>
+					    <li>
+					    	<a id="nav-realizadores" onclick="showID(2)">
+				            	<span id="bdg-realizadores" class="badge pull-right"><?php echo $crealizadores ?></span>
 				            	Realizadores
 				          	</a>
 				        </li>
 				        <li>
-				        	<a href="#">
-				            	<span class="badge pull-right"><?php echo $cgeneros ?></span>
+				        	<a id="nav-generos" onclick="showID(3)">
+				            	<span id="bdg-generos" class="badge pull-right"><?php echo $cgeneros ?></span>
 				            	Géneros
 				          	</a>
 				        </li>   
 				        <li>
-				        	<a href="#">
-				            	<span class="badge pull-right"><?php echo $cprodutoras ?></span>
+				        	<a id="nav-produtoras" onclick="showID(4)">
+				            	<span id="bdg-produtoras" class="badge pull-right"><?php echo $cprodutoras ?></span>
 				            	Produtoras
 				          	</a>
 				        </li>   
