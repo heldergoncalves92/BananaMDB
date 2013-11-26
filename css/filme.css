@@ -4,24 +4,11 @@
 			
 		}
 
-		.button{
-			margin-left: 14%;
-			width: 9%;
+		.img-filme{
+			width: 100%;
 		}
 
-		.erro{
-			width: 50%;
-		}
-
-		.input{
-			margin-bottom:.5em;
-			width:23%
-		}
-
-		div .pesquisa-avc{
-			padding-left:10%; 
-		}
-
+		
 		#feed-block .title{
 			text-indent: 4%;
 			font-weight: bold;
@@ -44,9 +31,15 @@
 			padding: 2%;
 		}
 
-		#log-cell-2 {
-			padding-left: 10%;
+		#log-cell-1{
+			padding: 1% 4%;
 		}
+
+		#cast{
+			margin: 0 3%;
+		}
+
+		
 
 
 

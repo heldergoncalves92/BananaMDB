@@ -9,7 +9,7 @@
 			<div id="log">
 				<div id="log-table">
 					<div id="log-cell-1">
-						<img class="img-thumbnail avatar" alt="Imagem não encontrada" src="<?php echo base_url(); ?>uploads/users/<?php  echo $idz[0]->AVATAR;?>" align="center"/>
+						<img class="img-thumbnail avatar" alt="Imagem não encontrada" src="<?php echo base_url(); ?>uploads/users/<?php  echo $idz[0]->AVATAR;?>" align="center">
 					</div>
 					<div id="log-cell-2">
 						<h4>Detalhes:</h4>
