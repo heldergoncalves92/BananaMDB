@@ -83,18 +83,8 @@
 
 
 				<div class="control-group" >
-				<label >Realizador - </label>
-				<label class="control-label"><?php  '<a href=' .   base_url() . 'title/realizador/' . $realizador[0]->ID_REALIZADOR . '>' . $realizador[0]->NOME . '</a>';?></label>
-				</div>
-
-
-				<div class="control-group" >
-				<label class="control-label">Produtora - </label>
-				<label class="control-label"><?php  '<a href=' .   base_url() . 'title/produtora/' . $produtora[0]->ID_PRODUTORA . '>' . $produtora[0]->NOME . '</a>';?></label>
-				</div>
-				<div class="control-group" >
 				<label class="control-label">ANO - </label>
-				<label class="control-label"><?php echo $query->ANO;?></label>
+				<label class="control-label"><?php echo '<a href=' .   base_url() . 'title/ano/' . $query->ANO . '>' . $query->ANO . '</a>' ;?></label>
 				</div>
 
 				<div class="control-group" >
@@ -189,7 +179,7 @@
 						if($linha==NULL)
 							break;
 						$this->table->add_row( '<a href=' .   base_url() . 'title/actor/' . $linha->ID_ACTOR . '><img src="' . base_url() . 'uploads/actores/' . $linha->IMAGEM . '" width="50px" height="auto""></a>',
-						$linha->PERSONAGEM . ' - <a href=' .   base_url() . 'title/actor/' . $linha->ID_ACTOR . '>' . $linha->NOME . '</a> (' . $linha->DATA_NASCIMENTO . ') <br> ');
+						$linha->PERSONAGEM . ' - <a href=' .   base_url() . 'title/actor/' . $linha->ID_ACTOR . '>' . $linha->NOME . '</a><br> ');
 						$cfilmes++;
 					}
 					if($cfilmes==0)
