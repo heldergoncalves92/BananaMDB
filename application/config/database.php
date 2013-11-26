@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$dbhost = "localhost";
+$dbhost = "192.168.248.148";
 $dbport = "1521";
 $dbname = "BDLEI";
 $dbuser = "UTILIZADOR";
