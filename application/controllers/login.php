@@ -16,7 +16,8 @@ class Login extends CI_Controller {
 
 	public function  logout(){
 		$this->session->sess_destroy();
-		redirect($this->input->get('last_url'));
+		redirect(base_url());
+		//redirect($this->input->get('last_url'));
 	}
  
 

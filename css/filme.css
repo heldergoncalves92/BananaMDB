@@ -8,6 +8,15 @@
 			width: 100%;
 		}
 
+		span.destaque{
+			color: #428bca;
+			font-weight: bold;
+
+		}
+
+		p.destaque{
+			font-size: 11pt;
+		}
 		
 		#feed-block .title{
 			text-indent: 4%;
@@ -36,7 +45,8 @@
 		}
 
 		#cast{
-			margin: 0 3%;
+			margin: 0 4%;
+			margin-right:54%; 
 		}
 
 		

@@ -35,16 +35,7 @@
 
 			<div id="log-cell-2">
 
-
-				<div class="control-group" >
-				<label >Género</label>
-				<label class="control-label">
-				<?php $gens = '';
-				foreach ($generoid as $linha) {
-				$gens = $gens . ' - ' . '<a href=' .   base_url() . 'title/genero/' . $linha->ID_GENERO . '>' . $linha->NOME . '</a>' ;}
-				echo $gens;?>
-				</label>
-				</div>     		
+				<p class="destaque"><span class="destaque"></span> </p>	
 
 
 				<div class="control-group" >

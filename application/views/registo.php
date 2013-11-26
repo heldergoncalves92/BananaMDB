@@ -30,6 +30,9 @@
 						<h5>Repita a Password</h5>
 						<?php echo form_password(array('name'=>'PASS2','class'=>'form-control input','placeholder'=>'REPITA A PASSWORD'),set_value('PASS2')); ?>
 
+						<h5>Avatar</h5>
+						<?php echo form_upload(array('name'=>'AVATAR'),set_value('AVATAR')); ?>
+
 						<br>
 						<?php 	$attributes = 'class = "btn btn-success button"';
 								echo form_submit('submit', 'Registar', $attributes); 
