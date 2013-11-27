@@ -22,7 +22,7 @@
 						<?php echo form_input(array('name'=>'EMAIL','class'=>'form-control input','placeholder'=>'E-MAIL'),set_value('EMAIL'));?>
 						
 						<h5>Data de Nascimento</h5>
-						<?php echo form_input(array('name'=>'DATANASCIMENTO','class'=>'form-control input','placeholder'=>'DATA'),set_value('DATANASCIMENTO'));?>
+						<?php echo form_input(array('name'=>'DATANASCIMENTO','class'=>'form-control input','placeholder'=>'DD-MM-AAA'),set_value('DATANASCIMENTO'));?>
 						
 						<h5>Password</h5>
 						<?php echo form_password(array('name'=>'PASS','class'=>'form-control input','placeholder'=>'PASSWORD'),set_value('PASS'));?>

@@ -23,6 +23,11 @@ where UPPER(f.titulo) like UPPER('%$nome%') and f.ano = '%$ano%");
 			return $this->db->query("SELECT f.*, af.personagem from filmes f, actores_filme af, actores ac WHERE af.id_filme = f.id_filme AND ac.id_actor = af.id_actor AND ac.id_actor = '$id' ORDER BY ANO desc");
 			
 		}
+
+	public function get_filmebyidrealizador($id=NULL){
+			return $this->db->query("SELECT * from filmes f WHERE  f.ID_REALIZADOR = '$id' ORDER BY ANO desc");
+			
+		}
 	
 	public function get_filmebyid($id=NULL){
 			$this->db->from('FILMES');
@@ -90,8 +95,9 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 				return 0;
 			$this->db->from('REALIZADORES');
 			$this->db->where('ID_REALIZADOR',$id);
-			//$this->db->order_by("NOME", "asc");	
-			return $this->db->get()->row()->NOME;
+			//$this->db->order_by("NOME", "asc");
+			//return $this->db->get()->row()->NOME;
+			return $this->db->get()->row();
 			
 		}
 		

@@ -24,6 +24,10 @@
 	</script>
 
 	<div class="block">
+		<!-- Button trigger modal -->
+				<button class="btn btn-primary btn-lg btn-right" data-toggle="modal" data-target="#myModal">
+				  Ver Trailer
+				</button>
 		<h2 class="title"><?php  echo $query->TITULO ?> </h2>
 		<hr>
 		<!-- Main hero unit for a primary marketing message or call to action -->
@@ -120,10 +124,9 @@
 					?>
 				</div>
 				<hr>
-				<!-- Button trigger modal -->
-				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-				  Ver Trailer
-				</button>
+
+				<h3>Sinopse</h3>
+				
 
 				<!-- Modal -->
 				<div class="modal fade block" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

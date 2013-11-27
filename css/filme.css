@@ -4,6 +4,10 @@
 			
 		}
 
+		.btn-right{
+			float: right;
+		}
+
 		.img-filme{
 			width: 100%;
 		}

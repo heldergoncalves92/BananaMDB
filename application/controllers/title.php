@@ -57,4 +57,20 @@ class title extends CI_Controller {
 		$this->load->view('actor.php');
 		$this->load->view('footer');
 	}
+
+	public function realizador (){
+			
+		$this->load->view('header');
+		$session_id = $this->session->userdata('session_id');
+		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
+		
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+
+		else 
+			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));	
+
+		$this->load->view('realizador.php');
+		$this->load->view('footer');
+	}
 }?>
