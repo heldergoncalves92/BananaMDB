@@ -3,11 +3,11 @@
 	<div id="feed-block" class="well">
 	
 	<?php
-		$idrealizador = $this->uri->segment(3);
-		if ($idrealizador==NULL)
+		$idprodutora = $this->uri->segment(3);
+		if ($idprodutora==NULL)
 			redirect(base_url());//se entra sem id no url vai para pagina principal
 
-		$query = $this->pesquisamodel->get_realizadorbyid($idrealizador);
+		$query = $this->pesquisamodel->get_produtorabyid($idprodutora);
 		
 		if ($query == FALSE)//não existe filme com esse id
 			redirect(base_url());
@@ -24,7 +24,7 @@
 	      	
 	      	<div id="log-table">
 				<div id="log-cell-1">
-					<img class="img-thumbnail img-filme" src="<?php echo base_url() . 'uploads/realizadores/' . $query->ID_REALIZADOR;?>">
+					<img class="img-thumbnail img-filme" src="<?php echo base_url() . 'uploads/realizadores/' . $query->ID_PRODUTORA;?>">
 				</div>
 
 				<div id="log-cell-2">
@@ -33,24 +33,16 @@
 					  	<label class="control-label"><?php echo $query->NOME;?></label>
 					</div>
 
-					<div class="control-group" >
-						<label class="control-label">DATA de  NASCIMENTO - </label>
-						<label class="control-label"><?php echo $query->DATA_NASCIMENTO;?></label>
-					</div>
 
 					<div class="control-group" >
 						<label class="control-label">NACIONALIDADE - </label>
 						<label class="control-label"><?php echo $query->NACIONALIDADE;?></label>
 					</div>
 
-					<div class="control-group" >
-						<label class="control-label">SEXO - </label>
-						<label class="control-label"><?php echo $query->SEXO;?></label>
-					</div>
 					<hr>       
 		            <div class="panel panel-info">
-		              	<div class="panel-heading">Filmes Realizados</div>
-		          		<?php $filmes = $this->pesquisamodel->get_filmebyidrealizador($query->ID_REALIZADOR)->result();
+		              	<div class="panel-heading">Filmes Produzidos</div>
+		          		<?php $filmes = $this->pesquisamodel->get_filmebyidprodutora($query->ID_PRODUTORA)->result();
 		          				$nada = '0 Resultados';
 					  		  $cfilmes=0;
 					  		  
