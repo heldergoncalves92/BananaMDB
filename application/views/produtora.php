@@ -35,7 +35,7 @@
 
 
 					<div class="control-group" >
-						<label class="control-label">NACIONALIDADE - </label>
+						<label class="control-label">País - </label>
 						<label class="control-label"><?php echo $query->NACIONALIDADE;?></label>
 					</div>
 

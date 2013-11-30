@@ -548,6 +548,20 @@ h6 .small {
   font-size: 75%;
 }
 
+h4.inline {
+display: inline;
+padding: 0 .5em 0 0;
+}
+
+
+
+h4 {
+color: #666;
+font-size: 13px;
+margin: .35em 0 .25em;
+padding: 0;
+}
+
 h1,
 .h1 {
   font-size: 36px;
@@ -2706,6 +2720,13 @@ input[type="button"].btn-block {
     color: #D4A017;
 }
 
+.silver, .silver a {
+    color: #C0C0C0;
+}
+
+.glyphicons-icon.crown{background-position:-44px -1717px}
+
+.glyphicons.crown:before{content:"\1F451"}
 
 .glyphicon-star-empty:before {
   content: "\e007";

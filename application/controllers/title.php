@@ -23,6 +23,8 @@ class title extends CI_Controller {
 	}
 	
 
+
+
 	public function filme (){
 			
 		$this->load->view('header');
@@ -42,6 +44,8 @@ class title extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+
+
 	public function actor (){
 			
 		$this->load->view('header');
@@ -57,6 +61,8 @@ class title extends CI_Controller {
 		$this->load->view('actor.php');
 		$this->load->view('footer');
 	}
+
+
 
 	public function realizador (){
 			
@@ -74,6 +80,8 @@ class title extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+
+
 	 public function produtora (){
 			
 		$this->load->view('header');
@@ -88,5 +96,45 @@ class title extends CI_Controller {
 
 		$this->load->view('produtora.php');
 		$this->load->view('footer');
+	}
+
+
+
+	 public function genero (){
+			
+		$this->load->view('header');
+		
+		$session_id = $this->session->userdata('session_id');
+		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
+		
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+
+		else 
+			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));	
+
+		$this->load->view('genero.php');
+		$this->load->view('footer');
+		
+	}
+
+
+
+	 public function ano (){
+			
+		$this->load->view('header');
+		
+		$session_id = $this->session->userdata('session_id');
+		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
+		
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+
+		else 
+			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));	
+
+		$this->load->view('ano.php');
+		$this->load->view('footer');
+		
 	}
 }?>

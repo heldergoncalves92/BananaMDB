@@ -17,11 +17,14 @@
 
 
 	<script type="text/javascript">
-		document.title = "<?= 'BananaMDB - ' . $query->NOME;?>"
+		document.title = "<?= 'BananaMDB - ' . $query->NOME ;?>"
 	</script>
 
 		<div class="block">
-			<h2 class="title"><?php  echo $query->NOME ?> <span class = "glyphicon glyphicon-star gold" \> </h2>
+			<h2 class="title"><?php  echo $query->NOME ; 
+									if($query->OSCARES==1) echo "<span class = \"glyphicon glyphicon-star silver\" \\>"; 
+									else if($query->OSCARES>1 && $query->OSCARES<100) echo "<span class = \"glyphicon glyphicon-star gold\" \\>"; 
+									else if($query->OSCARES==100) echo "<span class = \"glyphicon\"> <img src=\"" . base_url() . "img/crown.png\"></a></span>";  ?> </h2>
 	      	
 	      	<div id="log-table">
 				<div id="log-cell-1">
@@ -36,7 +39,7 @@
 
 					<div class="control-group" >
 						<label class="control-label">DATA de  NASCIMENTO - </label>
-						<label class="control-label"><?php echo $query->DATA_NASCIMENTO;?></label>
+						<label class="control-label"><?php echo $query->DATA_NASCIMENTO .' ( ' .$query->ANOS . ' anos)' ;?></label>
 					</div>
 
 					<div class="control-group" >
@@ -44,6 +47,11 @@
 						<label class="control-label"><?php echo $query->NACIONALIDADE;?></label>
 					</div>
 
+					<div class="control-group" >
+					<label class="control-label">ÓSCARES- </label>
+					<label class="control-label"><?php echo $query->OSCARES;?></label>
+					</div>
+					
 					<div class="control-group" >
 						<label class="control-label">PRÉMIOS NOMEADO - </label>
 						<label class="control-label"><?php echo $query->PREMIOS_NOMEADO;?></label>

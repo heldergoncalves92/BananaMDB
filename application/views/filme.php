@@ -28,7 +28,10 @@
 				<button class="btn btn-primary btn-lg btn-right" data-toggle="modal" data-target="#myModal">
 				  Ver Trailer
 				</button>
-		<h2 class="title"><?php  echo $query->TITULO ?> </h2>
+		<h2 class="title"><?php  echo $query->TITULO ; 
+									if($query->OSCARES==1) echo "<span class = \"glyphicon glyphicon-star silver\" \\>"; 
+									else if($query->OSCARES>1 && $query->OSCARES<100) echo "<span class = \"glyphicon glyphicon-star gold\" \\>"; 
+									else if($query->OSCARES==100) echo "<span class = \"glyphicon\"> <img src=\"" . base_url() . "img/crown.png\"></a></span>";  ?> </h2>
 		<hr>
 		<!-- Main hero unit for a primary marketing message or call to action -->
 
@@ -43,8 +46,8 @@
 
 
 				<div class="control-group" >
-				<label >Realizador - </label> 
-				<label class="control-label">
+				<h4 class="inline">Realizador - </h4>
+				<label class="control-group">
 				<?php  $reals = '';
 				foreach ($realizador as $linha) {
 				$reals = $reals . '<a href=' .   base_url() . 'title/realizador/' . $linha->ID_REALIZADOR . '>' . $linha->NOME . '</a>';}
@@ -54,8 +57,8 @@
 
 
 				<div class="control-group" >
-				<label class="control-label">Produtora - </label>
-				<label class="control-label">
+				<h4 class="inline">Produtora - </h4>
+				<label class="control-group">
 				<?php  $prods = '';
 				foreach ($produtora as $linha) {
 				$prods = $prods . '<a href=' .   base_url() . 'title/produtora/' . $linha->ID_PRODUTORA . '>' . $linha->NOME . '</a>';}
@@ -67,8 +70,8 @@
 
 
 				<div class="control-group" >
-				<label >Género</label>
-				<label class="control-label">
+				<h4 class="inline">Género</h4>
+				<label class="control-group">
 				<?php $gens = '';
 				foreach ($generoid as $linha) {
 				$gens = $gens . ' - ' . '<a href=' .   base_url() . 'title/genero/' . $linha->ID_GENERO . '>' . $linha->NOME . '</a>' ;}
@@ -78,32 +81,45 @@
 
 
 				<div class="control-group" >
-				<label class="control-label">ANO - </label>
-				<label class="control-label"><?php echo '<a href=' .   base_url() . 'title/ano/' . $query->ANO . '>' . $query->ANO . '</a>' ;?></label>
+				<h4 class="inline">ANO - </h4>
+				<label class="control-group"><?php echo '<a href=' .   base_url() . 'title/ano/' . $query->ANO . '>' . $query->ANO . '</a>' ;?></label>
 				</div>
 
 				<div class="control-group" >
-				<label class="control-label">BUDGET - </label>
-				<label class="control-label"><?php if ($query->BUDGET>0) echo $query->BUDGET . '€' ; else echo 'Sem Informações';?></label>
+				<h4 class="inline">BUDGET - </h4>
+				<label class="control-group"><?php if ($query->BUDGET>0) echo $query->BUDGET . '€' ; else echo 'Sem Informações';?></label>
 				</div>
 
 				<div class="control-group" >
-				<label class="control-label">GROSS - </label>
-				<label class="control-label"><?php if ($query->GROSS>0) echo $query->GROSS . '€' ; else echo 'Sem Informações';?></label>
+				<h4 class="inline">GROSS - </h4>
+				<label class="control-group"><?php if ($query->GROSS>0) echo $query->GROSS . '€' ; else echo 'Sem Informações';?></label>
 				</div>
 
 				<div class="control-group" >
-				<label class="control-label">PRÉMIOS NOMEADO - </label>
-				<label class="control-label"><?php echo $query->PREMIOS_NOMEADO;?></label>
+				<h4 class="inline">ÓSCARES- </h4>
+				<label class="control-group"><?php echo $query->OSCARES;?></label>
+				</div>
+				
+				<div class="control-group" >
+				<h4 class="inline">RÉMIOS NOMEADO - </h4>
+				<label class="control-group"><?php echo $query->PREMIOS_NOMEADO;?></label>
 				</div>
 
 				<div class="control-group" >
-				<label class="control-label">PRÉMIOS VENCIDOS - </label>
-				<label class="control-label"><?php echo $query->PREMIOS_VENCIDOS;?></label>
+				<h4 class="inline">PRÉMIOS VENCIDOS - </h4>
+				<label class="control-group"><?php echo $query->PREMIOS_VENCIDOS;?></label>
 				</div>
 
+								
 				<div class="control-group" >
-					<label class="control-label">RATING - </label>
+				<h4 class="inline">SINOPSE</h4><br>
+				<label class="control-group"><?php echo $query->SINOPSE;?></label>
+				</div>
+				
+				
+				
+				<div class="control-group" >
+					<h4 class="inline">RATING - </h4>
 					<?php 
 						if( $query->RATING<=6)
 							echo '<span class="label label-default">' .  'TODOS' . '</span>';
@@ -123,9 +139,10 @@
 											echo '<span class="label label-xred">' .  'ADULTO' . '</span>';
 					?>
 				</div>
+				
+				
 				<hr>
-
-				<h3>Sinopse</h3>
+				
 				
 
 				<!-- Modal -->
