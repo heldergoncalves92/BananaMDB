@@ -24,7 +24,7 @@
 	      	
 	      	<div id="log-table">
 				<div id="log-cell-1">
-					<img class="img-thumbnail img-filme" src="<?php echo base_url() . 'uploads/realizadores/' . $query->ID_REALIZADOR;?>">
+					<img class="img-thumbnail img-filme" src="<?php echo base_url() . 'uploads/realizadores/' . $query->IMAGEM;?>">
 				</div>
 
 				<div id="log-cell-2">
