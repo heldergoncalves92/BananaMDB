@@ -24,7 +24,7 @@ Class User extends CI_Model
  function setdados($dados,$cookies)
  {
    $user = $dados['USER'];
-   $idx = $this->usermodel->getidxbyuser($user);
+   $idx = $this->usermodel->getidbyuser($user);
    $sql="UPDATE CISE set ID_UTILIZADOR = '$idx' , USERNAME = '$user' WHERE SESSION_ID='{$cookies}'";
    $query = $this->db->query($sql);
   return true; 
@@ -39,12 +39,12 @@ Class User extends CI_Model
    }*/
  }
  
- function getidxbyuser($user)
+ function getidbyuser($user)
  {
 
    $sql="SELECT ID_UTILIZADOR from UTILIZADORES WHERE USERNAME='$user'";
    
-   $query = $this->db->query($sql)->row()->IDX;
+   $query = $this->db->query($sql)->row()->ID_UTILIZADOR;
   return $query; 
  }
  

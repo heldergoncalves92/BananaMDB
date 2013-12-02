@@ -26,7 +26,7 @@ class Inicio extends CI_Controller {
 			$this->load->view('navbar_base');
 			
 		else
-			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));
 		
 		$this->load->view('mainpage.php');	
 		$this->load->view('footer');	

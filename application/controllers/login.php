@@ -25,10 +25,10 @@ class Login extends CI_Controller {
 
 		$this->load->view('header');
 		$session_id = $this->session->userdata('session_id');
-		$idx = $this->usermodel->getuser($session_id);
+		$ID_UTILIZADOR = $this->usermodel->getuser($session_id);
 		$ultimo = $this->session->userdata('ultimo');
 		
-		if ($idx !=FALSE)
+		if ($ID_UTILIZADOR !=FALSE)
 		redirect($ultimo);
 
 		$erros = array('erro'=>'');
@@ -70,8 +70,8 @@ class Login extends CI_Controller {
 
 				$this->usermodel->setdados($dados,$sessid);
 
-				$idx = $this->usermodel->getidx($sessid);
-				//		   echo $idx.' <- id| ';
+				$ID_UTILIZADOR = $this->usermodel->getID_UTILIZADOR($sessid);
+				//		   echo $ID_UTILIZADOR.' <- id| ';
 				$user = $this->usermodel->getuser($sessid);
 				//			   echo $user.' <- user| ';
 				$erros = array('erro'=>'');

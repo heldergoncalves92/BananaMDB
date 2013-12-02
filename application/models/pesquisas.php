@@ -177,8 +177,12 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 	public function get_actorbyid($id=NULL){
 		if($id == null)
 				return 0;
+			$dataf = $this->db->query("SELECT a.data_morte FROM ACTORES a where a.id_actor = '$id'")->row()->DATA_MORTE;
 			
-			return $this->db->query("SELECT a.*,idade(to_date(data_nascimento,'dd-mm-yyyy')) as anos FROM ACTORES a where a.id_actor = '$id'");
+			if ($dataf=='')
+				return $this->db->query("SELECT a.*,idade(to_date(data_nascimento,'dd-mm-yyyy')) as anos FROM ACTORES a where a.id_actor = '$id'");
+			else
+				return $this->db->query("SELECT a.*,idade2(to_date(data_morte,'dd-mm-yyyy'),to_date(data_nascimento,'dd-mm-yyyy')) as anos FROM ACTORES a where a.id_actor = '$id'");
 			
 		}		
 				
@@ -190,7 +194,19 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 			
 		}		
 	
+	//RATINGS
+	
+	public function insereRating($idfilme,$iduser,$rating)
+	{
+		$this->db->query("INSERT INTO tabela_ratings values ( Lista_Ratings_seq.nextval,$idfilme,$iduser,$rating)");
+		return NULL;
+	}
 
+	
+	public function getmediabyidview($id=NULL)
+	{
+		return $this->db->query("SELECT MEDIA from viewratingsfilmes WHERE ID_FILME = $id");
+	}
 
 		
 }

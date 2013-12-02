@@ -19,7 +19,7 @@
 	</script>
 
 		<div class="block">
-			<h2 class="title"><?php  echo $query->NOME ?> <span class = "glyphicon glyphicon-star gold" \> </h2>
+			<h2 class="title"><?php  echo $query->NOME ?> </h2>
 			<hr>
 	      	
 	      	<div id="log-table">

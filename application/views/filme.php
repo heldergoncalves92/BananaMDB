@@ -1,4 +1,10 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>css/filme.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>css/jquery.rating.css">
+		<script src='<?php echo base_url();?>js/jquery.js' type="text/javascript"></script>
+	<script src='<?php echo base_url();?>js/jquery.MetaData.js' type="text/javascript" language="javascript"></script>
+ <script src='<?php echo base_url();?>js/jquery.rating.js' type="text/javascript" language="javascript"></script>
+ <link href='<?php echo base_url();?>js/jquery.rating.css' type="text/css" rel="stylesheet"/>
+
 
 	<div id="feed-block" class="well">
 
@@ -116,30 +122,33 @@
 				<label class="control-group"><?php echo $query->SINOPSE;?></label>
 				</div>
 				
+	
 				
 				
 				<div class="control-group" >
 					<h4 class="inline">RATING - </h4>
-					<?php 
-						if( $query->RATING<=6)
-							echo '<span class="label label-default">' .  'TODOS' . '</span>';
-						else 	
-							if( $query->RATING<=8)
-								echo '<span class="label label-primary">' .  $query->RATING . '</span>'; 
-							else 
-								if( $query->RATING<=12)
-									echo '<span class="label label-success">' .  $query->RATING . '</span>'; 
-								else 
-									if( $query->RATING<=16)
-										echo '<span class="label label-warning">' .  $query->RATING . '</span>'; 
-									else 
-										if( $query->RATING<=18)
-											echo '<span class="label label-danger">' .  $query->RATING . '</span>'; 
-										else 
-											echo '<span class="label label-xred">' .  'ADULTO' . '</span>';
-					?>
+
+				<label class="control-group">
+					<?php $media = $this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA;
+						echo $media;?>
+					
+					</label><label class="control-group">
+					<?php
+					$fo = 'title/filme/' . $idfilme; echo form_open($fo);?>
+<input name="star1" type="radio" class="star" value="1"/>
+<input name="star1" type="radio" class="star" value="2"/>
+<input name="star1" type="radio" class="star" value="3"/>
+<input name="star1" type="radio" class="star" value="4"/>
+<input name="star1" type="radio" class="star" value="5"/>
+<input name="star1" type="radio" class="star" value="6"/>
+<input name="star1" type="radio" class="star" value="7"/>
+<input name="star1" type="radio" class="star" value="8"/>
+<input name="star1" type="radio" class="star" value="9"/>
+<input name="star1" type="radio" class="star" value="10"/>
+<?php $attributes = 'class = "btn btn-success button"'; echo form_submit('submit', 'Avaliar', $attributes); //echo form_input(array('name'=>'required star0','class'=>'required star','type'=>'radio'));
+								echo form_close();?>
+</label>
 				</div>
-				
 				
 				<hr>
 				

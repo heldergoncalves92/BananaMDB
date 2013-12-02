@@ -65,7 +65,7 @@
             </div>
 
               <hr>
-              <div class="title"><h3>Actores de 'Tron 2' queixam-se da produção</h3></div>
+              <div class="title"><h3>Actores de 'Thor - The Dark World' queixam-se da produção</h3></div>
               <div class="contend">
                 <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
                   <div align="center">
@@ -105,7 +105,7 @@
             </div>
           </div>
 
-          <h2>Mais cenas que ne apteça meter!!</h2>
+          <h2>Mais cenas que nos apeteça meter!!</h2>
 
         </div>
       </div>

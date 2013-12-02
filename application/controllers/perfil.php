@@ -18,12 +18,12 @@ class Perfil extends CI_Controller {
 		$this->load->view("header");
 
 		$session_id = $this->session->userdata('session_id');
-		$idx = $this->usermodel->getuser($session_id);
+		$ID_UTILIZADOR = $this->usermodel->getuser($session_id);
 		
-		if($idx){
-			$utilizador=$this->usermodel->get_user_by_name($idx)->result();
+		if($ID_UTILIZADOR){
+			$utilizador=$this->usermodel->get_user_by_name($ID_UTILIZADOR)->result();
 			//var_dump($utilizador);
-			$this->load->view("navbar_Login",array('idx' => $idx));
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $ID_UTILIZADOR));
 			$this->load->view("perfil_login",array('idz' => $utilizador));
 		}
 		else{
@@ -40,11 +40,11 @@ class Perfil extends CI_Controller {
 		$this->load->view("header");
 
 		$session_id = $this->session->userdata('session_id');
-		$idx = $this->usermodel->getuser($session_id);
+		$ID_UTILIZADOR = $this->usermodel->getuser($session_id);
 		
-		if($idx){
-			$utilizador=$this->usermodel->get_user_by_name($idx)->result();
-			$this->load->view("navbar_Login",array('idx' => $idx));
+		if($ID_UTILIZADOR){
+			$utilizador=$this->usermodel->get_user_by_name($ID_UTILIZADOR)->result();
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $ID_UTILIZADOR));
 			$this->load->view("perfil_editar",array('idz' => $utilizador));
 		}
 		else{

@@ -57,7 +57,7 @@ class Pesquisa extends CI_Controller {
 			$this->load->view('navbar_base');
 
 		else
-			$this->load->view("navbar_Login",array('idx' => $IDUTILIZADOR));	
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));	
 
 
 

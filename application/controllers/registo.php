@@ -51,7 +51,7 @@ class Registo extends CI_Controller {
 				$this->load->view('registo',$erros);
 			}
 		}else{
-			$this->load->view('navbar_Login',array('idx' => $IDUTILIZADOR));
+			$this->load->view('navbar_Login',array('ID_UTILIZADOR' => $IDUTILIZADOR));
 			$this->load->view('registo_erroLogin');
 		}
 

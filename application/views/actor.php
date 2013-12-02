@@ -22,9 +22,11 @@
 
 		<div class="block">
 			<h2 class="title"><?php  echo $query->NOME ; 
-									if($query->OSCARES==1) echo "<span class = \"glyphicon glyphicon-star silver\" \\>"; 
-									else if($query->OSCARES>1 && $query->OSCARES<100) echo "<span class = \"glyphicon glyphicon-star gold\" \\>"; 
-									else if($query->OSCARES==100) echo "<span class = \"glyphicon\"> <img src=\"" . base_url() . "img/crown.png\"></a></span>";  ?> </h2>
+									if($query->OSCARES==1) echo "<span class = \"glyphicon glyphicon-star silver\" \\></span>"; 
+									else if($query->OSCARES>1 && $query->OSCARES<100) echo "<span class = \"glyphicon glyphicon-star gold\" \\></span>"; 
+									else if($query->OSCARES==100) echo "<span class = \"glyphicon\"> <img src=\"" . base_url() . "img/crown.png\"></span>";  
+									if($query->DATA_MORTE!='') echo "</span> <span class = \"glyphicon\" ><img align = \"top\" src=\"" . base_url() . "img/cross.png\"></span>";
+									?> </span> </h2>
 	      	
 	      	<div id="log-table">
 				<div id="log-cell-1">
@@ -38,9 +40,16 @@
 					</div>
 
 					<div class="control-group" >
-						<label class="control-label">DATA de  NASCIMENTO - </label>
+						<label class="control-label">DATA de NASCIMENTO - </label>
 						<label class="control-label"><?php echo $query->DATA_NASCIMENTO .' ( ' .$query->ANOS . ' anos)' ;?></label>
 					</div>
+					
+					<?php if ($query->DATA_MORTE!='') echo "
+					<div class=\"control-group\" >
+						<label class=\"control-label\">DATA de MORTE - </label>
+						<label class=\"control-label\">" . $query->DATA_MORTE  . "</label>
+					</div>"; ?>
+
 
 					<div class="control-group" >
 						<label class="control-label">NACIONALIDADE - </label>
@@ -49,7 +58,7 @@
 
 					<div class="control-group" >
 					<label class="control-label">ÓSCARES- </label>
-					<label class="control-label"><?php echo $query->OSCARES;?></label>
+					<label class="control-label"><?php if($query->OSCARES==100) echo 0; else echo $query->OSCARES;?></label>
 					</div>
 					
 					<div class="control-group" >

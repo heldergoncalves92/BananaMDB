@@ -114,7 +114,7 @@
 			              foreach ($produtoras as $linha) {
 			              	if($linha==NULL)
 								break;
-			             	$this->table->add_row( '<a href=' .   base_url() . 'title/realizador/' . $linha->ID_PRODUTURA . '>' . $linha->NOME . '</a> <br> ');
+			             	$this->table->add_row( '<a href=' .   base_url() . 'title/produtora/' . $linha->ID_PRODUTORA . '>' . $linha->NOME . '</a> <br> ');
 							$cprodutoras++;
 			              	}
 						  if($cprodutoras==0)
