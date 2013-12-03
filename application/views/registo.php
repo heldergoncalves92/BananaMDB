@@ -39,16 +39,16 @@
 								echo form_close();?>
 						<br>
 						
-							<?php 	if($erro!='')
-										echo '<div class="alert alert-danger "><p>' . $erro . '</p></div>';
-									echo validation_errors('<div class="alert alert-danger erro"><p>','</p></div>');	
-				?>
+							
 						
 					</div>
 					<div id="log-cell-2">
-						<h1>Bem-Vindo ao:</h1>
-						<img src="<?php echo base_url(); ?>img/BananaLOGO.png" width="100%"/>
-					</div>
+						<br><br>
+						<?php 	if($erro!='')
+										echo '<div class="alert alert-danger "><p>' . $erro . '</p></div>';
+									echo validation_errors('<div class="alert alert-danger erro"><p>','</p></div>');	
+							?>
+						</div>
 				</div>
 			</div>
 		</div>
