@@ -129,12 +129,19 @@
 					<h4 class="inline">RATING - </h4>
 
 				<label class="control-group">
-					<?php $media = $this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA;
+					<?php if(isset($this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA))
+								$media = $this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA;
+							else 
+								$media = 'Sem Votos';
 						echo $media;?>
 					
-					</label><label class="control-group">
+					</label>
+					
+					
+					
+					<label class="control-group">
 					<?php
-					$fo = 'title/filme/' . $idfilme; echo form_open($fo);?>
+					$fo = 'title/filme/' . $idfilme; if($ID_UTILIZADOR>0 ) echo form_open($fo);?>
 <input name="star1" type="radio" class="star" value="1"/>
 <input name="star1" type="radio" class="star" value="2"/>
 <input name="star1" type="radio" class="star" value="3"/>
@@ -145,8 +152,10 @@
 <input name="star1" type="radio" class="star" value="8"/>
 <input name="star1" type="radio" class="star" value="9"/>
 <input name="star1" type="radio" class="star" value="10"/>
-<?php $attributes = 'class = "btn btn-success button"'; echo form_submit('submit', 'Avaliar', $attributes); //echo form_input(array('name'=>'required star0','class'=>'required star','type'=>'radio'));
-								echo form_close();?>
+<?php if($ID_UTILIZADOR>0 ) {
+	$attributes = 'class = "btn btn-success button"';
+	echo form_submit('submit', 'Avaliar', $attributes); //echo form_input(array('name'=>'required star0','class'=>'required star','type'=>'radio'));
+	echo form_close();}?>
 </label>
 				</div>
 				

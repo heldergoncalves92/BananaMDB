@@ -46,9 +46,9 @@ class title extends CI_Controller {
 		else {
 			$datan = $this->usermodel->getDataNbyNOME($UTILIZADOR);
 			$idade = $this->usermodel->get_Idadebydata($datan);
-			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR,'idade'=>$idade));}
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $UTILIZADOR,'idade'=>$idade));}
 
-		$this->load->view('filme.php');
+		$this->load->view('filme.php',array('ID_UTILIZADOR' => $IDUTILIZADOR));
 		$this->load->view('footer');
 	}
 

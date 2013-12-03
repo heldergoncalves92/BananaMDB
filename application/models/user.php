@@ -44,12 +44,14 @@ Class User extends CI_Model
 
    $sql="SELECT ID_UTILIZADOR from UTILIZADORES WHERE USERNAME='$user'";
    
-   $query = $this->db->query($sql)->row()->ID_UTILIZADOR;
-  return $query; 
+   if(isset($this->db->query($sql)->row()->ID_UTILIZADOR))
+  		return $this->db->query($sql)->row()->ID_UTILIZADOR;
+   else
+       return 0;
  }
  
  
- function getidx($cookies)
+ function getID_UTILIZADOR($cookies)
  {
 
    $sql="SELECT ID_UTILIZADOR from CISE WHERE SESSION_ID='$cookies'";
