@@ -69,6 +69,17 @@ function get_user_by_name($name){
 	
 }
 
+function setPassword($user, $new_pass){
+	$sql="UPDATE UTILIZADORES SET PASSWORD='$new_pass' WHERE USERNAME='$user'";
+	$this->db->query($sql);
+}
+
+function setAvatar($user, $new_avatar){
+	$sql="UPDATE UTILIZADORES SET AVATAR='$new_avatar' WHERE USERNAME='$user'";
+	$this->db->query($sql);
+}
+
+
 
 function getuser($cookies)
  {

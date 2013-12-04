@@ -24,6 +24,10 @@
 			
 		}
 
+		.button{
+			margin: 3px 0 0 50%;
+		}
+
 		span.destaque{
 			color: #428bca;
 			font-weight: bold;
@@ -44,5 +48,6 @@
 
 		.btn-right{
 			float: right;
+			margin: 0 1%;
 			
 		}

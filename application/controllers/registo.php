@@ -17,14 +17,10 @@ class Registo extends CI_Controller {
 		$config['upload_path'] = './uploads/users';
 		$config['allowed_types'] = 'jpg|png|gif|jpeg';
 		$config['max_size']	= '1024';
-		$config['max_width']  = '800';
-		$config['max_height']  = '600';
 		$config['encrypt_name']  = 'TRUE';
 		$this->load->library('upload',$config);
 
 	}
-	
-	
 	
 	
 	public function index (){
@@ -96,5 +92,5 @@ class Registo extends CI_Controller {
 		$this->load->library('upload', $config);
 
 		
-		}
+	}
 }
