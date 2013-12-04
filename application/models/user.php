@@ -122,11 +122,8 @@ public function get_Idadebydata($datan){
 			$pass = $dados['PASS'];
 			$email = $dados['EMAIL'];
 			$datan = $dados['DATANASCIMENTO'];
-			if($dados['AVATAR'])
-				$avatar= $dados['AVATAR'];
-			else
-				$avatar= 'default.jpg';
-
+			$avatar= $dados['AVATAR'];
+			
 			
 			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan', '$avatar')";
 			$this->db->query($query);

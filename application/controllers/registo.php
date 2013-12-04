@@ -14,11 +14,12 @@ class Registo extends CI_Controller {
 		$this->load->library('table');
 		$this->load->model('user','usermodel');
 
-		$config['upload_path'] = base_url() .'uploads/users/';
-		$config['allowed_types'] = 'gif|jpg|jpeg|png';
-		$config['max_size']	= '2048';
-		$config['remove_spaces']= TRUE;
-		$config['overwrite']= TRUE;
+		$config['upload_path'] = './uploads/users';
+		$config['allowed_types'] = 'jpg|png|gif|jpeg';
+		$config['max_size']	= '1024';
+		$config['max_width']  = '800';
+		$config['max_height']  = '600';
+		$config['encrypt_name']  = 'TRUE';
 		$this->load->library('upload',$config);
 
 	}
@@ -46,23 +47,26 @@ class Registo extends CI_Controller {
 			
 			if($this->form_validation->run()==TRUE){
 
-				if ( ! $this->upload->do_upload()){
-					$error = array('error' => $this->upload->display_errors());	
+				if ( ! $this->upload->do_upload('AVATAR')){
+					$error = array('erro' => $this->upload->display_errors());	
 					
-					$this->load->view('registo');
+					$this->load->view('registo',$error);
+					
 
 				}else{	
 
 					$dados = elements(array('USERNAME','EMAIL','PASS','DATANASCIMENTO','AVATAR'), $this->input->post());
-					var_dump($data);
-
+					$da=$this->upload->data();
+					$dados['AVATAR'] = $da['file_name'];
+					
 					//para guardar a senha em MD5
 					$dados['PASS']=md5($dados['PASS']);			
 					$this->usermodel->db_insert_UTILIZADORES($dados);
 					session_start();
 					$_SESSION['registado'] = true;
 					
-					$this->load->view('registo_sucesso');
+					$data = array('upload_data' => $this->upload->data());
+					$this->load->view('registo_sucesso',$data);
 				}
 			}else{
 				$erros = array('erro'=>'');
@@ -79,4 +83,18 @@ class Registo extends CI_Controller {
 	}
 
 	
+	function do_upload()
+	{
+		$config['upload_path'] = './uploads/users';
+		$config['allowed_types'] = 'jpg|png';
+		$config['max_size']	= '2048';
+		$config['max_width']  = '600';
+		$config['max_height']  = '800';
+		$config['encrypt_name']  = 'TRUE';
+		
+
+		$this->load->library('upload', $config);
+
+		
+		}
 }

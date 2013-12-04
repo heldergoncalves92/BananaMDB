@@ -13,7 +13,7 @@
 						?>
 
 
-						<?php echo form_open('Registo','');?>
+						<?php echo form_open_multipart('Registo','');?>
 						
 						<h5>Utilizador</h5>
 						<?php echo form_input(array('name'=>'USERNAME','class'=>'form-control input','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>

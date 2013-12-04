@@ -7,7 +7,7 @@
 				<hr>
 				<div id="log">
 					<h3>Foi registado com sucesso!! </h3>
-					<h4>Por fovor dirija-se à zona de login para uma melhor experiência de navegação.</h4>
+					<h4>Por favor dirija-se à zona de login para uma melhor experiência de navegação.</h4>
 					<hr>
 					<h3>Bem-Vindo ao:</h3>
 					<div align="center">
