@@ -18,69 +18,6 @@ class Perfil extends CI_Controller {
 		$config['encrypt_name']  = 'TRUE';
 		$this->load->library('upload',$config);
 	}
-/*
-	public function  index(){
-
-		$this->load->view("header");
-
-		$session_id = $this->session->userdata('session_id');
-		$ID_UTILIZADOR = $this->usermodel->getuser($session_id);
-		
-		if($ID_UTILIZADOR){
-			$utilizador=$this->usermodel->get_user_by_name($ID_UTILIZADOR)->result();
-			//var_dump($utilizador);
-			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $ID_UTILIZADOR));
-			$this->load->view("perfil_login",array('idz' => $utilizador));
-		}
-		else{
-			$this->load->view("navbar_base");
-			$this->load->view("not_session");
-		}
-
-		$this->load->view("footer");
-		
-	}
-
-	public function  editar(){
-
-		$this->load->view("header");
-
-		$session_id = $this->session->userdata('session_id');
-		$ID_UTILIZADOR = $this->usermodel->getuser($session_id);
-		
-		if($ID_UTILIZADOR){
-			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $ID_UTILIZADOR));
-			$utilizador=$this->usermodel->get_user_by_name($ID_UTILIZADOR)->result();
-
-
-			$this->form_validation->set_rules('PASS_ANT','Password Actual','trim|required|min_length[6]|max_length[32]|md5');
-			$this->form_validation->set_rules('PASS','Password','trim|required|min_length[6]|max_length[32]');
-			$this->form_validation->set_message('matches','O campo %s está diferente de %s ');
-			$this->form_validation->set_rules('PASS2','Repita a Password','trim|required|max_length[32]|min_length[6]|matches[PASS]|md5');
-
-			if($this->form_validation->run()==TRUE){
-
-				$dados = elements(array('PASS_ANT','PASS2'), $this->input->post());
-				if($dados['PASS_ANT']==$utilizador[0]->PASSWORD){
-					
-					$this->load->view("perfil_editar",array('idz' => $utilizador ,'erro' =>' ', 'sucesso'=> 'Dados Alterados com Sucesso!'));
-				}else{
-					$this->load->view("perfil_editar",array('idz' => $utilizador, 'erro' =>'Password Actual errada!', 'sucesso'=> ' '));
-				}
-
-			}else{
-				$this->load->view('perfil_editar',array('idz' => $utilizador ,'erro' =>' ', 'sucesso'=> ' '));
-			}
-		}
-		else{
-			$this->load->view("navbar_base");
-			$this->load->view("not_session");
-		}
-
-		$this->load->view("footer");
-		
-	}*/
-
 
 	public function  index(){
 
@@ -121,10 +58,11 @@ class Perfil extends CI_Controller {
 					}else{	
 
 						$da=$this->upload->data();
+						if($utilizador[0]->AVATAR!='default.jpg')
+							$bol=unlink('./uploads/users/'.$utilizador[0]->AVATAR);
 						$utilizador[0]->AVATAR = $da['file_name'];
 						$this->load->usermodel->setAvatar($utilizador[0]->USERNAME,$da['file_name']);
-						$this->load->view('perfil_login',array('idz' => $utilizador ,'erro' =>' ','su_avatar'=> 'Avatar Alterado com Sucesso!!', 'sucesso'=> ' ', 'open' => '2'));
-						
+						$this->load->view('perfil_login',array('idz' => $utilizador ,'erro' =>' ','su_avatar'=> 'Avatar Alterado com Sucesso!!', 'sucesso'=> ' ', 'open' => '2'));	
 				}
 
 				}else
@@ -134,9 +72,7 @@ class Perfil extends CI_Controller {
 			$this->load->view("navbar_base");
 			$this->load->view("not_session");
 		}
-
 		$this->load->view("footer");
-		
 	}
 
 
