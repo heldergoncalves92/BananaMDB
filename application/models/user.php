@@ -124,11 +124,6 @@ public function get_Idadebydata($datan){
 	public function db_insert_UTILIZADORES($dados=NULL){
 	
 		if($dados!=NULL):
-			/*$date1=$dados['DNM'];
-			$date2=$dados['ES'];
-			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
-			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
-			//$this->db->insert('UTILIZADORES',$dados);
 			$user = $dados['USERNAME'];
 			$pass = $dados['PASS'];
 			$email = $dados['EMAIL'];

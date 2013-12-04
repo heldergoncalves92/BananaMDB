@@ -43,14 +43,8 @@ class Registo extends CI_Controller {
 			
 			if($this->form_validation->run()==TRUE){
 
-				if ( ! $this->upload->do_upload('AVATAR')){
-					$error = array('erro' => $this->upload->display_errors());	
+				if ($this->upload->do_upload('AVATAR')){
 					
-					$this->load->view('registo',$error);
-					
-
-				}else{	
-
 					$dados = elements(array('USERNAME','EMAIL','PASS','DATANASCIMENTO','AVATAR'), $this->input->post());
 					$da=$this->upload->data();
 					$dados['AVATAR'] = $da['file_name'];
@@ -60,9 +54,25 @@ class Registo extends CI_Controller {
 					$this->usermodel->db_insert_UTILIZADORES($dados);
 					session_start();
 					$_SESSION['registado'] = true;
+	
+					$this->load->view('registo_sucesso');
 					
-					$data = array('upload_data' => $this->upload->data());
-					$this->load->view('registo_sucesso',$data);
+				}else{	
+					$error = array('erro' => $this->upload->display_errors());
+					if($error['erro']=='<p>Não selecionou um arquivo para envio.</p>'){
+
+						$dados = elements(array('USERNAME','EMAIL','PASS','DATANASCIMENTO','AVATAR'), $this->input->post());
+						$dados['AVATAR'] ='default.jpg';
+						//para guardar a senha em MD5
+						$dados['PASS']=md5($dados['PASS']);			
+						$this->usermodel->db_insert_UTILIZADORES($dados);
+						session_start();
+						$_SESSION['registado'] = true;
+						$this->load->view('registo_sucesso');
+					}
+					else
+						$this->load->view('registo',$error);
+					
 				}
 			}else{
 				$erros = array('erro'=>'');
