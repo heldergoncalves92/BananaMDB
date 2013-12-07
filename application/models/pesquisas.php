@@ -54,6 +54,15 @@ where f.ano = $ano");
 		}	
 	
 	
+	public function get_topfilmes($id=NULL){
+		if($id == null)
+				return 0;
+		
+		return $this->db->query("SELECT f.id_filme,f.titulo, f.ano, f.poster  from lista_generos lg, filmes f where f.id_filme = lg.id_filme AND lg.id_genero = '$id' ORDER BY ANO desc");
+			
+		}	
+	
+	
 	
 	// GENEROS
 	
@@ -207,8 +216,26 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 	{
 		return $this->db->query("SELECT MEDIA from viewratingsfilmes WHERE ID_FILME = $id");
 	}
-
+	
+	public function getviewratings()
+	{
+		return $this->db->query("SELECT * from viewratingsfilmes ORDER BY MEDIA DESC");
+	}
+	
+	public function getviewtopratings()
+	{
+		return $this->db->query("SELECT * from viewratingsfilmes where ROWNUM < 11 ORDER BY MEDIA DESC");
+	}
 		
+	public function getviewtopbudget()
+	{
+		return $this->db->query("SELECT * from viewtopbudgetfilmes where ROWNUM < 11");
+	}
+	
+	public function getviewtopgross()
+	{
+		return $this->db->query("SELECT * from viewtopgrossfilmes where ROWNUM < 11");
+	}
 }
 
 ?>

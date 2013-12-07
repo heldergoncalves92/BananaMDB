@@ -23,13 +23,12 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php echo base_url(); ?>">Início</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filmes <b class="caret"></b></a>
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOP 10<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                   <li><a href="<?php echo base_url(); ?>#/">Listar Filmes</a></li>
-                  <li><a href="<?php echo base_url(); ?>#">Mais Caros</a></li>
-                  <li><a href="<?php echo base_url(); ?>#">Mais Rentáveis</a></li>
-                  <li class="divider"></li>
-                  <li><a href="<?php echo base_url(); ?>#">TOP 10</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topbudget">Mais Caros</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topgross">Mais Rentáveis</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topfilmes">Mais Votados</a></li>
+                 <!-- <li class="divider"></li>-->
                 </ul>
             </li>
             <?php

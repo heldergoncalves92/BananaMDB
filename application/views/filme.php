@@ -107,7 +107,7 @@
 				</div>
 				
 				<div class="control-group" >
-				<h4 class="inline">RÉMIOS NOMEADO - </h4>
+				<h4 class="inline">PRÉMIOS NOMEADO - </h4>
 				<label class="control-group"><?php echo $query->PREMIOS_NOMEADO;?></label>
 				</div>
 
