@@ -1,5 +1,10 @@
 
-  <link rel="stylesheet" type="text/css" href="css/main_page.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main_page.css">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="<?php echo base_url(); ?>js/jquery-1.9.1.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script> 
 
     <!-- - - - - - -Carosel - - - - - - -->
 
@@ -14,7 +19,7 @@
     <!-- Wrapper for slides -->
     <div align="middle" class="carousel-inner">
       <div class="item active">
-        <a href="#"><img id="carrosel" src="img/Tron.jpg" ></a>
+        <a href="#"><img id="carrosel" src="<?php echo base_url(); ?>img/Tron.jpg" ></a>
         <div class="carousel-caption">
          	<h1>TRON</h1>
         </div>
@@ -22,15 +27,15 @@
 
 
        <div class="item">
-        <img id="carrosel" src="img/Hangover.jpg" >
+        <img id="carrosel" src="<?php echo base_url(); ?>img/Hangover.jpg" >
         <div class="carousel-caption">
          
         </div>
       </div>
 
       <div  class="item">
-      	<a href="<?php echo base_url(); ?>title/filme/2">
-        <img id="carrosel" src="img/hobbit.jpg" ></a>
+      	<a href="title/filme/2">
+        <img id="carrosel" src="<?php echo base_url(); ?>img/hobbit.jpg" ></a>
         <div class="carousel-caption">
          
         </div>
@@ -54,26 +59,38 @@
       <div id="feed"> 
         <div id="feed-noticias">
             <div class="noticia">
-              <div class="title"><h3>Neil Patrick Harris contra-cena nos 'Monstros'</h3></div>
-              <div class="contend">
-                <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
-                  <div align="center">
-                    <img  class="img-rounded img-feed" src="img/moster.jpg" >
-                  </div>
-                <p>Agora aqui as noticias pretendidas</p>
-              </div>
+
+
+              <?php 
+
+              foreach ($feed as $value) {
+
+                echo
+
+                  "<div class=\"title\"><a class='l_noticia' href='#'><h3>". $value->TITULO ."</h3></a></div>
+                  <p>[". $value->DATA."]</p>
+                  <div class=\"contend\">
+                    <p>".$value->SINOPSE ."</p>
+                      <div align=\"center\">
+                        <img  class=\"img-rounded img-feed\" src=\"". base_url() ."uploads/noticias/". $value->IMAGEM ."\">
+                      </div>
+                      
+                  </div><hr>";
+                
+              }
+              ?>
             </div>
-
-              <hr>
-              <div class="title"><h3>Actores de 'Thor - The Dark World' queixam-se da produção</h3></div>
-              <div class="contend">
-                <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
-                  <div align="center">
-                    <img  class="img-rounded img-feed" src="img/thor.jpg" >
-                  </div>
-                <p>Agora aqui as noticias pretendidas</p>
-              </div>
-
+            <div id='pagination' align='center'>
+              <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li class='active'><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+              </ul>
+            </div>
         </div>
 
 
@@ -84,22 +101,22 @@
           <div id="tab-cin">
             <div id="cell-cin1">
               <div class="top-cin">
-                <img id="S_today" class="img-rounded" src="img/carrie.jpg" >
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/carrie.jpg" >
                 <p>Carrie</p>
               </div>
               <div class="top-cin">
-                <img id="S_today" class="img-rounded" src="img/escape.jpg" >
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/escape.jpg" >
                 <p>Plano de Fuga</p>
               </div>
               
             </div>
             <div id="cell-cin2">
               <div class="top-cin">
-                <img id="S_today" class="img-rounded" src="img/thor.jpg" >
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/thor.jpg" >
                 <p>Thor 2</p>
               </div>
               <div class="top-cin">
-                <img id="S_today" class="img-rounded" src="img/moster.jpg" >
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/moster.jpg" >
                 <p>Mostros</p>
               </div>
             </div>

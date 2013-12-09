@@ -12,6 +12,11 @@
 
 	.ident{text-indent: 5%;}
 
+	a.l_noticia{
+		text-decoration: none;
+		color: #333333;
+	}
+
 	#feed{
 		text-indent: 5%;
 		display: table;
@@ -49,6 +54,13 @@
 		width: 50%;
 		height: 100%
 	}
+
+	#pagination a{
+		padding: 0;
+		text-align: center;
+	}
+
+
 
 
 
