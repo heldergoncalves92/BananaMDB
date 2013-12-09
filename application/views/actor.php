@@ -7,8 +7,13 @@
 		if ($idactor==NULL)
 			redirect(base_url());//se entra sem id no url vai para pagina principal
 
-		$query = $this->pesquisamodel->get_actorbyid($idactor)->row();
-
+		if($idactor == 'fuckingELREIshaunT')
+			$query = $this->pesquisamodel->get_actorbyid(1)->row();
+		else	
+			if(is_numeric($idactor)==TRUE)
+				$query = $this->pesquisamodel->get_actorbyid($idactor)->row();
+			else
+				redirect(base_url());
 		if ($query == FALSE)//não existe filme com esse id
 			redirect(base_url());
 

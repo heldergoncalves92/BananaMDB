@@ -13,7 +13,11 @@
 	if ($idfilme==NULL)
 		redirect(base_url());//se entra sem id no url vai para pagina principal
 	
-	$query = $this->pesquisamodel->get_filmebyid($idfilme)->row();
+	if(is_numeric($idfilme)==TRUE)
+				$query = $this->pesquisamodel->get_filmebyid($idfilme)->row();
+			else
+				redirect(base_url());
+	
 
 	if ($query == FALSE)//não existe filme com esse id
 		redirect(base_url());
@@ -93,12 +97,12 @@
 
 				<div class="control-group" >
 				<h4 class="inline">BUDGET - </h4>
-				<label class="control-group"><?php if ($query->BUDGET>0) echo $query->BUDGET . '€' ; else echo 'Sem Informações';?></label>
+				<label class="control-group"><?php if ($query->BUDGET>0) echo number_format($query->BUDGET,0,'.',' ') . ' €' ; else echo 'Sem Informações';?></label>
 				</div>
 
 				<div class="control-group" >
 				<h4 class="inline">GROSS - </h4>
-				<label class="control-group"><?php if ($query->GROSS>0) echo $query->GROSS . '€' ; else echo 'Sem Informações';?></label>
+				<label class="control-group"><?php if ($query->GROSS>0) echo number_format($query->GROSS,0,'.',' ') . ' €' ; else echo 'Sem Informações';?></label>
 				</div>
 
 				<div class="control-group" >

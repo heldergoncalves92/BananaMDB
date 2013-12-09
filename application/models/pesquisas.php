@@ -219,23 +219,35 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 	
 	public function getviewratings()
 	{
-		return $this->db->query("SELECT * from viewratingsfilmes ORDER BY MEDIA DESC");
+		return $this->db->query("SELECT * from viewratingsfilmes");
 	}
 	
 	public function getviewtopratings()
 	{
-		return $this->db->query("SELECT * from viewratingsfilmes where ROWNUM < 11 ORDER BY MEDIA DESC");
+		return $this->db->query("SELECT * from viewtopratingfilmes");
+	}
+	
+	public function getviewtopvotos()
+	{
+		return $this->db->query("SELECT * from viewtopvotosfilmes");
 	}
 		
 	public function getviewtopbudget()
 	{
-		return $this->db->query("SELECT * from viewtopbudgetfilmes where ROWNUM < 11");
+		return $this->db->query("SELECT * from viewtopbudgetfilmes");
 	}
+	
 	
 	public function getviewtopgross()
 	{
-		return $this->db->query("SELECT * from viewtopgrossfilmes where ROWNUM < 11");
+		return $this->db->query("SELECT * from viewtopgrossfilmes");
 	}
+	
+	public function getviewtopprofit()
+	{
+		return $this->db->query("SELECT * from viewtopprofitfilmes");
+	}
+
 }
 
 ?>

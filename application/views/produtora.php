@@ -6,8 +6,11 @@
 		$idprodutora = $this->uri->segment(3);
 		if ($idprodutora==NULL)
 			redirect(base_url());//se entra sem id no url vai para pagina principal
-
-		$query = $this->pesquisamodel->get_produtorabyid($idprodutora);
+		if(is_numeric($idprodutora)==TRUE)
+				$query = $this->pesquisamodel->get_produtorabyid($idprodutora);
+			else
+				redirect(base_url());
+		
 		
 		if ($query == FALSE)//não existe filme com esse id
 			redirect(base_url());

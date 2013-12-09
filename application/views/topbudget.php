@@ -19,7 +19,7 @@
 			              	if($linha==NULL)
 								break;
 			              	$this->table->add_row( '<a href=' .   base_url() . 'title/filme/' . $linha->ID_FILME . '><img src="' . base_url() . 'uploads/posters/' . $linha->POSTER . '" width="50px" height="auto""></a>',
-			              	$linha->BUDGET . ' €',
+			              	number_format($linha->BUDGET,0,'.',' ') . ' €',
 			              	'<a href=' .   base_url() . 'title/filme/' . $linha->ID_FILME . '>' . $linha->TITULO . '</a> (' . $linha->ANO . ') <br> ');
 							$cfilmes++;
 						  	}

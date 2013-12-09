@@ -21,7 +21,11 @@ class Pesquisa extends CI_Controller {
 	
 	
 	public function index (){
-
+		
+		if($this->input->post('PESQUISA')=='')
+			redirect(base_url());
+		
+		
 		//FILMES
 		$filmesquery = $this->pesquisamodel->getfilmesbynome($this->input->post('PESQUISA'));
 		$filmespesquisa = $filmesquery->result(); 
@@ -45,8 +49,7 @@ class Pesquisa extends CI_Controller {
 
 			
 			
-		if($this->input->post('PESQUISA')=='')
-			redirect(base_url());
+		
 			
 		$this->load->view('header');
 		$session_id = $this->session->userdata('session_id');

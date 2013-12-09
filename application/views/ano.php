@@ -6,7 +6,9 @@
 		$ano = $this->uri->segment(3);
 		if ($ano==NULL)
 			redirect(base_url());//se entra sem id no url vai para pagina principal
-
+		if(is_numeric($ano)==FALSE)
+				redirect(base_url());
+			
 //		$query = $this->pesquisamodel->getfilmesbyano($ano)->row();
 
 //		if ($query == FALSE)//não existe filme com esse id

@@ -27,8 +27,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOP 10<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="<?php echo base_url(); ?>chart/topbudget">Mais Caros</a></li>
-                  <li><a href="<?php echo base_url(); ?>chart/topgross">Mais Rentáveis</a></li>
-                  <li><a href="<?php echo base_url(); ?>chart/topfilmes">Mais Votados</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topprofit">Mais Rentáveis</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topfilmes">Melhor Classificados</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topvotos">Mais Votados</a></li>
+                  <li><a href="<?php echo base_url(); ?>chart/topgross">Maiores Ganhos</a></li>
                 </ul>
             </li>
             <?php

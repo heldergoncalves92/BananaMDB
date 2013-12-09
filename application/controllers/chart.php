@@ -44,6 +44,26 @@ class chart extends CI_Controller {
 		$this->load->view('footer');
 	}
 	
+
+	public function topvotos (){
+			
+		$this->load->view('header');
+		$session_id = $this->session->userdata('session_id');
+		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
+		
+		
+		$filmes = $this->pesquisamodel->getviewtopvotos()->result();
+		
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+
+		else 
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));	
+
+		$this->load->view('topvotos.php',array("filmes"=>$filmes));
+		$this->load->view('footer');
+	}	
+	
 	
 	public function topgross (){
 			
@@ -80,6 +100,26 @@ class chart extends CI_Controller {
 			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));	
 
 		$this->load->view('topbudget.php',array("filmes"=>$filmes));
+		$this->load->view('footer');
+	}
+	
+	
+	public function topprofit (){
+			
+		$this->load->view('header');
+		$session_id = $this->session->userdata('session_id');
+		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
+		
+		
+		$filmes = $this->pesquisamodel->getviewtopprofit()->result();
+		
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+
+		else 
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));	
+
+		$this->load->view('topprofit.php',array("filmes"=>$filmes));
 		$this->load->view('footer');
 	}
 
