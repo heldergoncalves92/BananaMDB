@@ -1,11 +1,7 @@
 
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main_page.css">
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="<?php echo base_url(); ?>js/jquery-1.9.1.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script> 
-
+  
     <!-- - - - - - -Carosel - - - - - - -->
 
    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -82,13 +78,29 @@
             </div>
             <div id='pagination' align='center'>
               <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li class='active'><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
+                <?php 
+                 
+                    if(($n_pag-2)>1){
+                      $p=$n_pag-1;
+                      echo "<li><a href='".base_url()."inicio/page/$p'>&laquo;</a></li>";
+                      $x=$n_pag-2;
+                    }else
+                        $x=1;
+
+                    for(;$x<$n_pag;$x++)
+                      echo "<li><a href='".base_url()."inicio/page/$x'>$x</a></li>";
+
+                    echo "<li class='active'><a href='".base_url()."inicio/page/$n_pag'>$n_pag</a></li>";
+
+                    for($x=$n_pag+1;$x<$pages;$x++)
+                      echo "<li><a href='".base_url()."inicio/page/$x'>$x</a></li>";
+
+                    if(($n_pag+2)<$pages){
+                      $p=$n_pag+1;
+                      echo "<li><a href='".base_url()."inicio/page/$p'>&raquo;</a></li>";
+                    }
+
+                ?>
               </ul>
             </div>
         </div>
