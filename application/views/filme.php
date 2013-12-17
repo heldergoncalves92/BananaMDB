@@ -181,7 +181,7 @@
 
 								if($idade>0){//Está logado
 									if($idade>=18 && $idade<21)//maiores de 18 e menores de 21
-										echo "<iframe width=\"100%\" src=\"//www.youtube.com/embed/<?php echo $query->TRAILER ?>\" frameborder=\"0\" allowfullscreen></iframe>";
+										echo "<iframe width=\"100%\" src=\"//www.youtube.com/embed/<?php echo $query->TRAILER ?>\" frameborder=\"0\"></iframe>";
 									else 
 										if($idade>=21)//para adultos
 											echo "<iframe src=\"http://flashservice.xvideos.com/embedframe/$query->TRAILER\" frameborder=0 width=100% scrolling=no></iframe>";
@@ -192,7 +192,7 @@
 									echo "Conteúdo Susceptível de ferir a sensibilidade dos visitantes.";//Não está logado
 							}
 							else 
-								echo "<iframe width=\"100%\" height=\"315\" src=\"//www.youtube.com/embed/$query->TRAILER\" frameborder=\"0\" allowfullscreen></iframe>";
+								echo "<iframe width=\"100%\" height=\"315\" src=\"//www.youtube.com/embed/$query->TRAILER\" frameborder=\"0\"></iframe>";
 						?>
 				      </div>
 				    </div><!-- /.modal-content -->

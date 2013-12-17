@@ -63,7 +63,7 @@
 
                 echo
 
-                  "<div class=\"title\"><a class='l_noticia' href='#'><h3>". $value->TITULO ."</h3></a></div>
+                  "<div class=\"title\"><a class='l_noticia' href='".base_url()."title/noticia/".$value->ID_NOTICIA."'><h3>". $value->TITULO ."</h3></a></div>
                   <p>[". $value->DATA."]</p>
                   <div class=\"contend\">
                     <p>".$value->SINOPSE ."</p>

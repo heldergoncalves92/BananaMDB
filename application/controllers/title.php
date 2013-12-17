@@ -14,6 +14,7 @@ class title extends CI_Controller {
 		$this->load->library('table');
 		$this->load->model('pesquisas','pesquisamodel');
 		$this->load->model('user','usermodel');
+		$this->load->model('noticias','notmodel');
 	}
 	
 	
@@ -145,4 +146,24 @@ class title extends CI_Controller {
 		$this->load->view('footer');
 		
 	}
+
+	function noticia($id=1){
+
+		$this->load->view('header');
+		$session_id = $this->session->userdata('session_id');
+		$IDUTILIZADOR = $this->usermodel->getuser($session_id);
+		
+		if ($IDUTILIZADOR ==FALSE)
+			$this->load->view('navbar_base');
+			
+		else
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));
+		
+		$noticia=$this->notmodel->get_NoticiaByID($id);
+
+		//var_dump($noticia[0]);
+		$this->load->view('noticia',array('noticia'=>$noticia[0]));
+		$this->load->view('footer');	
+	}
+
 }?>

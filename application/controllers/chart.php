@@ -34,11 +34,11 @@ class chart extends CI_Controller {
 		
 		$filmes = $this->pesquisamodel->getviewtopratings()->result();
 		
-		if ($IDUTILIZADOR ==FALSE)
-			$this->load->view('navbar_base');
+		if ($IDUTILIZADOR)
+			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));	
 
 		else 
-			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));	
+			$this->load->view('navbar_base');
 
 		$this->load->view('topfilmes.php',array("filmes"=>$filmes));
 		$this->load->view('footer');
