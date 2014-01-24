@@ -131,7 +131,7 @@ public function get_Idadebydata($datan){
 			$avatar= $dados['AVATAR'];
 			
 			
-			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan', '$avatar')";
+			$query = "INSERT INTO UTILIZADORES (USERNAME,EMAIL,PASSWORD,DATA_NASCIMENTO,AVATAR,ESTADO) VALUES ('$user','$email','$pass','$datan', '$avatar',1)";
 			$this->db->query($query);
 			$this->session->set_flashdata('registook','Registou-se com Sucesso');
 			
