@@ -6,7 +6,7 @@ class Noticias extends CI_Model {
 	public function get_FeedNoticias($n_page = 0){
 
 		$n_por_page=3;
-		$sql_count='select count(*) as count from Noticias n';
+		$sql_count='select count(*) as count from Noticias';
 		$result= (INT)$this->db->query($sql_count)->result()[0]->COUNT;
 		if($n_page){
 			$count=$result-($n_por_page*$n_page);
