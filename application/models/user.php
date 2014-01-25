@@ -56,7 +56,7 @@ Class User extends CI_Model
 
    $sql="SELECT ID_UTILIZADOR from CISE WHERE SESSION_ID='$cookies'";
    
-   $query = $this->db->query($sql)->row()->IDX;
+   $query = $this->db->query($sql)->row()->ID_UTILIZADOR;
   return $query; 
  }
 
@@ -151,6 +151,27 @@ public function get_Idadebydata($datan){
 			$this->db->update('UTILIZADORES',$dados,$condicao);
 			$this->session->set_flashdata('edicaook','Editou com Sucesso');
 			redirect(current_url());
+		endif;		
+	}
+	
+	public function incstat($ID_UTILIZADOR=NULL){
+	
+
+		if($ID_UTILIZADOR!=NULL):
+			
+			$query = "SELECT * FROM userstats where id_utilizador=$ID_UTILIZADOR";
+			$query = $this->db->query($query);
+			
+			
+			if($query -> num_rows() == 1){
+				$VCOUNT=$query->row()->VCOUNT +1;
+				$query = "UPDATE userstats set vcount = $VCOUNT where id_utilizador=$ID_UTILIZADOR";
+				$nova = $this->db->query($query);}
+			else {
+				$query = "INSERT INTO userstats (id_utilizador, vcount) values($ID_UTILIZADOR,1)";
+				$VCOUNT = $this->db->query($query);
+			}
+			
 		endif;		
 	}
 	

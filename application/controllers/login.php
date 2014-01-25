@@ -73,6 +73,11 @@ class Login extends CI_Controller {
 				$ID_UTILIZADOR = $this->usermodel->getID_UTILIZADOR($sessid);
 				//		   echo $ID_UTILIZADOR.' <- id| ';
 				$user = $this->usermodel->getuser($sessid);
+				
+				
+				
+				$this->usermodel->incstat($ID_UTILIZADOR);
+				
 				//			   echo $user.' <- user| ';
 				$erros = array('erro'=>'');
 				redirect(current_url());
