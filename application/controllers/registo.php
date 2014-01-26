@@ -1,4 +1,4 @@
-s<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Registo extends CI_Controller {
 	

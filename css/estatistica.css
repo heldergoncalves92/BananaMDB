@@ -1,0 +1,16 @@
+	
+	#feed-block{
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	.block{
+		text-indent: 5%;
+		padding: 10px 10%;
+	}
+
+
+	#chartContainer {
+	 	width: 100%; 
+	  	height: 100%;
+	}

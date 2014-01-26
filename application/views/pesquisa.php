@@ -82,7 +82,8 @@
 			              foreach ($realizadores as $linha) {
 			              	if($linha==NULL)
 								break;
-			             	$this->table->add_row( '<a href=' .   base_url() . 'title/realizador/' . $linha->ID_REALIZADOR . '>' . $linha->NOME . '</a> <br> ');
+			             	$this->table->add_row( '<a href=' .   base_url() . 'title/realizador/' . $linha->ID_REALIZADOR . '><img src="' . base_url() . 'uploads/realizadores/' . $linha->IMAGEM . '" width="50px" height="auto""></a>',
+			             		'<a href=' .   base_url() . 'title/realizador/' . $linha->ID_REALIZADOR . '>' . $linha->NOME . '</a> <br> ');
 							$crealizadores++;
 			              	}
 						  if($crealizadores==0)

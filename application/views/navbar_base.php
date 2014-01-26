@@ -1,7 +1,7 @@
     
    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="<?php echo base_url(); ?>js/jquery-1.9.1.js"></script>
+     <script src="<?php echo base_url(); ?>js/chartJS/jquery-2.0.3.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
@@ -22,7 +22,7 @@
       
       <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?php echo base_url(); ?>">Início</a></li>
+            <li><a href="<?php echo base_url(); ?>estatistica">Estatística</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">TOP 10<b class="caret"></b></a>
                 <ul class="dropdown-menu">

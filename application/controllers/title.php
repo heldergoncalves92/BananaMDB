@@ -161,7 +161,6 @@ class title extends CI_Controller {
 		
 		$noticia=$this->notmodel->get_NoticiaByID($id);
 
-		//var_dump($noticia[0]);
 		$this->load->view('noticia',array('noticia'=>$noticia[0]));
 		$this->load->view('footer');	
 	}

@@ -10,6 +10,11 @@
     <!-- Bootstrap -->
 
     <link href="<?php echo base_url(); ?>css/bootstrap.css" rel="stylesheet">
+    <script src="<?php echo base_url(); ?>js/chartJS/jquery-2.0.3.min.js"></script>
+    <!--script src="js/chartJS/knockout-3.0.0.js"></script-->
+    <!--script src="js/chartJS/angular.min.js"></script-->
+    <script src="<?php echo base_url(); ?>js/chartJS/globalize.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/chartJS/dx.chartjs.js"></script>
 
     <style type="text/css">
       body,html{  width: 100%;
@@ -33,7 +38,7 @@
             NAO SEI PORQUÊ, MAS TEM DE TER EM MAIS QUE UMA PAGINA PARA FUNCIONAR-->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="<?php echo base_url(); ?>js/jquery-1.9.1.js"></script>
+     <script src="<?php echo base_url(); ?>js/chartJS/jquery-2.0.3.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 

@@ -159,18 +159,9 @@ public function get_Idadebydata($datan){
 
 		if($ID_UTILIZADOR!=NULL):
 			
-			$query = "SELECT * FROM userstats where id_utilizador=$ID_UTILIZADOR";
-			$query = $this->db->query($query);
-			
-			
-			if($query -> num_rows() == 1){
-				$VCOUNT=$query->row()->VCOUNT +1;
-				$query = "UPDATE userstats set vcount = $VCOUNT where id_utilizador=$ID_UTILIZADOR";
-				$nova = $this->db->query($query);}
-			else {
-				$query = "INSERT INTO userstats (id_utilizador, vcount) values($ID_UTILIZADOR,1)";
+				$query = "INSERT INTO userstats (id_utilizador) values($ID_UTILIZADOR)";
 				$VCOUNT = $this->db->query($query);
-			}
+			
 			
 		endif;		
 	}
