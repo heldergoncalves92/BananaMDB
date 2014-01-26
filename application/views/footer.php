@@ -22,7 +22,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?php echo base_url(); ?>js/chartJS/jquery-2.0.3.min.js"></script>
-	<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+    
+	  <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
   </body>
 </html>

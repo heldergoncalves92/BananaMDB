@@ -1,9 +1,7 @@
 	
 	<link rel="stylesheet" href="<?php echo base_url();?>css/estatistica.css">
 
-	 <script src="<?php echo base_url(); ?>js/chartJS/jquery-2.0.3.min.js"></script>
-    <script src="<?php echo base_url(); ?>js/chartJS/globalize.min.js"></script>
-    <script src="<?php echo base_url(); ?>js/chartJS/dx.chartjs.js"></script>
+		
 
 	<script src="<?php echo base_url(); ?>js/estatistica.js">
 		

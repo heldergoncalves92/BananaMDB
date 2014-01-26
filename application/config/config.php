@@ -15,7 +15,7 @@
 |
 */
 $config['base_url']	= 'http://localhost/BananaMDB/';
-//$config['base_url']	= 'http://95.69.68.139/BananaMDB/';
+//$config['base_url']	= 'http://31.22.219.96/BananaMDB/';
 
 /*
 |--------------------------------------------------------------------------
