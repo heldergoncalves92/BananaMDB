@@ -12,8 +12,8 @@ class estatistica extends CI_Controller {
 		$this->load->library('form_validation');	
 		$this->load->library('session');
 		$this->load->library('table');
-		$this->load->model('pesquisas','pesquisamodel');
 		$this->load->model('user','usermodel');
+		$this->load->model('estatisticas','estmodel');
 	}
 	
 	
@@ -28,8 +28,16 @@ class estatistica extends CI_Controller {
 			
 		else
 			$this->load->view("navbar_Login",array('ID_UTILIZADOR' => $IDUTILIZADOR));
+
+		$acessos=$this->estmodel->get_acessos();
+
+		$registos=$this->estmodel->get_registos();
+
+		$ngeneros=$this->estmodel->get_ngeneros();
+		//var_dump($ngeneros);
+
 		
-		$this->load->view('estatistica');
+		$this->load->view('estatistica', array('acessos' =>$acessos, 'registos'=>$registos,'ngeneros'=> $ngeneros));
 		$this->load->view('footer');	
 
 	}

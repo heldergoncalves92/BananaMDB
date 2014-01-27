@@ -131,7 +131,26 @@
 				
 				<div class="control-group" >
 					<h4 class="inline">RATING - </h4>
+						  <?php 	if( $query->RATING<=6)
+						
+						             echo '<span class="label label-default">' .  'TODOS' . '</span>';
+						          else if( $query->RATING<=8)
+						              echo '<span class="label label-primary">' .  $query->RATING . '</span>'; 
+						          else if( $query->RATING<=12)
+						              echo '<span class="label label-success">' .  $query->RATING . '</span>'; 
+						          else if( $query->RATING<=16)
+						              echo '<span class="label label-warning">' .  $query->RATING . '</span>'; 
+						
+						         else if( $query->RATING<=18)
+						              echo '<span class="label label-danger">' .  $query->RATING . '</span>'; 
+						
+						         else 
+						             echo '<span class="label label-xred">' .  'ADULTO' . '</span>';                                                   
+						              
+						              ?>
+				</div>
 
+			<div class="control-group" >
 				<label class="control-group">
 					<?php if(isset($this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA))
 								$media = $this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA;
