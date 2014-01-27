@@ -19,7 +19,7 @@
 			              	if($linha==NULL)
 								break;
 			              	$this->table->add_row( '<a href=' .   base_url() . 'title/filme/' . $linha->ID_FILME . '><img src="' . base_url() . 'uploads/posters/' . $linha->POSTER . '" width="50px" height="auto""></a>',
-			              	'<b>' . number_format($linha->MEDIA,0,'.',' ') . '</b> ( ' . $linha->VOTOS . ' votos )',
+			              	'<b>' . $linha->MEDIA . '</b> ( ' . $linha->VOTOS . ' votos )',
 			              	'<a href=' .   base_url() . 'title/filme/' . $linha->ID_FILME . '>' . $linha->TITULO . '</a> (' . $linha->ANO . ') <br> ');
 							$cfilmes++;
 						  	}

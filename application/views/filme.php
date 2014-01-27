@@ -140,7 +140,6 @@
 						              echo '<span class="label label-success">' .  $query->RATING . '</span>'; 
 						          else if( $query->RATING<=16)
 						              echo '<span class="label label-warning">' .  $query->RATING . '</span>'; 
-						
 						         else if( $query->RATING<=18)
 						              echo '<span class="label label-danger">' .  $query->RATING . '</span>'; 
 						
@@ -153,7 +152,8 @@
 			<div class="control-group" >
 				<label class="control-group">
 					<?php if(isset($this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA))
-								$media = $this->pesquisamodel->getmediabyidview($idfilme)->row()->MEDIA;
+								{$roww = $this->pesquisamodel->getmediabyidview($idfilme)->row();
+								$media = $roww->MEDIA . '( ' . $roww->VOTOS . ' votos )';}
 							else 
 								$media = 'Sem Votos';
 						echo $media;?>
@@ -164,18 +164,111 @@
 					
 					<label class="control-group">
 					<?php
-					$fo = 'title/filme/' . $idfilme; if($ID_UTILIZADOR>0 ) echo form_open($fo);?>
-<input name="star1" type="radio" class="star" value="1"/>
-<input name="star1" type="radio" class="star" value="2"/>
-<input name="star1" type="radio" class="star" value="3"/>
-<input name="star1" type="radio" class="star" value="4"/>
-<input name="star1" type="radio" class="star" value="5"/>
-<input name="star1" type="radio" class="star" value="6"/>
-<input name="star1" type="radio" class="star" value="7"/>
-<input name="star1" type="radio" class="star" value="8"/>
-<input name="star1" type="radio" class="star" value="9"/>
-<input name="star1" type="radio" class="star" value="10"/>
-<?php if($ID_UTILIZADOR>0 ) {
+					$fo = 'title/filme/' . $idfilme; if($ID_UTILIZADOR>0 ) echo form_open($fo);
+					$media = number_format($roww->MEDIA,0,'.',' ');
+					
+					$votou = $this->pesquisamodel->getvotosfilmebyuser($idfilme,$ID_UTILIZADOR);
+					//var_dump($votou);
+					if($votou->num_rows()>0)
+						$votou = $votou->row() -> PONTUACAO;
+					else
+						$votou = 0;
+					
+					
+					
+					if($ID_UTILIZADOR>0 && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="1"/>';
+					else if($votou == 1)
+						echo '<input name="star1" type="radio" class="star" value="1" disabled="disabled" checked="checked"/>';
+					else if($media == 1 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="1" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="1" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0  && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="2"/>';
+					else if($votou == 2)
+						echo '<input name="star1" type="radio" class="star" value="2" disabled="disabled" checked="checked"/>';
+					else if($media == 2 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="2" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="2" disabled="disabled"/>';
+					
+					
+					
+					if($ID_UTILIZADOR>0 && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="3"/>';
+					else if($votou == 3)
+						echo '<input name="star1" type="radio" class="star" value="3" disabled="disabled" checked="checked"/>';
+					else if($media == 3 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="3" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="3" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0 && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="4"/>';
+					else if($votou == 4)
+						echo '<input name="star1" type="radio" class="star" value="4" disabled="disabled" checked="checked"/>';
+					else if($media == 4 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="4" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="4" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0 && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="5"/>';
+					else if($votou == 5)
+						echo '<input name="star1" type="radio" class="star" value="5" disabled="disabled" checked="checked"/>';
+					else if($media == 5 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="5" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="5" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0  && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="6"/>';
+					else if($votou == 6)
+						echo '<input name="star1" type="radio" class="star" value="6" disabled="disabled" checked="checked"/>';
+					else if($media == 6  && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="6" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="6" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0  && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="7"/>';
+					else if($votou == 7)
+						echo '<input name="star1" type="radio" class="star" value="7" disabled="disabled" checked="checked"/>';
+					else if($media == 7 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="7" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="7" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0  && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="8"/>';
+					else if($votou == 8)
+						echo '<input name="star1" type="radio" class="star" value="8" disabled="disabled" checked="checked"/>';
+					else if($media == 8 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="8" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="8" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0  && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="9"/>';
+					else if($votou == 9)
+						echo '<input name="star1" type="radio" class="star" value="9" disabled="disabled" checked="checked"/>';
+					else if($media == 9 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="9" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="9" disabled="disabled"/>';
+					
+					if($ID_UTILIZADOR>0  && $votou==0)
+						echo '<input name="star1" type="radio" class="star" value="10"/>';
+					else if($votou == 10)
+						echo '<input name="star1" type="radio" class="star" value="10" disabled="disabled" checked="checked"/>';
+					else if($media == 10 && $votou == 0)
+						echo '<input name="star1" type="radio" class="star" value="10" disabled="disabled" checked="checked"/>';
+					else
+						echo '<input name="star1" type="radio" class="star" value="10" disabled="disabled"/>';
+					
+if($ID_UTILIZADOR>0 && $votou==0 ) {
 	$attributes = 'class = "btn btn-success button"';
 	echo form_submit('submit', 'Avaliar', $attributes); //echo form_input(array('name'=>'required star0','class'=>'required star','type'=>'radio'));
 	echo form_close();}?>

@@ -214,7 +214,7 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 	
 	public function getmediabyidview($id=NULL)
 	{
-		return $this->db->query("SELECT MEDIA from viewratingsfilmes WHERE ID_FILME = $id");
+		return $this->db->query("SELECT * from viewratingsfilmes WHERE ID_FILME = $id");
 	}
 	
 	public function getviewratings()
@@ -248,6 +248,15 @@ where UPPER(f.NOME) like UPPER('%$nome%')");
 		return $this->db->query("SELECT * from viewtopprofitfilmes");
 	}
 
+	public function getvotosfilmebyuser($idfilme, $iduser)
+	{
+		//if($iduser>0)
+			return $this->db->query("Select * from tabela_ratings where id_utilizador=$iduser AND id_filme = $idfilme");
+		//else
+			//return null;
+	}
+	
+	
 }
 
 ?>
