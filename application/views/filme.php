@@ -1,6 +1,6 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>css/filme.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>css/jquery.rating.css">
-		<script src='<?php echo base_url();?>js/jquery.js' type="text/javascript"></script>
+		
 	<script src='<?php echo base_url();?>js/jquery.MetaData.js' type="text/javascript" language="javascript"></script>
  <script src='<?php echo base_url();?>js/jquery.rating.js' type="text/javascript" language="javascript"></script>
  <link href='<?php echo base_url();?>js/jquery.rating.css' type="text/css" rel="stylesheet"/>
@@ -26,6 +26,8 @@
 
 	$realizador = $this->pesquisamodel->get_realizadorLbyid($query->ID_REALIZADOR)->result();
 	$produtora = $this->pesquisamodel->get_produtoraLbyid($query->ID_PRODUTORA)->result();
+	$votos=$this->estmodel->get_Vfilme($idfilme);
+
 	?>
 
 
@@ -182,9 +184,9 @@
 </label>
 				</div>
 				
-				<hr>
 				
 				
+				<div id="vfilme" width='100%' style="height:200px;"></div>
 
 				<!-- Modal -->
 				<div class="modal fade block" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -240,4 +242,39 @@
 				?>
 			</div>
 		</div>
+
+
+		<script>
+
+			var vfilme =[
+				<?php	foreach ($votos as $value) {
+						echo "{genero:'$value->PONTUACAO', val: $value->NVOTO },";}?>      
+		        ];
+
+			$(document).ready(function(){
+			    $("#vfilme").dxPieChart({
+				    dataSource: vfilme,
+				    title: "Votos",
+					tooltip: {
+						enabled: true,
+						
+						percentPrecision: 2,
+						
+					},
+					legend: {
+						horizontalAlignment: "right",
+						verticalAlignment: "top",
+						margin: 0
+					},
+					series: [{
+						type: "doughnut",
+						argumentField: "genero"
+						
+					}]
+				});
+
+
+			});
+
+		</script>
 		

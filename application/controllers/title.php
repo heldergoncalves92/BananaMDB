@@ -15,6 +15,7 @@ class title extends CI_Controller {
 		$this->load->model('pesquisas','pesquisamodel');
 		$this->load->model('user','usermodel');
 		$this->load->model('noticias','notmodel');
+		$this->load->model('estatisticas','estmodel');
 	}
 	
 	

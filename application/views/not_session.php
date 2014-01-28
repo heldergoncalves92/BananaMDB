@@ -1,4 +1,4 @@
-	<link rel="stylesheet" type="text/css" href="css/block.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/block.css">
 
 	<div id="feed-block" class="well">
 	  	<div class="block">

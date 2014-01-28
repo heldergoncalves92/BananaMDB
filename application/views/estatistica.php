@@ -2,7 +2,7 @@
 	<link rel="stylesheet" href="<?php echo base_url();?>css/estatistica.css">
 
 		
-		 <?php //var_dump($ngeneros);?>
+		 <?php //var_dump($fetarias);?>
 
 		<div id="feed-block" class="well">
 			<div class="block">
@@ -10,13 +10,17 @@
 				<hr>
 				<div id="feed-noticias" width='100%'>
 					<div class='table big'>
-            			<div id="ngeneros" class='cell1' width='100%'></div>
+            			<div id="ngeneros"  width='100%'></div>
 		             	
             		</div>
 
             		<div class='table'>
             			<div id="n_acessos" class='cell1' width='50%'></div>
 		             	<div id="n_registos" class='cell2' width='50%'></div>
+            		</div>
+            		<div class='table'>
+            			<div id="fetarias" class='cell1' width='50%'></div>
+		             	
             		</div>
             		
             		          	
@@ -46,6 +50,15 @@
 			<?php	foreach ($ngeneros as $value) {
 					echo "{genero:'$value->NOME', val: $value->PERC },";}?>      
 	        ];
+
+	        var fetarias =[
+				
+			<?php   echo "{faixa:'$fetarias->FAIXA1', val: $fetarias->NUM1 },
+					{faixa:'$fetarias->FAIXA2', val: $fetarias->NUM2 },
+					{faixa:'$fetarias->FAIXA3', val: $fetarias->NUM3 },
+					{faixa:'$fetarias->FAIXA4', val: $fetarias->NUM4 }";?>      
+	        ];
+
 
 			$("#n_acessos").dxChart({
                 dataSource: n_acessos,
@@ -100,6 +113,33 @@
 				series: [{
 					type: "doughnut",
 					argumentField: "genero",
+					label: {
+						visible: true,
+						
+						connector: {
+							visible: true
+						}
+					}
+				}]
+			});
+
+			$("#fetarias").dxPieChart({
+			    dataSource: fetarias,
+			    title: "Utilizadores por Faixas Etárias",
+				tooltip: {
+					enabled: true,
+					
+					percentPrecision: 2,
+					
+				},
+				legend: {
+					horizontalAlignment: "right",
+					verticalAlignment: "top",
+					margin: 0
+				},
+				series: [{
+					type: "doughnut",
+					argumentField: "faixa",
 					label: {
 						visible: true,
 						

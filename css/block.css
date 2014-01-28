@@ -47,6 +47,17 @@
 			padding-left: 10%;
 		}
 
+		.cell1{
+			display: table-cell;
+			width: 55%;
+			padding-right: 2%;
+			padding-top: 0;
+		}
+		.cell2{
+			display: table-cell;
+			width: 44%;
+			padding-left: 2%;
+		}
 
 
 

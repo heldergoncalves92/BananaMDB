@@ -34,10 +34,12 @@ class estatistica extends CI_Controller {
 		$registos=$this->estmodel->get_registos();
 
 		$ngeneros=$this->estmodel->get_ngeneros();
+
+		$fetarias=$this->estmodel->get_fetarias();
 		//var_dump($ngeneros);
 
 		
-		$this->load->view('estatistica', array('acessos' =>$acessos, 'registos'=>$registos,'ngeneros'=> $ngeneros));
+		$this->load->view('estatistica', array('acessos' =>$acessos, 'registos'=>$registos,'ngeneros'=> $ngeneros,'fetarias'=>$fetarias));
 		$this->load->view('footer');	
 
 	}

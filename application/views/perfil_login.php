@@ -1,4 +1,4 @@
-	<link rel="stylesheet" type="text/css" href="css/perfil.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/perfil.css">
 	
 
 	<?php 
