@@ -548,6 +548,20 @@ h6 .small {
   font-size: 75%;
 }
 
+h4.inline {
+display: inline;
+padding: 0 .5em 0 0;
+}
+
+
+
+h4 {
+color: #666;
+font-size: 13px;
+margin: .35em 0 .25em;
+padding: 0;
+}
+
 h1,
 .h1 {
   font-size: 36px;
@@ -2701,6 +2715,18 @@ input[type="button"].btn-block {
 .glyphicon-star:before {
   content: "\e006";
 }
+
+.gold, .gold a {
+    color: #D4A017;
+}
+
+.silver, .silver a {
+    color: #C0C0C0;
+}
+
+.glyphicons-icon.crown{background-position:-44px -1717px}
+
+.glyphicons.crown:before{content:"\1F451"}
 
 .glyphicon-star-empty:before {
   content: "\e007";
@@ -5155,6 +5181,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .label-success[href]:focus {
   background-color: #449d44;
 }
+
+.label-xred {
+  background-color: #FF0000;
+}
+
+.label-xred[href]:hover,
+.label-xred[href]:focus {
+  background-color: #FF0000;
+}
+
 
 .label-info {
   background-color: #5bc0de;

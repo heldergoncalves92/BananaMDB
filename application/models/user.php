@@ -24,7 +24,7 @@ Class User extends CI_Model
  function setdados($dados,$cookies)
  {
    $user = $dados['USER'];
-   $idx = $this->usermodel->getidxbyuser($user);
+   $idx = $this->usermodel->getidbyuser($user);
    $sql="UPDATE CISE set ID_UTILIZADOR = '$idx' , USERNAME = '$user' WHERE SESSION_ID='{$cookies}'";
    $query = $this->db->query($sql);
   return true; 
@@ -39,33 +39,46 @@ Class User extends CI_Model
    }*/
  }
  
- function getidxbyuser($user)
+ function getidbyuser($user)
  {
 
    $sql="SELECT ID_UTILIZADOR from UTILIZADORES WHERE USERNAME='$user'";
    
-   $query = $this->db->query($sql)->row()->IDX;
-  return $query; 
+   if(isset($this->db->query($sql)->row()->ID_UTILIZADOR))
+  		return $this->db->query($sql)->row()->ID_UTILIZADOR;
+   else
+       return 0;
  }
  
  
- function getidx($cookies)
+ function getID_UTILIZADOR($cookies)
  {
 
    $sql="SELECT ID_UTILIZADOR from CISE WHERE SESSION_ID='$cookies'";
    
-   $query = $this->db->query($sql)->row()->IDX;
+   $query = $this->db->query($sql)->row()->ID_UTILIZADOR;
   return $query; 
  }
 
 
 
-		public function get_users(){
-			$this->db->from('UTILIZADORES');
-			$this->db->order_by("IDX", "asc");
-			return $this->db->get();
-			
-		}
+function get_user_by_name($name){
+	$sql="SELECT * from UTILIZADORES WHERE USERNAME='$name'";
+
+	return $this->db->query($sql);
+	
+}
+
+function setPassword($user, $new_pass){
+	$sql="UPDATE UTILIZADORES SET PASSWORD='$new_pass' WHERE USERNAME='$user'";
+	$this->db->query($sql);
+}
+
+function setAvatar($user, $new_avatar){
+	$sql="UPDATE UTILIZADORES SET AVATAR='$new_avatar' WHERE USERNAME='$user'";
+	$this->db->query($sql);
+}
+
 
 
 function getuser($cookies)
@@ -80,6 +93,17 @@ function getuser($cookies)
   return $query; 
  }
 
+function getDataNbyNome($datan)
+ {
+
+   $sql="SELECT DATA_NASCIMENTO from UTILIZADORES WHERE USERNAME='$datan'";
+   
+   $query = $this->db->query($sql)->row()->DATA_NASCIMENTO;
+  if ($query == ' ')
+  return -1;
+  else
+  return $query; 
+ }
 
 
 		public function get_UTILIZADORESseqcurrval(){
@@ -89,24 +113,28 @@ function getuser($cookies)
 	
 
 
+public function get_Idadebydata($datan){
+			
+			return $this->db->query("select idade(to_date('$datan','dd-mm-yyyy')) as idade from dual")->row()->IDADE;
+		}
+	
+
+
 
 	public function db_insert_UTILIZADORES($dados=NULL){
 	
 		if($dados!=NULL):
-			/*$date1=$dados['DNM'];
-			$date2=$dados['ES'];
-			$this->db->set('DNM',"to_date('$date1','yyyy-mm-dd')",false);
-			$this->db->set('ES',"to_date('$date2','yyyy-mm-dd')",false);*/
-			//$this->db->insert('UTILIZADORES',$dados);
 			$user = $dados['USERNAME'];
 			$pass = $dados['PASS'];
 			$email = $dados['EMAIL'];
 			$datan = $dados['DATANASCIMENTO'];
+			$avatar= $dados['AVATAR'];
 			
-			$query = "INSERT INTO UTILIZADORES VALUES (UTILIZADORES_SEQ.nextval,'$user','$email','$pass','$datan')";
+			
+			$query = "INSERT INTO UTILIZADORES (USERNAME,EMAIL,PASSWORD,DATA_NASCIMENTO,AVATAR,ESTADO) VALUES ('$user','$email','$pass','$datan', '$avatar',1)";
 			$this->db->query($query);
 			$this->session->set_flashdata('registook','Registou-se com Sucesso');
-			redirect('registo');
+			
 		endif;		
 	}
 	
@@ -123,6 +151,18 @@ function getuser($cookies)
 			$this->db->update('UTILIZADORES',$dados,$condicao);
 			$this->session->set_flashdata('edicaook','Editou com Sucesso');
 			redirect(current_url());
+		endif;		
+	}
+	
+	public function incstat($ID_UTILIZADOR=NULL){
+	
+
+		if($ID_UTILIZADOR!=NULL):
+			
+				$query = "INSERT INTO userstats (id_utilizador) values($ID_UTILIZADOR)";
+				$VCOUNT = $this->db->query($query);
+			
+			
 		endif;		
 	}
 	

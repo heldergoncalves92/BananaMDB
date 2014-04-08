@@ -47,8 +47,9 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-
-$dbhost = "172.16.98.128";
+//$dbhost = "http://bananacorp.no-ip.org/";
+//$dbhost = "192.168.248.156";
+$dbhost = "localhost";
 $dbport = "1521";
 $dbname = "BDLEI";
 $dbuser = "UTILIZADOR";

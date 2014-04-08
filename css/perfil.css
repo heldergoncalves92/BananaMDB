@@ -1,0 +1,53 @@
+		
+		#feed-block .title{
+			text-indent: 4%;
+			font-weight: bold;
+			
+		}
+
+		
+
+		#log{
+			padding: 0 5% 0 5%;
+			text-indent: 1%;
+		}
+
+		#log-table{
+			display: table;
+			width: 100%;
+		}
+
+		#log-cell-1, #log-cell-2{
+			display: table-cell;
+			vertical-align: top;
+			width: 50%;
+			
+		}
+
+		.button{
+			margin: 3px 0 0 50%;
+		}
+
+		span.destaque{
+			color: #428bca;
+			font-weight: bold;
+
+		}
+
+		p.destaque{
+			font-size: 11pt;
+		}
+
+		.user{
+			text-transform: capitalize;
+		}
+
+		.avatar{
+			width: 70%;
+		}
+
+		.btn-right{
+			float: right;
+			margin: 0 1%;
+			
+		}

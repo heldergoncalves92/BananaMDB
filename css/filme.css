@@ -1,0 +1,61 @@
+		
+		.block{
+			width: 100%;
+			
+		}
+
+		.btn-right{
+			float: right;
+		}
+
+		.img-filme{
+			width: 100%;
+		}
+
+		span.destaque{
+			color: #428bca;
+			font-weight: bold;
+
+		}
+
+		p.destaque{
+			font-size: 11pt;
+		}
+		
+		#feed-block .title{
+			text-indent: 4%;
+			font-weight: bold;
+		}
+
+		#log{
+			padding: 0 5% 0 5%;
+			text-indent: 1%;
+		}
+
+		#log-table{
+			display: table;
+			width: 100%;
+		}
+
+		#log-cell-1, #log-cell-2{
+			display: table-cell;
+			vertical-align: top;
+			width: 50%;
+			padding: 2%;
+		}
+
+		#log-cell-1{
+			padding: 1% 4%;
+		}
+
+		#cast{
+			margin: 0 4%;
+			margin-right:54%; 
+		}
+
+		
+
+
+
+
+

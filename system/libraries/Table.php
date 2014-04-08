@@ -475,7 +475,7 @@ class CI_Table {
 			return;
 		}
 
-		$this->temp = $this->_default_template();
+		$this->temp = $this->_default_template(); 
 		foreach (array('table_open', 'thead_open', 'thead_close', 'heading_row_start', 'heading_row_end', 'heading_cell_start', 'heading_cell_end', 'tbody_open', 'tbody_close', 'row_start', 'row_end', 'cell_start', 'cell_end', 'row_alt_start', 'row_alt_end', 'cell_alt_start', 'cell_alt_end', 'table_close') as $val)
 		{
 			if ( ! isset($this->template[$val]))
@@ -496,7 +496,7 @@ class CI_Table {
 	function _default_template()
 	{
 		return  array (
-						'table_open'			=> '<table border="0" cellpadding="4" cellspacing="0">',
+						'table_open'			=> '<table class="table-striped" border="0" width="100%" cellpadding="4" cellspacing="0">',
 
 						'thead_open'			=> '<thead>',
 						'thead_close'			=> '</thead>',

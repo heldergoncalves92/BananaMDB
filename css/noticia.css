@@ -1,0 +1,19 @@
+
+	
+	#feed-block{
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+
+	.block{
+		text-indent: 5%;
+		padding: 10px 10%;
+	}
+
+	.noticia{
+		text-align: justify;
+	}
+
+	.img-noticia{
+		width: 70%;
+	}

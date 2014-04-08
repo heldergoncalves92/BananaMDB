@@ -14,7 +14,9 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/BananaMDB/';/*'http://192.168.1.112/ci/';*/
+
+$config['base_url']	= 'http://localhost/BananaMDB/';
+//$config['base_url']	= 'http://89.214.153.171/BananaMDB/';
 
 /*
 |--------------------------------------------------------------------------

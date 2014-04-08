@@ -1,0 +1,31 @@
+	
+	.table{
+		width: 90%;
+		display: table;
+		height: 300px;
+		
+	}
+
+	.big{
+		height: 400px
+	}
+
+	.block{
+		
+		text-indent: 5%;
+		padding: 10px 5%
+	}
+
+	.cell1{
+		
+		
+		width: 50%;
+		display: table-cell;
+	}
+
+
+	.cell2{
+		
+		width: 50%;
+		display: table-cell;	
+	}

@@ -1,6 +1,7 @@
 
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main_page.css">
 
-
+  
     <!-- - - - - - -Carosel - - - - - - -->
 
    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -14,7 +15,7 @@
     <!-- Wrapper for slides -->
     <div align="middle" class="carousel-inner">
       <div class="item active">
-        <a href="#"><img id="carrosel" src="img/Tron.jpg" ></a>
+        <a href="#"><img id="carrosel" src="<?php echo base_url(); ?>img/Tron.jpg" ></a>
         <div class="carousel-caption">
          	<h1>TRON</h1>
         </div>
@@ -22,14 +23,15 @@
 
 
        <div class="item">
-        <img id="carrosel" src="img/Hangover.jpg" >
+        <img id="carrosel" src="<?php echo base_url(); ?>img/Hangover.jpg" >
         <div class="carousel-caption">
          
         </div>
       </div>
 
       <div  class="item">
-        <img id="carrosel" src="img/hobbit.jpg" >
+      	<a href="title/filme/2">
+        <img id="carrosel" src="<?php echo base_url(); ?>img/hobbit.jpg" ></a>
         <div class="carousel-caption">
          
         </div>
@@ -46,50 +48,95 @@
   </a>
  </div>
 
-
-    <!-- - - - - - -Cinema de hoje - - - - - - -->
-    <h4 align="center">Nos Cinemas</h4>
-
-    <div align="center" class="row">
-      <div class="col-lg-4">
-        <a href="#">
-          <img class="img-thumbnail" id="S_today" src="img/carrie.jpg" >
-        </a>
-        <h4>Carrie</h4>
-      </div>
-      <div class="col-lg-4">
-        <a href="#">
-          <img  class="img-thumbnail" id="S_today" src="img/moster.jpg" >
-        </a>
-        <h4>Mostros: A Universidade</h4>
-      </div>
-      <div class="col-lg-4">
-        <a href="#">
-          <img class="img-thumbnail" id="S_today" src="img/gaiola.jpg" >
-        </a>
-        <h4>A Gaiola Dourada</h4>
-      </div>
-    </div>
-
     <!-- - - - - Noticias - - - - - -->
-    <div id="feed-block" class="well">
+    <div id="feed-block" class="well ident">
       <h2><b>Notícias</b></h2>
       <hr>
-      <div id="feed-noticias"> 
-        <div id="noticia">
-          <div class="title"><h3>Nell Patric Harris contra-cena nos 'Mostros'</h3></div>
-          <div class="contend">
-            <p>Agora aqui as noticias pretendidas. Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas Agora aqui as noticias pretendidas.</p>
-            <img  class="img-rounded img-feed" src="img/moster.jpg" >
-            <p>Agora aqui as noticias pretendidas</p>
+      <div id="feed"> 
+        <div id="feed-noticias">
+            <div class="noticia">
+
+
+              <?php 
+
+              foreach ($feed as $value) {
+
+                echo
+
+                  "<div class=\"title\"><a class='l_noticia' href='".base_url()."title/noticia/".$value->ID_NOTICIA."'><h3>". $value->TITULO ."</h3></a></div>
+                  <p>[". $value->DATA."]</p>
+                  <div class=\"contend\">
+                    <p>".$value->SINOPSE ."</p>
+                      <div align=\"center\">
+                        <img  class=\"img-rounded img-feed\" src=\"". base_url() ."uploads/noticias/". $value->IMAGEM ."\">
+                      </div>
+                      
+                  </div><hr>";
+                
+              }
+              ?>
+            </div>
+            <div id='pagination' align='center'>
+              <ul class="pagination">
+                <?php 
+                 
+                    if(($n_pag-2)>1){
+                      $p=$n_pag-1;
+                      echo "<li><a href='".base_url()."inicio/page/$p'>&laquo;</a></li>";
+                      $x=$n_pag-2;
+                    }else
+                        $x=1;
+
+                    for(;$x<$n_pag;$x++)
+                      echo "<li><a href='".base_url()."inicio/page/$x'>$x</a></li>";
+
+                    echo "<li class='active'><a href='".base_url()."inicio/page/$n_pag'>$n_pag</a></li>";
+
+                    for($x=$n_pag+1;$x<$pages;$x++)
+                      echo "<li><a href='".base_url()."inicio/page/$x'>$x</a></li>";
+
+                    if(($n_pag+2)<$pages){
+                      $p=$n_pag+1;
+                      echo "<li><a href='".base_url()."inicio/page/$p'>&raquo;</a></li>";
+                    }
+
+                ?>
+              </ul>
+            </div>
+        </div>
+
+
+
+        <div align="center" id="tops">
+          <!-- - - - - - -Cinema de hoje - - - - - - -->
+          <h4 class="title" align="center">Nos Cinemas</h4>
+          <div id="tab-cin">
+            <div id="cell-cin1">
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/carrie.jpg" >
+                <p>Carrie</p>
+              </div>
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/escape.jpg" >
+                <p>Plano de Fuga</p>
+              </div>
+              
+            </div>
+            <div id="cell-cin2">
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/thor.jpg" >
+                <p>Thor 2</p>
+              </div>
+              <div class="top-cin">
+                <img id="S_today" class="img-rounded" src="<?php echo base_url(); ?>img/moster.jpg" >
+                <p>Mostros</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div id="tops">
-          <p>Welcome to the Jungle <hr><h2>Por aqui tabelas que interessam</h2></p>
-        </div>
+          <h2></h2>
 
+        </div>
       </div>
-    </div>
 
 

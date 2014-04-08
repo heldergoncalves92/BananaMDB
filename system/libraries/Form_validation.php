@@ -1093,6 +1093,32 @@ class CI_Form_validation {
 
 	// --------------------------------------------------------------------
 
+	
+	
+	
+	/**
+     * Valid Date (ISO format)
+     *
+     * @access    public
+     * @param    string
+     * @return    bool
+     */
+    public function date($date) {
+        if (!empty($date))
+        {
+            if (preg_match("/^(\d{1,2})[- \/.](\d{1,2})[- \/.](\d{4})$/", $date, $values))     // Is a date format (dd mm yyyy)
+            {
+                if (checkdate($values[2], $values[1], $values[3]))    // Date really exists
+                {
+                    return TRUE;
+                }
+            }
+        }
+        return FALSE;
+    }
+	
+	
+	
 	/**
 	 * Validate IP Address
 	 *

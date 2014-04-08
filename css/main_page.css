@@ -1,0 +1,69 @@
+
+	#carrosel{
+		height: 400px;
+		width: 100%;
+	}
+
+
+	#S_today{
+		width: 95%;
+		height: 110px
+	}
+
+	.ident{text-indent: 5%;}
+
+	a.l_noticia{
+		text-decoration: none;
+		color: #333333;
+	}
+
+	#feed{
+		text-indent: 5%;
+		display: table;
+	}
+
+	img.img-feed{
+
+		width: 70%;
+	}
+
+	
+	#feed-noticias ,#tops{
+		
+
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	#feed-noticias{
+		text-align: justify;
+		padding: 0 4% 0 2%;
+		width: 70%;
+		
+	}
+
+	#tab-cin{
+		display: table;
+		width: 100%;
+		height: 100%
+	}
+
+	#cell-cin1, #cell-cin2{
+		display: table-cell;
+		vertical-align: top;
+		width: 50%;
+		height: 100%
+	}
+
+	#pagination a{
+		
+		text-align: center;
+	}
+
+
+
+
+
+	
+
+

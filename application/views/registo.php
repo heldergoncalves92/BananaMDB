@@ -1,149 +1,61 @@
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/registo.css">
+
+  	<div id="feed-block" class="well">
+	  	<div class="block">
+			<h2 class="title">Registo</h2>
+			<hr>
+			<div id="log">
+				<div id="log-table">
+					<div id="log-cell-1">
+					
+						<?php if ($this->session->flashdata('registook'))
+								echo'<p>'.$this->session->flashdata('registook').'</p>';
+						?>
 
 
+						<?php echo form_open_multipart('Registo','');?>
+						
+						<h5>Utilizador</h5>
+						<?php echo form_input(array('name'=>'USERNAME','class'=>'form-control input','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
+										
+						<h5>E-Mail</h5>
+						<?php echo form_input(array('name'=>'EMAIL','class'=>'form-control input','placeholder'=>'E-MAIL'),set_value('EMAIL'));?>
+						
+						<h5>Data de Nascimento</h5>
+						<?php echo form_input(array('name'=>'DATANASCIMENTO','class'=>'form-control input','placeholder'=>'DD-MM-AAA'),set_value('DATANASCIMENTO'));?>
+						
+						<h5>Password</h5>
+						<?php echo form_password(array('name'=>'PASS','class'=>'form-control input','placeholder'=>'PASSWORD'),set_value('PASS'));?>
+						
+						<h5>Repita a Password</h5>
+						<?php echo form_password(array('name'=>'PASS2','class'=>'form-control input','placeholder'=>'REPITA A PASSWORD'),set_value('PASS2')); ?>
 
-<?php
+						<h5>Avatar</h5>
+						<?php echo form_upload(array('name'=>'AVATAR'),set_value('AVATAR')); ?>
 
-if ($this->session->flashdata('registook')):
-	echo'<p>'.$this->session->flashdata('registook').'</p>';
-	
-endif
-
-
-
-
-?>
-
-
-
-
-  <div class="container">
-	
-  <div class="row">
-	
-	
-  <div class="span8">
-	
-	<form class="form-horizontal"  method='post' action=''>
-	  <fieldset>
-	    <legend>Registo</legend>
-	    
-	    
-	
-	    
-	
-	     
-<?php
-
-echo form_open('inicio/Registo','');?>
-
- <div class="alert alert-danger">      
-<?php
-
-echo validation_errors('<p>','</p>');
-?>
-
-</div>
-<div class="control-group">
-	      <label class="control-label" for="input01">Username</label>
-<div class="controls">
-
-<?php
-
-echo form_input(array('name'=>'USERNAME','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'USERNAME'),set_value('USERNAME'),'autofocus');?>
-</div></div>
-
-
-
-
-<div class="control-group">
-	      <label class="control-label" for="input01">E-Mail</label>
-<div class="controls">
-
-<?php
-
-echo form_input(array('name'=>'EMAIL','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'E-MAIL'),set_value('EMAIL'));?>
-</div></div>
-
-
-
-<div class="control-group">
-	      <label class="control-label" for="input01">Data de Nascimento</label>
-<div class="controls">
-
-<?php
-
-echo form_input(array('name'=>'DATANASCIMENTO','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'DATA'),set_value('DATANASCIMENTO'));?>
-</div></div>
-
-
-
-<div class="control-group">
-	      <label class="control-label" for="input01">Password</label>
-<div class="controls">
-
-<?php
-
-echo form_password(array('name'=>'PASS','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'PASSWORD'),set_value('PASS'));?>
-</div></div>
-
-
-
-<div class="control-group">
-	      <label class="control-label" for="input01">Repita a Password</label>
-<div class="controls">
-	
-<?php
-
-echo form_password(array('name'=>'PASS2','style'=>'margin-bottom:.5em;width:20%','class'=>'form-control','placeholder'=>'REPITA A PASSWORD'),set_value('PASS2')); ?>
-
-</div></div>
-	<div class="control-group">
-		<label class="control-label" for="input01"></label>
-	      <div class="controls">
-	      	
-	      	
-	      	
-
-<?php
-
-
-$attributes = 'class = "btn btn-success"';
-echo form_submit('submit', 'Registar', $attributes); 
-echo form_close();?>
-
-</div></div>
-
-
-
-	    
-	<!-- //ComboBox
-	 <div class="control-group">
-		<label class="control-label" for="input01">Especialidade</label>
-	      <div class="controls">
-	        <select name="gender" id="gender" >
-            				<option value="OFT">OFT</option>
-			                <option value="CARD">CARD</option>
-			                <option value="CG">CG</option>
-			
-			               
-			              </select>
-	       
-	      </div>
-	
-	</div> -->
-	
-	
-	   
-	  </fieldset>
-	</form>
-	</div>
-	
+						<br>
+						<?php 	$attributes = 'class = "btn btn-success button"';
+								echo form_submit('submit', 'Registar', $attributes); 
+								echo form_close();?>
+						<br>
+						
+							
+						
+					</div>
+					<div id="log-cell-2">
+						<br><br>
+						<?php 	if($erro!='')
+										echo '<div class="alert alert-danger "><p>' . $erro . '</p></div>';
+									echo validation_errors('<div class="alert alert-danger erro"><p>','</p></div>');	
+							?>
+						</div>
+				</div>
+			</div>
 		</div>
-        
-        
-          </div><!--/row-->
-        </div><!--/span-->
-      </div><!--/row-->
+	
+	
+
+
 
 
 
